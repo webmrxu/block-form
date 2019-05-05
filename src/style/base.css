@@ -1,0 +1,561 @@
+/*!
+ * @describe: 项目公共样式
+ * @date: 2018/12/18
+ * @des: 为了统一页面风格，必须引入公共css文件
+ * @des: 使用normalize.css 初始化元素，统一风格
+ * @des: 由于没有使用命名空间进行区分，有很大几率会出现class 类名冲突。
+ *       解决方案：可选择直接覆盖有冲突属性或者使用其他类名
+ * @des: 栅格 .col-100 .col-50 .col-25 .col-33  
+ *       移动端常用的四种比例：一行一个、一行两个、一行三个、一行四个
+ *       示例：.col-100{ width: 100% }、.col-33{width: 33.33%}
+ * 1 统一页面颜色
+ * 2 最常用 css 
+ * 3 b 代表 bottom 例如：.border-b 下边框
+ * 4 t 代表 top
+ * 5 l 代表 left  例如： .left-l 左浮动
+ * 6 r 代表 right
+ * 7 s 代表 small
+ */
+
+body, div, section, a, p, span, strong, input, ul, li, tr, td, h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  font-size: 14px;
+  font-family: Helvetica Neue, Helvetica, STHeiTi, sans-serif;
+  color: #555;
+  background: #fff;
+}
+
+html, body {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* 主色 */
+
+.color {
+  color: #f46a64;
+}
+
+/* 主色背景*/
+
+.bg-color {
+  color: #fff;
+  background-color: #f46a64;
+}
+
+/* 灰色字体 */
+
+.gray {
+  color: #858585;
+}
+
+/* 去除浮动对父元素的影响 */
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+/* 0.5 像素下边框，注意：不能和 clearfix 清除浮动同时使用, 且父元素必须定位为 position: relative */
+
+.border-b-s {
+  position: relative;
+}
+
+.border-b-s::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  color: #d9d9d9;
+  bottom: 0;
+  border-bottom: 1px solid #d9d9d9;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+}
+
+/* 0.5 像素上边框 父元素必须定位为 position: relative */
+
+.border-t-s {
+  position: relative;
+}
+
+.border-t-s::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  color: #d9d9d9;
+  top: 0;
+  border-top: 1px solid #d9d9d9;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+}
+
+.border-r-s {
+  position: relative;
+}
+
+.border-r-s::before {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-right: 1px solid #D9D9D9;
+  color: #D9D9D9;
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+
+.border-l-s {
+  position: relative;
+}
+
+.border-l-s::before {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-left: 1px solid #D9D9D9;
+  color: #D9D9D9;
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+
+/* 边框，目的为统一边框颜色 */
+
+.border {
+  border: 1px solid #d9d9d9;
+}
+
+/* 上边框 */
+
+.border-t {
+  border-top: 1px solid #d9d9d9;
+}
+
+/* 下边框 */
+
+.border-b {
+  border-bottom: 1px solid #d9d9d9;
+}
+
+/* 左边框 */
+
+.border-l {
+  border-left: 1px solid #d9d9d9;
+}
+
+/* 右边框 */
+
+.border-r {
+  border-right: 1px solid #d9d9d9;
+}
+
+/* 左浮动 */
+
+.float-l {
+  float: left;
+}
+
+/* 右浮动 */
+
+.float-r {
+  float: right;
+}
+
+/* 上外边距 */
+
+.margin-t {
+  margin-top: 16px;
+}
+
+.margin-t-s {
+  margin-top: 8px;
+}
+
+/* 下外边距 */
+
+.margin-b {
+  margin-bottom: 16px;
+}
+
+.margin-b-s {
+  margin-bottom: 8px;
+}
+
+/* 左外边距 */
+
+.margin-l {
+  margin-left: 16px;
+}
+
+.margin-l-s {
+  margin-left: 8px;
+}
+
+/* 右外边距 */
+
+.margin-r {
+  margin-right: 16px;
+}
+
+.margin-r-s {
+  margin-right: 8px;
+}
+
+/* 上内边距 */
+
+.padding-t {
+  padding-top: 16px;
+}
+
+.padding-t-s {
+  padding-top: 8px;
+}
+
+/* 下内边距 */
+
+.padding-b {
+  padding-bottom: 16px;
+}
+
+.padding-b-s {
+  padding-bottom: 8px;
+}
+
+/* 左内边距 */
+
+.padding-l {
+  padding-left: 16px;
+}
+
+.padding-l-s {
+  padding-left: 8px;
+}
+
+/* 右内边距 */
+
+.padding-r {
+  padding-right: 16px;
+}
+
+.padding-r-s {
+  padding-right: 8px;
+}
+
+/* 绝对定位 */
+
+.absolute {
+  position: absolute;
+}
+
+/* 相对定位 */
+
+.relative {
+  position: relative;
+}
+
+/* 遮罩层 */
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* 阴影 */
+
+.shadow {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.03);
+}
+
+.shadow-t {
+  box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.03);
+}
+
+.shadow-b {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.03);
+}
+
+.shadow-l {
+  box-shadow: -4px 0px 4px rgba(0, 0, 0, 0.03);
+}
+
+.shadow-r {
+  box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.03);
+}
+
+/* 阴影 END*/
+
+/* 间隙 */
+
+.gap {
+  width: 100%;
+  height: 8px;
+  background-color: #f1f1f1;
+}
+
+/* 栅格 */
+
+.col-100 {
+  width: 100%;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+.col-25 {
+  width: 25%;
+}
+
+.col-33 {
+  width: 33.33%;
+}
+
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+audio, canvas, progress, video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden], template {
+  display: none;
+}
+
+a {
+  background-color: transparent;
+}
+
+a:active, a:hover {
+  outline: 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+h1 {
+  margin: .67em 0;
+  font-size: 2em;
+}
+
+mark {
+  color: #000;
+  background: #ff0;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -.5em;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  height: 0;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+pre {
+  overflow: auto;
+}
+
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled], html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+fieldset {
+  padding: .35em .625em .75em;
+  margin: 0 2px;
+  border: 1px solid #c0c0c0;
+}
+
+legend {
+  padding: 0;
+  border: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 0;
+}
+
+input, button, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: #23527c;
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  vertical-align: middle;
+}

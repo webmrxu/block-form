@@ -12,9 +12,7 @@
     <!-- 表单展示区 -->
     <div class="form-box">
       <div>
-        <el-form ref="form" :model="form" label-width="80px">
-          <base-input/>
-        </el-form>
+        <block-from/>
       </div>
     </div>
     <!-- 字段自定义区 -->
@@ -23,11 +21,13 @@
   </div>
 </template>
 <script>
-import BaseInput from '@/components/form-items/base-input'
+import Input from '@/components/form-items/input'
+import BlockFrom from '@/components/block-form'
 export default {
   name: 'home',
   components: {
-    BaseInput
+    Input,
+    BlockFrom
   },
   data () {
     return {

@@ -4,6 +4,14 @@
 
 积木表单
 
+
+# 目录结构
+src/
+  components/ 组件目录
+    block-form.vue 积木表单核心组件
+    form-items/积木表单组件子组件(输入组件)
+      input  基础输入组件
+
 ## Build Setup
 
 ``` bash

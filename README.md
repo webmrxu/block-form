@@ -10,7 +10,10 @@ src/
   components/ 组件目录
     block-form.vue 积木表单核心组件
     form-items/积木表单组件子组件(输入组件)
-      input  基础输入组件
+      input.vue  基础输入组件
+  settings
+    base-form.js 基础form表单配置
+    form.js  form表单配置，继承于base-form配置
 
 ## Build Setup
 

@@ -23,16 +23,22 @@
 <script>
 import Input from '@/components/form-items/b-input'
 import BlockFrom from '@/components/block-form'
+import FormSetting from '@/settings/form'
 export default {
   name: 'home',
   components: {
     Input,
     BlockFrom
   },
-  data () {
+  data() {
     return {
       form: {}
     }
+  },
+  mounted() {
+    console.log(FormSetting)
+  },
+  methods: {
   }
 }
 </script>

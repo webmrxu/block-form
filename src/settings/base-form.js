@@ -4,4 +4,4 @@ const baseFormSetting = [
   }
 ]
 
-export default baseFormSetting;
+export default baseFormSetting

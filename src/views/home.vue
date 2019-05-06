@@ -36,6 +36,7 @@ export default {
   },
   created() {
     this.setting = FormSetting
+    console.log(FormSetting)
   },
   methods: {
   }

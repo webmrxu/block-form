@@ -1,9 +1,11 @@
 const baseFormSetting = [
   {
-    type: 'input'
+    type: 'input',
+    title: '文本框'
   },
   {
-    type: 'select'
+    type: 'select',
+    title: '下拉选择框'
   }
 ]
 

@@ -11,7 +11,7 @@ src/
     block-form.vue 积木表单核心组件
     form-items/积木表单组件子组件(输入组件)
       input.vue  基础输入组件
-  settings
+  settings  积木表单配置(对应数据库表)
     base-form.js 基础form表单配置
     form.js  form表单配置，继承于base-form配置
 
@@ -30,6 +30,17 @@ src/
 
 ## Slot
 
+# b-input 组件（文本框）
+
+itemSetting: baseObject
+
++ type: 'input'  类型
++ title: '文本框'  输入框标题
+
+itemSeting: formObject
+
++ type: input  类型
++ title: string  输入框标题  default: 文本框
 
 # Build Setup
 

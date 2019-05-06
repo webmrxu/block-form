@@ -21,7 +21,7 @@
   </div>
 </template>
 <script>
-import Input from '@/components/form-items/input'
+import Input from '@/components/form-items/b-input'
 import BlockFrom from '@/components/block-form'
 export default {
   name: 'home',

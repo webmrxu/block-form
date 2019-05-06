@@ -15,7 +15,23 @@ src/
     base-form.js 基础form表单配置
     form.js  form表单配置，继承于base-form配置
 
-## Build Setup
+# block-from 组件
+
+积木表单核心组件。
+
+## 属性
+
+1 setting 表单配置
+2 formData 表单数据(输入和输出)
+
+## 事件
+
+1 @change 整个form表单输入值改变时触发
+
+## Slot
+
+
+# Build Setup
 
 ``` bash
 # install dependencies

@@ -1,6 +1,9 @@
 const baseFormSetting = [
   {
     type: 'input'
+  },
+  {
+    type: 'select'
   }
 ]
 

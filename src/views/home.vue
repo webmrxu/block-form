@@ -12,7 +12,7 @@
     <!-- 表单展示区 -->
     <div class="form-box">
       <div>
-        <block-from/>
+        <block-from :setting="setting"/>
       </div>
     </div>
     <!-- 字段自定义区 -->
@@ -21,22 +21,21 @@
   </div>
 </template>
 <script>
-import Input from '@/components/form-items/b-input'
 import BlockFrom from '@/components/block-form'
 import FormSetting from '@/settings/form'
 export default {
   name: 'home',
   components: {
-    Input,
     BlockFrom
   },
   data() {
     return {
-      form: {}
+      form: {},
+      setting: {}
     }
   },
-  mounted() {
-    console.log(FormSetting)
+  created() {
+    this.setting = FormSetting
   },
   methods: {
   }

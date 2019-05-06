@@ -2,6 +2,9 @@ import baseFormSetting from './base-form'
 const formSetting = [
   {
     type: 'input'
+  },
+  {
+    type: 'select'
   }
 ]
 // 扩展基础form配置

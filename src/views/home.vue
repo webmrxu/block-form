@@ -22,7 +22,7 @@
 </template>
 <script>
 import BlockFrom from '@/components/block-form'
-import FormSetting from '@/settings/form'
+import FormItemsSetting from '@/settings/form-items'
 export default {
   name: 'home',
   components: {
@@ -35,8 +35,8 @@ export default {
     }
   },
   created() {
-    this.setting = FormSetting
-    console.log(FormSetting)
+    this.setting = FormItemsSetting
+    // console.log(FormItemsSetting)
   },
   methods: {
   }

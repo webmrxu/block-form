@@ -2,7 +2,8 @@ import BaseItemSetting from './base-items'
 const formSetting = [
   {
     type: 'input',
-    title: '用户名称'
+    title: '用户名称',
+    field: 'userName'
   },
   {
     type: 'select'

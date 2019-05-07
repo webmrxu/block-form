@@ -16,9 +16,10 @@ src/
   settings  积木表单配置(对应数据库表)
     base-item.js  基础输入组件配置
     form-item.js  form表单输入组件配置，继承于base-item配置
+      排序字段
     form.js  表单全局配置，优先级（form-item.js > form.js > base-item.js）
     rules.js  输入组件验证规则配置
-    
+
 ```
 
 # block-from 组件

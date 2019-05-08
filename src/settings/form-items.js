@@ -6,7 +6,9 @@ const formSetting = [
     field: 'userName'
   },
   {
-    type: 'select'
+    type: 'select',
+    title: '性别',
+    field: 'userSex'
   }
 ]
 let _tmpSetting = []

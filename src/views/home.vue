@@ -12,7 +12,7 @@
     <!-- 表单展示区 -->
     <div class="form-box">
       <div>
-        <block-from :setting="setting"/>
+        <block-from :setting="setting" :formData="formData"/>
       </div>
     </div>
     <!-- 字段自定义区 -->
@@ -30,7 +30,10 @@ export default {
   },
   data() {
     return {
-      form: {},
+      formData: {
+        userName: 'tom',
+        userSex: 'man'
+      },
       setting: {}
     }
   },

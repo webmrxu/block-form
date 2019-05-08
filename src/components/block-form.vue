@@ -14,7 +14,7 @@ export default {
     BInput,
     BSelect
   },
-  props: ['setting'],
+  props: ['setting', 'formData'],
   data () {
     return {
       form: {}

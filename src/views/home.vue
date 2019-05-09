@@ -12,7 +12,7 @@
     <!-- 表单展示区 -->
     <div class="form-box">
       <div>
-        <block-from :itemSetting="itemSetting" :formData="formData" :FormSetting="FormSetting"/>
+        <block-from :itemSetting="itemSetting" :formData="formData" :FormSetting="FormSetting" :rules="rules"/>
       </div>
     </div>
     <!-- 字段自定义区 -->
@@ -24,6 +24,7 @@
 import BlockFrom from '@/components/block-form'
 import ItemsSetting from '@/settings/items'
 import FormSetting from '@/settings/form'
+import Rules from '@/settings/rules'
 
 export default {
   name: 'home',
@@ -32,6 +33,7 @@ export default {
   },
   data() {
     return {
+      rules: [],
       itemSetting: [],
       FormSetting: {},
       formData: {
@@ -43,6 +45,8 @@ export default {
   created() {
     this.itemSetting = ItemsSetting
     this.FormSetting = FormSetting
+    this.rules = Rules
+    console.log(Rules)
   },
   methods: {
   }

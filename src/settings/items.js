@@ -3,14 +3,14 @@ import utils from '@/utils/common'
 const formSetting = [
   {
     type: 'input',
-    title: '用户名称',
+    title: '文本框',
     field: 'userName',
     rules: ['1'],
     itemWidth: '50%'
   },
   {
     type: 'select',
-    title: '性别',
+    title: '文本框',
     field: 'userSex'
   }
 ]

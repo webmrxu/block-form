@@ -1,4 +1,5 @@
 import BaseItemSetting from './base-items'
+import utils from '@/utils/common'
 const formSetting = [
   {
     type: 'input',
@@ -16,7 +17,7 @@ let _tmpSetting = []
 BaseItemSetting.forEach(b => {
   formSetting.forEach(f => {
     if (b.type === f.type) {
-      _tmpSetting.push({...b, ...f})
+      _tmpSetting.push(utils.deepMerge(f, b))
     }
   })
 })

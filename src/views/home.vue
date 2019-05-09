@@ -22,7 +22,7 @@
 </template>
 <script>
 import BlockFrom from '@/components/block-form'
-import ItemsSetting from '@/settings/form-items'
+import ItemsSetting from '@/settings/items'
 import FormSetting from '@/settings/form'
 
 export default {

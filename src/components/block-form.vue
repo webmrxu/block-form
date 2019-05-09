@@ -1,8 +1,8 @@
 <template>
   <div>
     <div @click="test">test</div>
-    <el-form ref="form" :model="form" label-width="120px">
-      <component v-for="item in setting" :is="'b-'+item.type" :key="item.id" :setting="item" :value.sync="formData[item.field]"></component>
+    <el-form ref="form" :model="form" :label-width="FormSetting.labelWidth">
+      <component v-for="item in itemSetting" :is="'b-'+item.type" :key="item.id" :setting="item" :value.sync="formData[item.field]"></component>
     </el-form>
   </div>
 </template>
@@ -15,14 +15,14 @@ export default {
     BInput,
     BSelect
   },
-  props: ['setting', 'formData'],
+  props: ['itemSetting', 'formData', 'FormSetting'],
   data () {
     return {
       form: {}
     }
   },
   mounted() {
-    console.log(this.setting)
+    console.log(this.itemSetting)
   },
   methods: {
     test() {

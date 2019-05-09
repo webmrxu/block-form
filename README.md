@@ -75,3 +75,21 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+form
+label-position 表单域标签的位置	string	right/left/top	right
+label-width 表单域标签的宽度，作为 Form 直接子元素的 form-item 会继承该值	string	—	—
+Form Methods
+validate	对整个表单进行校验的方法。若不传入回调函数，则会返回一个 promise	Function(callback: Function(boolean))
+validateField	对部分表单字段进行校验的方法	Function(prop: string, callback: Function(errorMessage: string))
+resetFields	对整个表单进行重置，将所有字段值重置为初始值并移除校验结果	-
+clearValidate	移除整个表单的校验结果	-
+
+Form-Item Attributes
+prop	表单域 model 字段，在使用 validate、resetFields 方法的情况下，该属性是必填的	string	传入 Form 组件的 model 中的字段	—
+label	标签文本	string	—	—
+label-width	表单域标签的的宽度，例如 '50px'	string	—	—
+rules	表单验证规则	object	—	—
+Form-Item Methods
+resetField	对该表单项进行重置，将其值重置为初始值并移除校验结果	-

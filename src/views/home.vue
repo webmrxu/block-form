@@ -10,7 +10,7 @@
       </div>
     </div>
     <!-- 表单展示区 -->
-    <div class="form-box">
+    <div class="form-box" :style="formBoxStyle">
       <div>
         <block-from :itemSetting="itemSetting" :formData="formData" :formSetting="FormSetting" :rules="rules"/>
       </div>
@@ -25,6 +25,7 @@ import BlockFrom from '@/components/block-form'
 import ItemsSetting from '@/settings/items'
 import FormSetting from '@/settings/form'
 import Rules from '@/settings/rules'
+import utils from '@/utils/common'
 
 export default {
   name: 'home',
@@ -39,6 +40,9 @@ export default {
       formData: {
         // userName: 'tom',
         // userSex: 'man'
+      },
+      formBoxStyle: {
+        marginLeft: '100px'
       }
     }
   },
@@ -46,9 +50,16 @@ export default {
     this.itemSetting = ItemsSetting
     this.FormSetting = FormSetting
     this.rules = Rules
-    console.log(Rules)
+    let _this = this
+    this.dealWindowResize()
+    window.onresize = utils.debounce(_this.dealWindowResize, 500)
   },
   methods: {
+    dealWindowResize() {
+      let windowWidth = window.document.documentElement.getBoundingClientRect().width
+      let margin = windowWidth - 793
+      this.formBoxStyle.marginLeft = margin / 2 - 375 + 'px'
+    }
   }
 }
 </script>
@@ -59,9 +70,9 @@ export default {
   border: 1px solid #eee;
 }
 .formitem-box{
-  width: 150px;
+  width: 370px;
 }
 .form-box{
-  width: 1200px;
+  width: 793px;
 }
 </style>

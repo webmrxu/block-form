@@ -39,15 +39,31 @@ src/
 
 # b-input 组件（文本框）
 
-itemSetting: baseObject
+# itemSetting: baseObject
 
 + type: 'input'  类型
 + title: '文本框'  输入框标题
++ itemWidth: 输入框宽度
 
 itemSeting: formObject
 
 + type: input  类型
 + title: string  输入框标题  default: 文本框
+
+# itemSetting: item
+
++ type: 'input'  类型
++ title: '文本框'  输入框标题
++ itemWidth: 输入框宽度
+
+# formSetting
+
++ itemWidth: 输入框宽度
+
+# rules
+
++ require 必填
+
 
 # Build Setup
 

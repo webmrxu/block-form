@@ -5,7 +5,8 @@ const formSetting = [
     type: 'input',
     title: '用户名称',
     field: 'userName',
-    rules: ['1']
+    rules: ['1'],
+    itemWidth: '50%'
   },
   {
     type: 'select',
@@ -18,7 +19,7 @@ let _tmpSetting = []
 BaseItemSetting.forEach(b => {
   formSetting.forEach(f => {
     if (b.type === f.type) {
-      _tmpSetting.push(utils.deepMerge(f, b))
+      _tmpSetting.push(utils.deepMerge(b, f))
     }
   })
 })

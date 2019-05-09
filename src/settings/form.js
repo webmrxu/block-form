@@ -2,6 +2,7 @@ import BaseFormSetting from './base-form'
 import utils from '@/utils/common'
 
 let formSetting = {
+  itemWidth: '50%'
 }
 let keys = Object.keys(BaseFormSetting)
 keys.forEach(v => {

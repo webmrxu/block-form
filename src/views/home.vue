@@ -16,8 +16,8 @@
       </div>
     </div>
     <!-- 字段自定义区 -->
-    <div class="form-custom">
-    </div>
+    <!-- <div class="form-custom">
+    </div> -->
   </div>
 </template>
 <script>
@@ -55,6 +55,13 @@ export default {
 <style scoped>
 .home>div{
   float: left;
-  width: 20%;
+  height: 500px;
+  border: 1px solid #eee;
+}
+.formitem-box{
+  width: 150px;
+}
+.form-box{
+  width: 1200px;
 }
 </style>

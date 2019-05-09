@@ -1,16 +1,20 @@
 <template>
   <div>
-    <div @click="test">test</div>
-    <el-form ref="form" :model="formData" :label-width="formSetting.labelWidth">
-      <component
-        v-for="item in itemSetting"
-        :is="'b-'+item.type"
-        :key="item.id"
-        :setting="item"
-        :rule="item._rules"
-        :value.sync="formData[item.field]"
-      ></component>
-    </el-form>
+    <!-- <div @click="test">test</div> -->
+    <div >
+      <el-form ref="form" :model="formData" :label-width="formSetting.labelWidth">
+        <component
+          v-for="item in itemSetting"
+          :is="'b-'+item.type"
+          :key="item.id"
+          :setting="item"
+          :rule="item._rules"
+          :value.sync="formData[item.field]"
+          :style="dealItemStyle(item)"
+          class="form-item-component"
+        ></component>
+      </el-form>
+    </div>
   </div>
 </template>
 <script>
@@ -25,6 +29,9 @@ export default {
   props: ["itemSetting", "formData", "formSetting", "rules"],
   data() {
     return {
+      itemStyleObject: {
+        width: '200px'
+      }
     }
   },
   created() {
@@ -32,6 +39,13 @@ export default {
     // console.log(this.itemSetting)
   },
   methods: {
+    // 处理 form-item 样式
+    // 优先级（form-item.js > form.js > base-item.js）
+    dealItemStyle(item) {
+      return {
+        width: item.itemWidth ? item.itemWidth : this.formSetting.itemWidth
+      }
+    },
     // 处理表单验证规则
     dealFormRules() {
       this.itemSetting.forEach(v => {
@@ -53,3 +67,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.form-item-component{
+  float: left;
+}
+</style>

@@ -4,7 +4,8 @@ const formSetting = [
   {
     type: 'input',
     title: '用户名称',
-    field: 'userName'
+    field: 'userName',
+    rules: ['1']
   },
   {
     type: 'select',

@@ -12,7 +12,7 @@
     <!-- 表单展示区 -->
     <div class="form-box">
       <div>
-        <block-from :itemSetting="itemSetting" :formData="formData" :FormSetting="FormSetting" :rules="rules"/>
+        <block-from :itemSetting="itemSetting" :formData="formData" :formSetting="FormSetting" :rules="rules"/>
       </div>
     </div>
     <!-- 字段自定义区 -->

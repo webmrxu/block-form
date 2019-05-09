@@ -1,21 +1,23 @@
 <template>
   <div>
     <el-form-item :label="setting.title">
-      <el-input v-model="form.name"></el-input>
+      <el-input v-model="itemValue" @input="change"></el-input>
     </el-form-item>
   </div>
 </template>
 <script>
 export default {
   name: 'base-input',
-  props: ['setting'],
+  props: ['setting', 'value'],
   data () {
     return {
-      form: {}
+      itemValue: this.value
     }
   },
-  mounted() {
-    // console.log(this.setting)
+  methods: {
+    change(value) {
+      this.$emit('update:value', value)
+    }
   }
 }
 </script>

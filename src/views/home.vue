@@ -33,8 +33,7 @@ export default {
       formData: {
         userName: 'tom',
         userSex: 'man'
-      },
-      setting: {}
+      }
     }
   },
   created() {

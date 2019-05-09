@@ -7,8 +7,8 @@
         :is="'b-'+item.type"
         :key="item.id"
         :setting="item"
+        :rule="item._rules"
         :value.sync="formData[item.field]"
-        :rule = "item._rules"
       ></component>
     </el-form>
   </div>

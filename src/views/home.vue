@@ -3,10 +3,19 @@
     <!-- 字段列表 -->
     <div class="formitem-box">
       <div>
-        <span>输入框</span>
+        <div>
+          <span>文本框</span>
+        </div>
       </div>
       <div>
-        <span>数值输入</span>
+        <div>
+          <span>数值</span>
+        </div>
+      </div>
+      <div>
+        <div>
+          <span>邮箱</span>
+        </div>
       </div>
     </div>
     <!-- 表单展示区 -->
@@ -91,5 +100,19 @@ export default {
   margin-top: 8px;
   margin-bottom: 25px;
   padding-top: 20px;
+}
+.formitem-box{
+  margin-top: 8px;
+  background: #fff;
+}
+.formitem-box>div{
+  width: 50%;
+  float: left;
+}
+.formitem-box>div>div{
+  margin: 8px;
+  border: 1px solid #eee;
+  padding: 10px 8px;
+  cursor: pointer;
 }
 </style>

@@ -61,8 +61,18 @@ itemSeting: formObject
 + itemWidth: 输入框宽度
 
 # rules
-
-+ require 必填
+id ruleTyle ruleName ruleDes   message         trigger   pattern     minlen        maxlen        minrang       maxrang      
+   规则类型 规则名称 规则描述  验证错误提示信息   触发规则  正则表达式  最小输入长度  最大输入长度  number最小值  number最大值
++ 规则类型 (len：输入长度；require：必填；range 范围；pattern：正则)
++ 规则名称 
++ 规则描述
++ 验证错误提示信息
++ 触发规则（'change'，'blur'）
++ 正则表达式（只有当 ruleTyle 值为pattern 时才生效）
++ 最小输入长度（只有当 ruleTyle 值为len 时才生效）
++ 最大输入长度（只有当 ruleTyle 值为len 时才生效）
++ number最小值（只有当 ruleTyle 值为range 时才生效）
++ number最大值（只有当 ruleTyle 值为range 时才生效）
 
 
 # Build Setup

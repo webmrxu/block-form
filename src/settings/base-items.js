@@ -6,6 +6,10 @@ const baseFormSetting = [
   {
     type: 'select',
     title: '下拉选择框'
+  },
+  {
+    type: 'email',
+    title: '邮箱'
   }
 ]
 

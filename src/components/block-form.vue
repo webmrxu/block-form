@@ -20,11 +20,14 @@
 <script>
 import BInput from "@/components/form-items/b-input";
 import BSelect from "@/components/form-items/b-select";
+import BEmail from "@/components/form-items/b-email";
+
 export default {
   name: "block-from",
   components: {
     BInput,
-    BSelect
+    BSelect,
+    BEmail
   },
   props: ["itemSetting", "formData", "formSetting", "rules"],
   data() {
@@ -58,11 +61,26 @@ export default {
                 if (k.ruleTyle === "require") {
                   v._rules.push(this.convertRequire(k));
                 }
+                // 正则规则转换
+                if (k.ruleTyle === "pattern") {
+                  v._rules.push(this.convertPattern(k));
+                }
               }
             });
           });
         }
       });
+    },
+    // 正则规则转换
+    convertPattern(rule) {
+      return {
+        id: rule.id,
+        ruleName: rule.ruleName,
+        ruleDes: rule.ruleDes,
+        trigger: rule.trigger,
+        message: rule.message,
+        pattern: new RegExp(rule.pattern)
+      };
     },
     // 必填规则转换
     convertRequire(rule) {

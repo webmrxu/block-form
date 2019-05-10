@@ -12,6 +12,12 @@ const formSetting = [
     type: 'select',
     title: '文本框',
     field: 'userSex'
+  },
+  {
+    type: 'email',
+    title: '邮箱',
+    field: 'userEmail',
+    rules: ['1', '2']
   }
 ]
 let _tmpSetting = []

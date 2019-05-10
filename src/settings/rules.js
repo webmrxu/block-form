@@ -15,6 +15,19 @@ let rules = [
     maxlen: '',
     minrang: '',
     maxrang: ''
+  },
+  {
+    id: '2',
+    ruleTyle: 'pattern',
+    ruleName: '邮箱格式',
+    ruleDes: '邮箱格式正则验证',
+    message: '输入的邮箱格式错误',
+    trigger: 'blur',
+    pattern: '\\w[-w.+]*@([A-Za-z0-9][-A-Za-z0-9]+.)+[A-Za-z]{2,14}',
+    minlen: '',
+    maxlen: '',
+    minrang: '',
+    maxrang: ''
   }
 ]
 

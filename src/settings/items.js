@@ -16,7 +16,7 @@ const formSetting = [
     type: 'email',
     title: '邮箱',
     field: 'userEmail',
-    rules: ['1', '2']
+    rules: ['1']
   }
 ]
 let _tmpSetting = []
@@ -24,7 +24,7 @@ let _tmpSetting = []
 BaseItemSetting.forEach(b => {
   formSetting.forEach(f => {
     if (b.type === f.type) {
-      _tmpSetting.push(utils.deepMerge(b, f))
+      _tmpSetting.push(utils.deepMerge(f, b))
     }
   })
 })

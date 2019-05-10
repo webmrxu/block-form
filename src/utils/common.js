@@ -20,16 +20,26 @@ export default {
    * @param {*} master 主对象
    * 以主对象为主，当分支和主对象有冲突
    * @example
-   *   let a = {a:'a'}
-   *   let b = {a:'b'}
-   *   deepMerge(a, b); // {a: 'b'}
    */
-  deepMerge(branch, master) {
-    let key
-    for (key in master) {
-      branch[key] = branch[key] && branch[key].toString() === "[object Object]" ? this.deepMerge(branch[key], master[key]) : branch[key] = master[key]
+  deepMerge(master, branch) {
+    if (typeof master !== 'object' || typeof branch !== 'object' || master === null || branch === null) {
+      console.error('deepMerge: params 参数必须为对象');
+      return;
     }
-    return branch
+    for (let key in branch) {
+      if (typeof master[key] === 'undefined' && typeof branch[key] !== 'undefined') {
+        master[key] = branch[key];
+      }
+      let masterKeytype = Object.prototype.toString.call(master[key]);
+      let branchKeyType = Object.prototype.toString.call(branch[key]);
+      if (masterKeytype === '[object Array]' && branchKeyType === '[object Array]') {
+        master[key] = Array.from(new Set(master[key].concat(branch[key])))
+      }
+      if (masterKeytype === '[object Object]' && branchKeyType === '[object Object]') {
+        master[key] = this.deepMerge(master[key], branch[key])
+      }
+    }
+    return master
   },
   /**
    * 时间格式化

@@ -9,7 +9,8 @@ const baseFormSetting = [
   },
   {
     type: 'email',
-    title: '邮箱'
+    title: '邮箱',
+    rules: ['2']
   }
 ]
 

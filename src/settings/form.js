@@ -9,6 +9,6 @@ keys.forEach(v => {
   if (typeof formSetting[v] === 'undefined') {
     formSetting[v] = BaseFormSetting[v]
   }
-  utils.deepMerge(BaseFormSetting, formSetting)
+  utils.deepMerge(formSetting, BaseFormSetting)
 })
 export default formSetting

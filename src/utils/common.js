@@ -3,6 +3,11 @@ export default {
    * 深拷贝
    * @param {*} obj 原对象
    * @returns newobj 新对象
+   * 注意：目前没有解决对象间重复依赖问题，例如不可深拷贝对象a,b，如下
+   *      let a = {};
+   *      let b = {};
+   *      a.a = b;
+   *      b.b = a;
    */
   deepCopy(obj) {
     if (typeof obj !== 'object' || obj === null) {
@@ -16,10 +21,13 @@ export default {
   },
   /**
    * 两对象深合并 branch -> master
-   * @param {*} branch 分支对象
-   * @param {*} master 主对象
-   * 以主对象为主，当分支和主对象有冲突
+   * @param {*} master 主对象 优先级高
+   * @param {*} branch 分支对象 优先级低
+   * 以主对象为主，当分支和主对象有冲突时，分支的值将会忽略
    * @example
+   * m = {a:'a',b:[1]}
+   * b = {a:'z',b:[1,2], c:'c'}
+   * deepMerge(m,b) // {a:'a',b:[1,2],c:'c'}
    */
   deepMerge(master, branch) {
     if (typeof master !== 'object' || typeof branch !== 'object' || master === null || branch === null) {
@@ -114,7 +122,7 @@ export default {
     }
   },
   /**
-   * 生产 uuid
+   * 生成 uuid
    * Universally Unique IDentifier
    * https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
    * @param len 截取长度  由于整个uuid 太长，使用是否有必要，太占空间

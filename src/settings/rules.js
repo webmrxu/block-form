@@ -1,11 +1,20 @@
+/**
+ * 验证规则
+ * 在README.md 文档中有详细介绍
+ */
 let rules = [
   {
-    id: '1', // 主键
-    ruleName: 'require', // 主键
-    required: true,
-    ruleDes: '必填',
-    trigger: 'blur', // 触发验证方式
-    message: '必填项'
+    id: '1',
+    ruleTyle: 'require',
+    ruleName: '必填',
+    ruleDes: '输入框必填',
+    message: '必填输入项',
+    trigger: 'blur',
+    pattern: '',
+    minlen: '',
+    maxlen: '',
+    minrang: '',
+    maxrang: ''
   }
 ]
 

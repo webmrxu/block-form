@@ -66,7 +66,7 @@ export default {
    *              这时如果又有人进电梯了（在10秒内再次触发该事件），我们又得等10秒再出发（重新计时）。
    * @param {*} fn 执行函数
    * @param {*} wait 等待执行时间
-   * @example setInterval(debounce(fn,500),1000) // 第一次在1500ms后触发，之后每1000ms触发一次
+   * @example window.onresize = utils.debounce(_this.dealWindowResize, 500);
    */
   debounce(fn, wait) {
     var timer = null

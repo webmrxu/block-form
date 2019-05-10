@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <div @click="test">test</div> -->
-    <div >
+    <div>
       <el-form ref="form" :model="formData" :label-width="formSetting.labelWidth">
         <component
           v-for="item in itemSetting"
@@ -18,8 +18,8 @@
   </div>
 </template>
 <script>
-import BInput from "@/components/form-items/b-input"
-import BSelect from "@/components/form-items/b-select"
+import BInput from "@/components/form-items/b-input";
+import BSelect from "@/components/form-items/b-select";
 export default {
   name: "block-from",
   components: {
@@ -30,12 +30,12 @@ export default {
   data() {
     return {
       itemStyleObject: {
-        width: '200px'
+        width: "200px"
       }
-    }
+    };
   },
   created() {
-    this.dealFormRules()
+    this.dealFormRules();
     // console.log(this.itemSetting)
   },
   methods: {
@@ -44,31 +44,45 @@ export default {
     dealItemStyle(item) {
       return {
         width: item.itemWidth ? item.itemWidth : this.formSetting.itemWidth
-      }
+      };
     },
     // 处理表单验证规则
     dealFormRules() {
       this.itemSetting.forEach(v => {
         if (Array.isArray(v.rules) && v.rules.length > 0) {
-          this.$set(v, "_rules", [])
+          this.$set(v, "_rules", []);
           v.rules.forEach(ruleId => {
             this.rules.forEach(k => {
               if (k.id === ruleId) {
-                v._rules.push(k)
+                // 必填规则转换
+                if (k.ruleTyle === "require") {
+                  v._rules.push(this.convertRequire(k));
+                }
               }
-            })
-          })
+            });
+          });
         }
-      })
+      });
+    },
+    // 必填规则转换
+    convertRequire(rule) {
+      return {
+        id: rule.id,
+        ruleName: rule.ruleName,
+        required: true,
+        ruleDes: rule.ruleDes,
+        trigger: rule.trigger,
+        message: rule.message
+      };
     },
     test() {
-      console.log(this.formData)
+      console.log(this.formData);
     }
   }
-}
+};
 </script>
 <style scoped>
-.form-item-component{
+.form-item-component {
   float: left;
 }
 </style>

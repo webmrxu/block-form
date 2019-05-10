@@ -74,6 +74,26 @@ id ruleTyle ruleName ruleDes   message         trigger   pattern     minlen     
 + number最小值（只有当 ruleTyle 值为range 时才生效）
 + number最大值（只有当 ruleTyle 值为range 时才生效）
 
+```js
+// 实例
+let rules = [
+  {
+    id: '',
+    ruleTyle: '',
+    ruleName: '',
+    ruleDes: '',
+    message: '',
+    trigger: '',
+    pattern: '',
+    minlen: '',
+    maxlen: '',
+    minrang: '',
+    maxrang: ''
+  }
+]
+
+```
+
 
 # Build Setup
 

@@ -90,5 +90,6 @@ export default {
   margin-right: auto;
   margin-top: 8px;
   margin-bottom: 25px;
+  padding-top: 20px;
 }
 </style>

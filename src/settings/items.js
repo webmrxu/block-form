@@ -5,8 +5,7 @@ const formSetting = [
     type: 'input',
     title: '文本框',
     field: 'userName',
-    rules: ['1'],
-    itemWidth: '50%'
+    rules: ['1']
   },
   {
     type: 'select',

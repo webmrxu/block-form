@@ -2,7 +2,7 @@
   <div>
     <!-- <div @click="test">test</div> -->
     <div>
-      <el-form ref="form" :model="formData" :label-width="formSetting.labelWidth">
+      <el-form ref="form" :model="formData" :label-width="formSetting.labelWidth" class="clearfix">
         <component
           v-for="item in itemSetting"
           :is="'b-'+item.type"

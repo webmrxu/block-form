@@ -134,6 +134,25 @@ export default {
       return len ? v.toString(16) : 'id' + v.toString(16).slice(0, len)
     })
   },
+  /**
+   * 返回带格式字符串
+   * 参考：https://www.jianshu.com/p/e8b011496be9
+   * @param {*} fn 
+   * @example
+   *   getTemplateString(function(){
+   *        /*
+   *          # hello world
+   *          ```js
+   *          var a = 10;
+   *          console.log(a)
+   *          ```
+   *        *\/
+   *   })
+   */
+  getTemplateString(fn) {
+    var lines = new String(fn);
+    return lines.substring(lines.indexOf("/*") + 3, lines.lastIndexOf("*/"));
+  },
   // 正则验证
   valid: {
     isMail(value) { // 邮箱

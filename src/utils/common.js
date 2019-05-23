@@ -1,5 +1,27 @@
 export default {
   /**
+   * 倒计时函数
+   * @param {*} dateStr 
+   * @return [d,h,m,s]
+   * @example
+   *  let connts = countDown('2019/5/23 23:59:59');
+   *  '<span>活动结束还剩 </span><span>'+ counts[0] +'</span>天<span>'+ counts[1] +'</span> 时<span>'+ counts[2] +'</span>分';
+   */
+  countDown(dateStr) {
+    let nowTimestamp = Number(new Date());
+    let leftTime = Number(new Date(dateStr)) - nowTimestamp;
+    if (leftTime <= 0) {
+      return [0, 0, 0, 0];
+    };
+
+    let d, h, m, s;
+    d = Math.floor(leftTime / 1000 / 60 / 60 / 24);
+    h = Math.floor(leftTime / 1000 / 60 / 60 % 24);
+    m = Math.floor(leftTime / 1000 / 60 % 60);
+    s = Math.floor(leftTime / 1000 % 60);
+    return [d, h, m, s];
+  },
+  /**
    * 深拷贝
    * @param {*} obj 原对象
    * @returns newobj 新对象

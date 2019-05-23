@@ -10,7 +10,18 @@ const formSetting = [
   {
     type: 'select',
     title: '文本框',
-    field: 'userSex'
+    field: 'userSex',
+    paramCode: 'code',
+    paramList: [
+      {
+        value: 'ali',
+        name: '正则'
+      },
+      {
+        value: 'tent',
+        name: '无效'
+      }
+    ]
   },
   {
     type: 'email',

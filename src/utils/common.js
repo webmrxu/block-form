@@ -5,7 +5,7 @@ export default {
    * @return [d,h,m,s]
    * @example
    *  let connts = countDown('2019/5/23 23:59:59');
-   *  '<span>活动结束还剩 </span><span>'+ counts[0] +'</span>天<span>'+ counts[1] +'</span> 时<span>'+ counts[2] +'</span>分';
+   *  '<span>活动结束还剩 </span><span>'+ counts[0] +'</span>天<span>'+ counts[1] +'</span> 时<span>'+ counts[2] +'</span>分'+ counts[3] +'</span>秒';
    */
   countDown(dateStr) {
     let nowTimestamp = Number(new Date());
@@ -15,10 +15,14 @@ export default {
     };
 
     let d, h, m, s;
-    d = Math.floor(leftTime / 1000 / 60 / 60 / 24);
-    h = Math.floor(leftTime / 1000 / 60 / 60 % 24);
-    m = Math.floor(leftTime / 1000 / 60 % 60);
-    s = Math.floor(leftTime / 1000 % 60);
+    d = Math.floor(leftTime / 1000 / 60 / 60 / 24) + '';
+    d = d > 9 ? d : '0' + d;
+    h = Math.floor(leftTime / 1000 / 60 / 60 % 24) + '';
+    h = h > 9 ? h : '0' + h;
+    m = Math.floor(leftTime / 1000 / 60 % 60) + '';
+    m = m > 9 ? m : '0' + m;
+    s = Math.floor(leftTime / 1000 % 60) + '';
+    s = s > 9 ? s : '0' + s;
     return [d, h, m, s];
   },
   /**

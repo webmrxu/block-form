@@ -1,7 +1,7 @@
 export default {
   /**
    * 倒计时函数
-   * @param {*} dateStr 
+   * @param {*} dateStr
    * @return [d,h,m,s]
    * @example
    *  let connts = countDown('2019/5/23 23:59:59');
@@ -163,7 +163,7 @@ export default {
   /**
    * 返回带格式字符串
    * 参考：https://www.jianshu.com/p/e8b011496be9
-   * @param {*} fn 
+   * @param {*} fn
    * @example
    *   getTemplateString(function(){
    *        /*

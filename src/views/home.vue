@@ -1,6 +1,6 @@
 <template>
   <div class="clearfix home">
-    <div @click="test">test</div>
+    <!-- <div @click="test">test</div> -->
     <!-- 字段列表 -->
     <div class="formitem-box">
       <div>
@@ -39,8 +39,13 @@
           <div class="clearfix b-form-title">
             <div class="float-l">输入组件修改</div> <div class="float-r bf-form-close" @click="showItemEdit=false">X</div>
           </div>
-          <div>
-            hello world
+          <div class="bf-form-body">
+            <block-from
+              :itemSetting="editSetting"
+              :formData="formData"
+              :formSetting="FormSetting"
+              :rules="rules"
+            />
           </div>
         </div>
       </transition>
@@ -50,11 +55,16 @@
       <div v-if="showSetting" class="b-mask" @click="showSetting=false"></div>
       <transition name="fade">
         <div v-if="showSetting" class="form-custom b-form">
-          <div class="clearfix b-form-title">
-            <div class="float-l">展示积木表单配置</div> <div class="float-r bf-form-close" @click="showSetting=false">X</div>
-          </div>
           <div>
-            <pre class="language-css"><code class="language-css">p { color: red }</code></pre>
+            <div class="clearfix b-form-title">
+              <div class="float-l">展示积木表单配置</div> <div class="float-r bf-form-close" @click="showSetting=false">X</div>
+            </div>
+            <div class="bf-form-body">
+              <h2>itemSetting 配置</h2>
+              <pre class="language-json"><code class="language-json">{{itemSettingStr}}</code></pre>
+              <h2>FormSetting 配置</h2>
+              <pre class="language-json"><code class="language-json">{{FormSetting}}</code></pre>
+            </div>
           </div>
         </div>
       </transition>
@@ -68,6 +78,7 @@ import ItemsSetting from "@/settings/items";
 import FormSetting from "@/settings/form";
 import Rules from "@/settings/rules";
 import utils from "@/utils/common";
+import EditSetting from './edit-item'
 
 export default {
   name: "home",
@@ -87,16 +98,23 @@ export default {
         marginLeft: "100px"
       },
       showItemEdit: false, // 展示组件配置
-      showSetting: false
+      showSetting: false,
+      editSetting: {}
     };
   },
   created() {
     this.itemSetting = ItemsSetting;
     this.FormSetting = FormSetting;
+    this.editSetting = EditSetting;
     this.rules = Rules;
     let _this = this;
     this.dealWindowResize();
     window.onresize = utils.debounce(_this.dealWindowResize, 500);
+  },
+  computed: {
+    itemSettingStr() {
+      return JSON.stringify(this.itemSetting, null, 2);
+    }
   },
   methods: {
     test() {
@@ -121,6 +139,9 @@ export default {
 };
 </script>
 <style scoped>
+.bf-form-body{
+  padding: 8px;
+}
 .show-setting{
   position: absolute;
   top: 0;
@@ -185,6 +206,7 @@ export default {
   background: #fff;
   z-index: 120;
   border-left: 1px solid #eee;
+  overflow-y:scroll;
 }
 .b-mask{
   position: fixed;

@@ -3,17 +3,17 @@
     <!-- 字段列表 -->
     <div class="formitem-box">
       <div>
-        <div>
+        <div @click="addInputItem('input')">
           <span>文本框</span>
         </div>
       </div>
       <div>
-        <div>
-          <span>数值</span>
+        <div @click="addInputItem('select')">
+          <span>下拉选择框</span>
         </div>
       </div>
       <div>
-        <div>
+        <div @click="addInputItem('email')">
           <span>邮箱</span>
         </div>
       </div>
@@ -36,6 +36,7 @@
 </template>
 <script>
 import BlockFrom from "@/components/block-form";
+import BaseItems from "@/settings/base-items";
 import ItemsSetting from "@/settings/items";
 import FormSetting from "@/settings/form";
 import Rules from "@/settings/rules";
@@ -74,6 +75,15 @@ export default {
         .width;
       let margin = windowWidth - 793;
       this.formBoxStyle.marginLeft = margin / 2 - 375 + "px";
+    },
+    addInputItem(type) {
+      BaseItems.forEach(v => {
+        if (v.type === type) {
+          v.field = '_' + v.type + '_' + utils.uuid(7);
+          v['_isNewAdd'] = true;
+          this.itemSetting.push(v);
+        }
+      })
     }
   }
 };
@@ -100,6 +110,7 @@ export default {
   margin-top: 8px;
   margin-bottom: 25px;
   padding-top: 20px;
+  padding-right: 16px;
 }
 .formitem-box{
   margin-top: 8px;

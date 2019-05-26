@@ -157,8 +157,8 @@ export default {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
       let r = Math.random() * 16 | 0
       let v = c === 'x' ? r : (r & 0x3 | 0x8)
-      return len ? v.toString(16) : 'id' + v.toString(16).slice(0, len)
-    })
+      return v.toString(16)
+    }).slice(0, len)
   },
   /**
    * 返回带格式字符串

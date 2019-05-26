@@ -41,6 +41,15 @@ export default {
     this.dealFormRules();
     // console.log(this.itemSetting)
   },
+  watch: {
+    itemSetting(newV, oldV) {
+      newV.forEach(v => {
+        if (v['_isNewAdd']) {
+          this.dealRule(v);
+        }
+      })
+    }
+  },
   methods: {
     // 处理 form-item 样式
     // 优先级（form-item.js > form.js > base-item.js）
@@ -52,24 +61,28 @@ export default {
     // 处理表单验证规则
     dealFormRules() {
       this.itemSetting.forEach(v => {
-        if (Array.isArray(v.rules) && v.rules.length > 0) {
-          this.$set(v, "_rules", []);
-          v.rules.forEach(ruleId => {
-            this.rules.forEach(k => {
-              if (k.id === ruleId) {
-                // 必填规则转换
-                if (k.ruleTyle === "require") {
-                  v._rules.push(this.convertRequire(k));
-                }
-                // 正则规则转换
-                if (k.ruleTyle === "pattern") {
-                  v._rules.push(this.convertPattern(k));
-                }
-              }
-            });
-          });
-        }
+        this.dealRule(v);
       });
+    },
+    // 处理单个验证规则
+    dealRule(v) {
+      if (Array.isArray(v.rules) && v.rules.length > 0) {
+        this.$set(v, "_rules", []);
+        v.rules.forEach(ruleId => {
+          this.rules.forEach(k => {
+            if (k.id === ruleId) {
+              // 必填规则转换
+              if (k.ruleTyle === "require") {
+                v._rules.push(this.convertRequire(k));
+              }
+              // 正则规则转换
+              if (k.ruleTyle === "pattern") {
+                v._rules.push(this.convertPattern(k));
+              }
+            }
+          });
+        });
+      }
     },
     // 正则规则转换
     convertPattern(rule) {

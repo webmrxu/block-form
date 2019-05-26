@@ -5,7 +5,8 @@ const baseFormSetting = [
   },
   {
     type: 'select',
-    title: '下拉选择框'
+    title: '下拉选择框',
+    paramsList: []
   },
   {
     type: 'email',

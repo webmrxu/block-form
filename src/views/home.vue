@@ -29,7 +29,7 @@
           :rules="rules"
         />
       </div>
-      <div class="show-setting" @click="showSetting = true;">setting</div>
+      <div class="show-setting" @click="showSetting = true;">show settings</div>
     </div>
     <!-- 字段自定义区 -->
     <div>

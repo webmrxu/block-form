@@ -10,7 +10,7 @@ const formSetting = [
   {
     type: 'select',
     title: '文本框',
-    field: 'userSex',
+    field: 'parteents',
     paramCode: 'code',
     paramList: [
       {

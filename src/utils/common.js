@@ -1,7 +1,7 @@
 export default {
   /**
    * 倒计时函数
-   * @param {*} dateStr 
+   * @param {*} dateStr
    * @return [d,h,m,s]
    * @example
    *  let connts = countDown('2019/5/23 23:59:59');
@@ -157,13 +157,13 @@ export default {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
       let r = Math.random() * 16 | 0
       let v = c === 'x' ? r : (r & 0x3 | 0x8)
-      return len ? v.toString(16) : 'id' + v.toString(16).slice(0, len)
-    })
+      return v.toString(16)
+    }).slice(0, len)
   },
   /**
    * 返回带格式字符串
    * 参考：https://www.jianshu.com/p/e8b011496be9
-   * @param {*} fn 
+   * @param {*} fn
    * @example
    *   getTemplateString(function(){
    *        /*

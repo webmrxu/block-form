@@ -15,7 +15,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.setting)
+    // console.log(this.setting)
   },
   methods: {
     change(value) {

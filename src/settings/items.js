@@ -9,7 +9,7 @@ const formSetting = [
   },
   {
     type: 'select',
-    title: '文本框',
+    title: '下拉选择框',
     field: 'parteents',
     paramCode: 'code',
     paramList: [

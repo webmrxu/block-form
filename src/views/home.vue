@@ -21,13 +21,18 @@
     </div>
     <!-- 表单展示区 -->
     <div class="form-box" :style="formBoxStyle">
-      <div>
+      <div class="form-container">
         <block-from
           :itemSetting="itemSetting"
-          :formData="formData"
           :formSetting="FormSetting"
+          :formData="formData"
           :rules="rules"
         />
+        <div class="edit-box">
+          <div v-for="item in itemSetting" :key="item.field" @click="showEditItem(item)">
+            <!-- <span>{{item.title}}</span> -->
+          </div>
+        </div>
       </div>
       <div class="show-setting" @click="showSetting = true;">show settings</div>
     </div>
@@ -37,7 +42,8 @@
       <transition name="fade">
         <div v-if="showItemEdit" class="form-custom b-form">
           <div class="clearfix b-form-title">
-            <div class="float-l">输入组件修改</div> <div class="float-r bf-form-close" @click="showItemEdit=false">X</div>
+            <div class="float-l">输入组件修改</div>
+            <div class="float-r bf-form-close" @click="showItemEdit=false">X</div>
           </div>
           <div class="bf-form-body">
             <block-from
@@ -57,7 +63,8 @@
         <div v-if="showSetting" class="form-custom b-form">
           <div>
             <div class="clearfix b-form-title">
-              <div class="float-l">展示积木表单配置</div> <div class="float-r bf-form-close" @click="showSetting=false">X</div>
+              <div class="float-l">展示积木表单配置</div>
+              <div class="float-r bf-form-close" @click="showSetting=false">X</div>
             </div>
             <div class="bf-form-body">
               <h2>itemSetting 配置</h2>
@@ -78,7 +85,7 @@ import ItemsSetting from "@/settings/items";
 import FormSetting from "@/settings/form";
 import Rules from "@/settings/rules";
 import utils from "@/utils/common";
-import EditSetting from './edit-item'
+import EditSetting from "./edit-item";
 
 export default {
   name: "home",
@@ -120,6 +127,9 @@ export default {
     test() {
       this.showItemEdit = !this.showItemEdit;
     },
+    showEditItem(item) {
+      this.showItemEdit = true;
+    },
     dealWindowResize() {
       let windowWidth = window.document.documentElement.getBoundingClientRect()
         .width;
@@ -129,33 +139,47 @@ export default {
     addInputItem(type) {
       BaseItems.forEach(v => {
         if (v.type === type) {
-          v.field = '_' + v.type + '_' + utils.uuid(7);
-          v['_isNewAdd'] = true;
+          v.field = "_" + v.type + "_" + utils.uuid(7);
+          v["_isNewAdd"] = true;
           this.itemSetting.push(v);
         }
-      })
+      });
     }
   }
 };
 </script>
 <style scoped>
-.bf-form-body{
+.edit-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.edit-box>div{
+  height: 62px;
+  width: 60%;
+  cursor: pointer;
+}
+.form-container {
+  position: relative;
+}
+.bf-form-body {
   padding: 8px;
 }
-.show-setting{
+.show-setting {
   position: absolute;
   top: 0;
   right: 0;
   padding: 8px 15px;
   cursor: pointer;
 }
-.bf-form-close{
+.bf-form-close {
   cursor: pointer;
 }
-.float-r{
+.float-r {
   float: right;
 }
-.b-form-title{
+.b-form-title {
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
 }
@@ -183,21 +207,21 @@ export default {
   padding-right: 16px;
   position: relative;
 }
-.formitem-box{
+.formitem-box {
   margin-top: 8px;
   background: #fff;
 }
-.formitem-box>div{
+.formitem-box > div {
   width: 50%;
   float: left;
 }
-.formitem-box>div>div{
+.formitem-box > div > div {
   margin: 8px;
   border: 1px solid #eee;
   padding: 10px 8px;
   cursor: pointer;
 }
-.form-custom{
+.form-custom {
   position: fixed;
   width: 600px;
   right: 0;
@@ -206,9 +230,9 @@ export default {
   background: #fff;
   z-index: 120;
   border-left: 1px solid #eee;
-  overflow-y:scroll;
+  overflow-y: scroll;
 }
-.b-mask{
+.b-mask {
   position: fixed;
   top: 0;
   left: 0;
@@ -217,19 +241,20 @@ export default {
   bottom: 0;
   background: rgba(0, 0, 0, 0.4);
 }
-.fade-enter-active, .fade-leave-active {
-  transition: all .5s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
   width: 0px;
 }
-.float-l{
+.float-l {
   float: left;
 }
 .clearfix::after {
-    display: block;
-    clear: both;
-    content: "";
+  display: block;
+  clear: both;
+  content: "";
 }
 </style>

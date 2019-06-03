@@ -47,7 +47,7 @@ export default {
   },
   /**
    * 两对象深合并 branch -> master
-   * @param {*} master 主对象 优先级高
+   * @param {*} master 主对象 优先级高, keyValue 不会被覆盖
    * @param {*} branch 分支对象 优先级低
    * 以主对象为主，当分支和主对象有冲突时，分支的值将会忽略
    * @example

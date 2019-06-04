@@ -3,12 +3,18 @@ import utils from '@/utils/common'
 const formSetting = [
   {
     type: 'input',
+    itemWidth: '60%',
+    labelWidth: '150px',
+    labelHeight: '62px',
     title: '文本框',
     field: 'userName',
     rules: ['1']
   },
   {
     type: 'select',
+    itemWidth: '60%',
+    labelWidth: '150px',
+    labelHeight: '62px',
     title: '下拉选择框',
     field: 'parteents',
     paramCode: 'code',
@@ -25,6 +31,9 @@ const formSetting = [
   },
   {
     type: 'email',
+    itemWidth: '60%',
+    labelWidth: '150px',
+    labelHeight: '62px',
     title: '邮箱',
     field: 'userEmail',
     rules: ['1']

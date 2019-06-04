@@ -29,6 +29,7 @@
           :rules="rules"
         />
       </div>
+      <!-- 点击在字段展示字段配置编辑 -->
       <div class="show-setting" @click="showSetting = true;">show settings</div>
     </div>
     <!-- 字段自定义区 -->
@@ -78,7 +79,7 @@ import ItemsSetting from "@/settings/items";
 import FormSetting from "@/settings/form";
 import Rules from "@/settings/rules";
 import utils from "@/utils/common";
-import EditSetting from './edit-item'
+import EditSetting from './edit-item';
 
 export default {
   name: "home",

@@ -10,7 +10,7 @@ const formSetting = [
       color: '#aaa'
     },
     placeholder: '请输入',
-    itemLayout: 'left-right',// top-bottom
+    itemLayout: 'left-right', // top-bottom
     title: '文本框',
     field: 'userName',
     rules: ['1']
@@ -24,7 +24,7 @@ const formSetting = [
       color: '#aaa'
     },
     placeholder: '请输入',
-    itemLayout: 'left-right',// top-bottom
+    itemLayout: 'left-right', // top-bottom
     title: '下拉选择框',
     field: 'parteents',
     paramCode: 'code',
@@ -48,7 +48,7 @@ const formSetting = [
       color: '#aaa'
     },
     placeholder: '请输入',
-    itemLayout: 'left-right',// top-bottom
+    itemLayout: 'left-right', // top-bottom
     title: '邮箱',
     field: 'userEmail',
     rules: ['1']

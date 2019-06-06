@@ -50,7 +50,6 @@
             <block-from
               :itemSetting="editSetting"
               :formData="formData"
-              :formSetting="FormSetting"
               :rules="rules"
             />
           </div>
@@ -83,7 +82,6 @@
 import BlockFrom from "@/components/block-form";
 import BaseItems from "@/settings/base-items";
 import ItemsSetting from "@/settings/items";
-import FormSetting from "@/settings/form";
 import Rules from "@/settings/rules";
 import utils from "@/utils/common";
 import EditSetting from "./edit-item";
@@ -97,7 +95,6 @@ export default {
     return {
       rules: [],
       itemSetting: [],
-      FormSetting: {},
       formData: {
         // userName: 'tom',
         // userSex: 'man'
@@ -112,7 +109,6 @@ export default {
   },
   created() {
     this.itemSetting = ItemsSetting;
-    this.FormSetting = FormSetting;
     this.editSetting = EditSetting;
     this.rules = Rules;
     let _this = this;

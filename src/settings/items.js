@@ -1,4 +1,4 @@
-const formSetting = [
+const itemsSetting = [
   {
     type: 'input',
     itemWidth: '60%',
@@ -53,4 +53,4 @@ const formSetting = [
   }
 ]
 
-export default formSetting
+export default itemsSetting

@@ -1,4 +1,4 @@
-const baseFormSetting = [
+const baseItemsSetting = [
   {
     type: 'input',
     title: '文本框'
@@ -15,4 +15,4 @@ const baseFormSetting = [
   }
 ]
 
-export default baseFormSetting
+export default baseItemsSetting

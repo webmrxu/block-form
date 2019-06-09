@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form-item  :label="setting.title">
+    <el-form-item  :label="setting.title" :label-width="setting.labelWidth">
       <el-select v-model="form.region" placeholder="请选择活动区域" @input="change" class="b-select">
         <el-option v-for="item in list" :key="item.value" :label="item.name" :value="item.value"></el-option>
       </el-select>

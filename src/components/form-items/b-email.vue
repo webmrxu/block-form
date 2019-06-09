@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form-item :label="setting.title" :rules="rule" :prop="setting.field">
+    <el-form-item :label="setting.title" :rules="rule" :prop="setting.field" :label-width="setting.labelWidth">
       <el-input v-model="itemValue" @input="change" ></el-input>
     </el-form-item>
   </div>

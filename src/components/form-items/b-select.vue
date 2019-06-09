@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form-item  :label="setting.title" :label-width="setting.labelWidth">
+    <el-form-item  :label="item.title" :label-width="item.labelWidth">
       <el-select v-model="form.region" placeholder="请选择活动区域" @input="change" class="b-select">
         <el-option v-for="item in list" :key="item.value" :label="item.name" :value="item.value"></el-option>
       </el-select>
@@ -10,7 +10,7 @@
 <script>
 export default {
   name: 'b-select',
-  props: ['setting'],
+  props: ['item'],
   data() {
     return {
       list: [],
@@ -18,10 +18,10 @@ export default {
     }
   },
   mounted() {
-    if (Array.isArray(this.setting.paramList)) {
-      this.list = this.setting.paramList;
+    if (Array.isArray(this.item.paramList)) {
+      this.list = this.item.paramList;
     }
-    // console.log(this.setting)
+    // console.log(this.item)
   },
   methods: {
     change(value) {

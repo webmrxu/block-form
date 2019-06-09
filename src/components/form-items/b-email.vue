@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form-item :label="setting.title" :rules="rule" :prop="setting.field" :label-width="setting.labelWidth">
+    <el-form-item :label="item.title" :rules="rule" :prop="item.field" :label-width="item.labelWidth">
       <el-input v-model="itemValue" @input="change" ></el-input>
     </el-form-item>
   </div>
@@ -8,14 +8,14 @@
 <script>
 export default {
   name: "base-email",
-  props: ["setting", "value", "rule"],
+  props: ["item", "value", "rule"],
   data() {
     return {
       itemValue: this.value
     }
   },
   mounted() {
-    // console.log(this.setting)
+    // console.log(this.item)
   },
   methods: {
     change(value) {

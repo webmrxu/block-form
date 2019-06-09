@@ -7,7 +7,7 @@
           v-for="item in itemSetting"
           :is="'b-'+item.type"
           :key="item.id"
-          :setting="item"
+          :item="item"
           :rule="item._rules"
           :value.sync="formData[item.field]"
           :style="dealItemStyle(item)"

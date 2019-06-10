@@ -107,11 +107,11 @@ export default {
     };
   },
   created() {
-    this.dealItemSetting();
     this.editSetting = EditSetting;
     this.rules = Rules;
-    let _this = this;
+    this.dealItemSetting();
     this.dealWindowResize();
+    let _this = this;
     window.onresize = utils.debounce(_this.dealWindowResize, 500);
   },
   computed: {
@@ -138,13 +138,6 @@ export default {
     showEditItem(item) {
       this.showItemEdit = true;
     },
-    // 处理屏幕缩放
-    dealWindowResize() {
-      let windowWidth = window.document.documentElement.getBoundingClientRect()
-        .width;
-      let margin = windowWidth - 793;
-      this.formBoxStyle.marginLeft = margin / 2 - 375 + "px";
-    },
     // 添加新字段
     addInputItem(type) {
       BaseItems.forEach(v => {
@@ -154,6 +147,13 @@ export default {
           this.itemSetting.push(v);
         }
       });
+    },
+    // 处理屏幕缩放
+    dealWindowResize() {
+      let windowWidth = window.document.documentElement.getBoundingClientRect()
+        .width;
+      let margin = windowWidth - 793;
+      this.formBoxStyle.marginLeft = margin / 2 - 375 + "px";
     }
   }
 };

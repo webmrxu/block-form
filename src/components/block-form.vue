@@ -32,9 +32,6 @@ export default {
   props: ["itemSetting", "formData", "formSetting", "rules"],
   data() {
     return {
-      itemStyleObject: {
-        width: "200px"
-      }
     };
   },
   created() {
@@ -50,11 +47,9 @@ export default {
     }
   },
   methods: {
-    // 处理 form-item 样式
-    // 优先级（form-item.js > form.js > base-item.js）
     dealItemStyle(item) {
       return {
-        width: item.itemWidth ? item.itemWidth : this.formSetting.itemWidth
+        width: item.itemWidth ? item.itemWidth : ''
       };
     },
     // 处理表单验证规则

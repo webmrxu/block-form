@@ -1,4 +1,4 @@
-const formSetting = [
+const itemsSetting = [
   {
     type: 'input',
     itemStyleObj: {
@@ -44,4 +44,4 @@ const formSetting = [
   }
 ]
 
-export default formSetting
+export default itemsSetting

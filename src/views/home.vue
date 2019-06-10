@@ -68,8 +68,6 @@
             <div class="bf-form-body">
               <h2>itemSetting 配置</h2>
               <pre class="language-json"><code class="language-json">{{itemSettingStr}}</code></pre>
-              <!-- <h2>FormSetting 配置</h2>
-              <pre class="language-json"><code class="language-json">{{FormSetting}}</code></pre> -->
             </div>
           </div>
         </div>

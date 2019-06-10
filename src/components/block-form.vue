@@ -29,7 +29,7 @@ export default {
     BSelect,
     BEmail
   },
-  props: ["itemSetting", "formData", "formSetting", "rules"],
+  props: ["itemSetting", "formData", "rules"],
   data() {
     return {
     };

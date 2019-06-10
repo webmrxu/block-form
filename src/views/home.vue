@@ -107,6 +107,7 @@ export default {
     };
   },
   created() {
+    this.dealItemSetting();
     this.editSetting = EditSetting;
     this.rules = Rules;
     let _this = this;

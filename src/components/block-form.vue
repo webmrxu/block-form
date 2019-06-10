@@ -39,7 +39,6 @@ export default {
   },
   created() {
     this.dealFormRules();
-    // console.log(this.itemSetting)
   },
   watch: {
     itemSetting(newV, oldV) {

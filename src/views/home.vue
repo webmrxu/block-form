@@ -24,7 +24,6 @@
       <div class="form-container">
         <block-from
           :itemSetting="itemSetting"
-          :formSetting="FormSetting"
           :formData="formData"
           :rules="rules"
         />
@@ -47,11 +46,11 @@
             <div class="float-r bf-form-close" @click="showItemEdit=false">X</div>
           </div>
           <div class="bf-form-body">
-            <block-from
+            <!-- <block-from
               :itemSetting="editSetting"
               :formData="formData"
               :rules="rules"
-            />
+            /> -->
           </div>
         </div>
       </transition>
@@ -108,7 +107,6 @@ export default {
     };
   },
   created() {
-    this.itemSetting = ItemsSetting;
     this.editSetting = EditSetting;
     this.rules = Rules;
     let _this = this;
@@ -124,15 +122,29 @@ export default {
     test() {
       this.showItemEdit = !this.showItemEdit;
     },
+    // 处理表单配置，将基础base配置和自定义配置进行整合，自定义配置优先级高于base配置
+    dealItemSetting() {
+      ItemsSetting.forEach(v => {
+        BaseItems.forEach(b => {
+          if (v.type === b.type) {
+            v = utils.deepMerge(v, b)
+          }
+        })
+      })
+      this.itemSetting = ItemsSetting;
+    },
+    // 弹出字段编辑
     showEditItem(item) {
       this.showItemEdit = true;
     },
+    // 处理屏幕缩放
     dealWindowResize() {
       let windowWidth = window.document.documentElement.getBoundingClientRect()
         .width;
       let margin = windowWidth - 793;
       this.formBoxStyle.marginLeft = margin / 2 - 375 + "px";
     },
+    // 添加新字段
     addInputItem(type) {
       BaseItems.forEach(v => {
         if (v.type === type) {

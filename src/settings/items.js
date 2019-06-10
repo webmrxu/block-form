@@ -1,9 +1,6 @@
 const formSetting = [
   {
     type: 'input',
-    itemWidth: '60%',
-    labelWidth: '150px',
-    labelHeight: '62px',
     itemStyleObj: {
       color: '#aaa'
     },
@@ -15,9 +12,6 @@ const formSetting = [
   },
   {
     type: 'select',
-    itemWidth: '60%',
-    labelWidth: '150px',
-    labelHeight: '62px',
     itemStyleObj: {
       color: '#aaa'
     },
@@ -39,9 +33,6 @@ const formSetting = [
   },
   {
     type: 'email',
-    itemWidth: '60%',
-    labelWidth: '150px',
-    labelHeight: '62px',
     itemStyleObj: {
       color: '#aaa'
     },

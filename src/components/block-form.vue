@@ -2,13 +2,12 @@
   <div>
     <!-- <div @click="test">test</div> -->
     <div>
-      <el-form ref="form" :model="formData"  class="clearfix">
+      <el-form ref="form" :model="formData" class="clearfix">
         <component
           v-for="item in itemSetting"
           :is="'b-'+item.type"
           :key="item.id"
           :item="item"
-          :rule="item._rules"
           :value.sync="formData[item.field]"
           :style="dealItemStyle(item)"
           class="form-item-component"
@@ -29,7 +28,7 @@ export default {
     BSelect,
     BEmail
   },
-  props: ["itemSetting", "formData", "formSetting", "rules"],
+  props: ["itemSetting", "formData", "formSetting"],
   data() {
     return {
       itemStyleObject: {
@@ -44,10 +43,10 @@ export default {
   watch: {
     itemSetting(newV, oldV) {
       newV.forEach(v => {
-        if (v['_isNewAdd']) {
+        if (v["_isNewAdd"]) {
           this.dealRule(v);
         }
-      })
+      });
     }
   },
   methods: {
@@ -55,7 +54,7 @@ export default {
     // 优先级（form-item.js > form.js > base-item.js）
     dealItemStyle(item) {
       return {
-        width: item.itemWidth ? item.itemWidth : this.formSetting.itemWidth
+        // width: item.itemWidth ? item.itemWidth : this.formSetting.itemWidth
       };
     },
     // 处理表单验证规则
@@ -66,21 +65,16 @@ export default {
     },
     // 处理单个验证规则
     dealRule(v) {
-      if (Array.isArray(v.rules) && v.rules.length > 0) {
+      if (v.rules && Array.isArray(v.rules) && v.rules.length > 0) {
         this.$set(v, "_rules", []);
-        v.rules.forEach(ruleId => {
-          this.rules.forEach(k => {
-            if (k.id === ruleId) {
-              // 必填规则转换
-              if (k.ruleTyle === "require") {
-                v._rules.push(this.convertRequire(k));
-              }
-              // 正则规则转换
-              if (k.ruleTyle === "pattern") {
-                v._rules.push(this.convertPattern(k));
-              }
-            }
-          });
+        v.rules.forEach(k => {
+          if (k.ruleTyle === "require") {
+            v._rules.push(this.convertRequire(k));
+          }
+          // 正则规则转换
+          if (k.ruleTyle === "pattern") {
+            v._rules.push(this.convertPattern(k));
+          }
         });
       }
     },

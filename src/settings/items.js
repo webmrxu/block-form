@@ -1,9 +1,6 @@
 const itemsSetting = [
   {
     type: 'input',
-    itemWidth: '60%',
-    labelWidth: '150px',
-    labelHeight: '62px',
     itemStyleObj: {
       color: '#aaa'
     },
@@ -11,13 +8,10 @@ const itemsSetting = [
     itemLayout: 'left-right', // top-bottom
     title: '文本框',
     field: 'userName',
-    rules: ['1']
+    rulesId: ['1']
   },
   {
     type: 'select',
-    itemWidth: '60%',
-    labelWidth: '150px',
-    labelHeight: '62px',
     itemStyleObj: {
       color: '#aaa'
     },
@@ -39,9 +33,6 @@ const itemsSetting = [
   },
   {
     type: 'email',
-    itemWidth: '60%',
-    labelWidth: '150px',
-    labelHeight: '62px',
     itemStyleObj: {
       color: '#aaa'
     },
@@ -49,7 +40,7 @@ const itemsSetting = [
     itemLayout: 'left-right', // top-bottom
     title: '邮箱',
     field: 'userEmail',
-    rules: ['1']
+    rulesId: ['1', '2']
   }
 ]
 

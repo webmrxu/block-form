@@ -22,12 +22,8 @@
     <!-- 表单展示区 -->
     <div class="form-box" :style="formBoxStyle">
       <div class="form-container">
-        <block-from
-          :itemSetting="itemSetting"
-          :formData="formData"
-          :rules="rules"
-        />
-        <div class="edit-box">
+        <block-from :itemSetting="itemSetting" :formData="formData"/>
+        <div v-if="false" class="edit-box">
           <div v-for="item in itemSetting" :key="item.field" @click="showEditItem(item)">
             <!-- <span>{{item.title}}</span> -->
           </div>
@@ -46,11 +42,7 @@
             <div class="float-r bf-form-close" @click="showItemEdit=false">X</div>
           </div>
           <div class="bf-form-body">
-            <block-from
-              :itemSetting="editSetting"
-              :formData="formData"
-              :rules="rules"
-            />
+            <block-from :itemSetting="editSetting" :formData="formData"/>
           </div>
         </div>
       </transition>
@@ -69,7 +61,7 @@
               <h2>itemSetting 配置</h2>
               <pre class="language-json"><code class="language-json">{{itemSettingStr}}</code></pre>
               <!-- <h2>FormSetting 配置</h2>
-              <pre class="language-json"><code class="language-json">{{FormSetting}}</code></pre> -->
+              <pre class="language-json"><code class="language-json">{{FormSetting}}</code></pre>-->
             </div>
           </div>
         </div>
@@ -78,12 +70,17 @@
   </div>
 </template>
 <script>
+import Utils from "@/Utils/common";
+// 积木表单组件
 import BlockFrom from "@/components/block-form";
+// 基础表单配置
 import BaseItems from "@/settings/base-items";
-import ItemsSetting from "@/settings/items";
+// form 表单验证规则
 import Rules from "@/settings/rules";
-import utils from "@/utils/common";
+// 编辑字段表单配置
 import EditSetting from "./edit-item";
+// 核心字段配置
+import ItemsSetting from "@/settings/items";
 
 export default {
   name: "home",
@@ -95,8 +92,6 @@ export default {
       rules: [],
       itemSetting: [],
       formData: {
-        // userName: 'tom',
-        // userSex: 'man'
       },
       formBoxStyle: {
         marginLeft: "100px"
@@ -107,12 +102,12 @@ export default {
     };
   },
   created() {
-    this.itemSetting = ItemsSetting;
+    this.itemSetting = this.mergeItemSetting();
+    // console.log(this.itemSetting);
     this.editSetting = EditSetting;
-    this.rules = Rules;
     let _this = this;
     this.dealWindowResize();
-    window.onresize = utils.debounce(_this.dealWindowResize, 500);
+    window.onresize = Utils.debounce(_this.dealWindowResize, 500);
   },
   computed: {
     itemSettingStr() {
@@ -120,22 +115,49 @@ export default {
     }
   },
   methods: {
+    // 测试
     test() {
       this.showItemEdit = !this.showItemEdit;
     },
+    // 合并基础配置。
+    mergeItemSetting() {
+      let items = [];
+      ItemsSetting.forEach(v => {
+        BaseItems.forEach(b => {
+          if (v.type === b.type) {
+            Utils.deepMerge(v, b);
+          }
+        });
+        if (v.rulesId && Array.isArray(v.rulesId) && v.rulesId.length > 0) {
+          v.rules = [];
+          v.rulesId.forEach(rId => {
+            Rules.forEach(R => {
+              if (rId === R.id) {
+                v.rules.push(R);
+              }
+            });
+          });
+        }
+        items.push(v);
+      });
+      return items;
+    },
+    // 显示该该字段配置
     showEditItem(item) {
       this.showItemEdit = true;
     },
+    // 处理浏览器缩放
     dealWindowResize() {
       let windowWidth = window.document.documentElement.getBoundingClientRect()
         .width;
       let margin = windowWidth - 793;
       this.formBoxStyle.marginLeft = margin / 2 - 375 + "px";
     },
+    // 新增一个字段
     addInputItem(type) {
       BaseItems.forEach(v => {
         if (v.type === type) {
-          v.field = "_" + v.type + "_" + utils.uuid(7);
+          v.field = "_" + v.type + "_" + Utils.uuid(7);
           v["_isNewAdd"] = true;
           this.itemSetting.push(v);
         }
@@ -145,13 +167,13 @@ export default {
 };
 </script>
 <style scoped>
-.edit-box{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+.edit-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
-.edit-box>div{
+.edit-box > div {
   height: 62px;
   width: 60%;
   cursor: pointer;

@@ -42,7 +42,15 @@
             <div class="float-r bf-form-close" @click="showItemEdit=false">X</div>
           </div>
           <div class="bf-form-body">
+<<<<<<< HEAD
             <block-from :itemSetting="editSetting" :formData="formData"/>
+=======
+            <!-- <block-from
+              :itemSetting="editSetting"
+              :formData="formData"
+              :rules="rules"
+            /> -->
+>>>>>>> 60354be383c18796f3ca8514f95e45af3a42e8cf
           </div>
         </div>
       </transition>
@@ -102,12 +110,21 @@ export default {
     };
   },
   created() {
+<<<<<<< HEAD
     this.itemSetting = this.mergeItemSetting();
     // console.log(this.itemSetting);
     this.editSetting = EditSetting;
     let _this = this;
     this.dealWindowResize();
     window.onresize = Utils.debounce(_this.dealWindowResize, 500);
+=======
+    this.editSetting = EditSetting;
+    this.rules = Rules;
+    this.dealItemSetting();
+    this.dealWindowResize();
+    let _this = this;
+    window.onresize = utils.debounce(_this.dealWindowResize, 500);
+>>>>>>> 60354be383c18796f3ca8514f95e45af3a42e8cf
   },
   computed: {
     itemSettingStr() {
@@ -119,6 +136,7 @@ export default {
     test() {
       this.showItemEdit = !this.showItemEdit;
     },
+<<<<<<< HEAD
     // 合并基础配置。
     mergeItemSetting() {
       let items = [];
@@ -154,6 +172,24 @@ export default {
       this.formBoxStyle.marginLeft = margin / 2 - 375 + "px";
     },
     // 新增一个字段
+=======
+    // 处理表单配置，将基础base配置和自定义配置进行整合，自定义配置优先级高于base配置
+    dealItemSetting() {
+      ItemsSetting.forEach(v => {
+        BaseItems.forEach(b => {
+          if (v.type === b.type) {
+            v = utils.deepMerge(v, b)
+          }
+        })
+      })
+      this.itemSetting = ItemsSetting;
+    },
+    // 弹出字段编辑
+    showEditItem(item) {
+      this.showItemEdit = true;
+    },
+    // 添加新字段
+>>>>>>> 60354be383c18796f3ca8514f95e45af3a42e8cf
     addInputItem(type) {
       BaseItems.forEach(v => {
         if (v.type === type) {
@@ -162,6 +198,13 @@ export default {
           this.itemSetting.push(v);
         }
       });
+    },
+    // 处理屏幕缩放
+    dealWindowResize() {
+      let windowWidth = window.document.documentElement.getBoundingClientRect()
+        .width;
+      let margin = windowWidth - 793;
+      this.formBoxStyle.marginLeft = margin / 2 - 375 + "px";
     }
   }
 };

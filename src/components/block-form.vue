@@ -31,14 +31,10 @@ export default {
   props: ["itemSetting", "formData", "formSetting"],
   data() {
     return {
-      itemStyleObject: {
-        width: "200px"
-      }
     };
   },
   created() {
     this.dealFormRules();
-    // console.log(this.itemSetting)
   },
   watch: {
     itemSetting(newV, oldV) {
@@ -50,8 +46,6 @@ export default {
     }
   },
   methods: {
-    // 处理 form-item 样式
-    // 优先级（form-item.js > form.js > base-item.js）
     dealItemStyle(item) {
       return {
         // width: item.itemWidth ? item.itemWidth : this.formSetting.itemWidth

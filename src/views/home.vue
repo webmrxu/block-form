@@ -36,7 +36,7 @@
     <div>
       <div v-if="showItemEditState" class="b-mask" @click="showItemEditState=false"></div>
       <transition name="fade">
-        <div v-if="showItemEditState" class="form-custom b-form">
+        <div v-show="showItemEditState" class="form-custom b-form">
           <div class="clearfix b-form-title">
             <div class="float-l">输入组件修改</div>
             <div class="float-r bf-form-close" @click="showItemEditState=false">X</div>
@@ -75,8 +75,6 @@ import Utils from "@/Utils/common";
 import BlockFrom from "@/components/block-form";
 // 基础表单配置
 import BaseItems from "@/settings/base-items";
-// form 表单验证规则
-import Rules from "@/settings/rules";
 // 编辑字段表单配置
 import EditSetting from "./edit-item";
 // 核心字段配置
@@ -89,7 +87,6 @@ export default {
   },
   data() {
     return {
-      rules: [],
       itemSetting: [],
       formData: {},
       formBoxStyle: {
@@ -100,13 +97,13 @@ export default {
       editSetting: {}
     };
   },
-  created() {
-    this.itemSetting = this.mergeItemSetting();
-    // console.log(this.itemSetting);
+  mounted() {
+    this.itemSetting = ItemsSetting;
     this.editSetting = EditSetting;
+  },
+  created() {
     let _this = this;
     this.dealWindowResize();
-    this.dealFormRules();
     window.onresize = Utils.debounce(_this.dealWindowResize, 500);
   },
   computed: {
@@ -118,38 +115,6 @@ export default {
     // 测试
     test() {
       this.showItemEditState = !this.showItemEditState;
-    },
-    // 合并基础配置。
-    mergeItemSetting() {
-      let items = [];
-
-      ItemsSetting.forEach(v => {
-        this.mergeBaseSetting(v);
-        this.mergeRule(v);
-        items.push(v);
-      });
-      return items;
-    },
-    // 合并验证规则
-    mergeRule(v) {
-      if (v.rulesId && Array.isArray(v.rulesId) && v.rulesId.length > 0) {
-        v.rules = [];
-        v.rulesId.forEach(rId => {
-          Rules.forEach(R => {
-            if (rId === R.id) {
-              v.rules.push(R);
-            }
-          });
-        });
-      }
-    },
-    // 合并基础配置
-    mergeBaseSetting(v) {
-      BaseItems.forEach(b => {
-        if (v.type === b.type) {
-          Utils.deepMerge(v, b);
-        }
-      });
     },
     // 显示该该字段配置
     showEditItem(item) {
@@ -168,54 +133,9 @@ export default {
         if (v.type === type) {
           v.field = "_" + v.type + "_" + Utils.uuid(7);
           v["_isNewAdd"] = true;
-          this.mergeRule(v);
-          this.dealRule(v);
           this.itemSetting.push(v);
         }
       });
-    },
-    // 处理表单验证规则
-    dealFormRules() {
-      this.itemSetting.forEach(v => {
-        this.dealRule(v);
-      });
-    },
-    // 处理单个验证规则
-    dealRule(v) {
-      if (v.rules && Array.isArray(v.rules) && v.rules.length > 0) {
-        this.$set(v, "_rules", []);
-        v.rules.forEach(k => {
-          if (k.ruleTyle === "require") {
-            v._rules.push(this.convertRequire(k));
-          }
-          // 正则规则转换
-          if (k.ruleTyle === "pattern") {
-            v._rules.push(this.convertPattern(k));
-          }
-        });
-      }
-    },
-    // 正则规则转换
-    convertPattern(rule) {
-      return {
-        id: rule.id,
-        ruleName: rule.ruleName,
-        ruleDes: rule.ruleDes,
-        trigger: rule.trigger,
-        message: rule.message,
-        pattern: new RegExp(rule.pattern)
-      };
-    },
-    // 必填规则转换
-    convertRequire(rule) {
-      return {
-        id: rule.id,
-        ruleName: rule.ruleName,
-        required: true,
-        ruleDes: rule.ruleDes,
-        trigger: rule.trigger,
-        message: rule.message
-      };
     }
   }
 };

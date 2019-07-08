@@ -28,8 +28,8 @@ src/
 
 ## 属性
 
-1 setting 表单配置
-2 formData 表单数据(输入)
++ itemSetting 表单配置
++ formData 表单数据(输入)
 
 ## 事件
 
@@ -139,3 +139,5 @@ label-width	表单域标签的的宽度，例如 '50px'	string	—	—
 rules	表单验证规则	object	—	—
 Form-Item Methods
 resetField	对该表单项进行重置，将其值重置为初始值并移除校验结果	-
+
+# 

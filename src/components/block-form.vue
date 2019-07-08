@@ -34,7 +34,7 @@ export default {
     };
   },
   created() {
-    this.dealFormRules();
+    // this.dealFormRules();
   },
   watch: {
     itemSetting(newV, oldV) {

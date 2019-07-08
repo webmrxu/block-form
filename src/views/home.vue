@@ -25,7 +25,7 @@
         <block-from :itemSetting="itemSetting" :formData="formData" />
         <div v-if="true" class="edit-box" >
           <div v-for="item in itemSetting" :key="item.field" @click="showEditItem(item)" :style="{width: item.itemWidth}">
-            <span>{{item.title}}</span>
+            <!-- <span>{{item.title}}</span> -->
           </div>
         </div>
       </div>

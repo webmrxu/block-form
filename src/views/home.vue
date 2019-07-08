@@ -22,7 +22,7 @@
     <!-- 表单展示区 -->
     <div class="form-box" :style="formBoxStyle">
       <div class="form-container">
-        <block-from :itemSetting="itemSetting" :formData="formData"/>
+        <block-from :itemSetting="itemSetting" :formData="formData" />
         <div v-if="false" class="edit-box">
           <div v-for="item in itemSetting" :key="item.field" @click="showEditItem(item)">
             <!-- <span>{{item.title}}</span> -->
@@ -42,7 +42,7 @@
             <div class="float-r bf-form-close" @click="showItemEdit=false">X</div>
           </div>
           <div class="bf-form-body">
-            <block-from :itemSetting="editSetting" :formData="formData"/>
+            <block-from :itemSetting="editSetting" :formData="formData" />
           </div>
         </div>
       </transition>
@@ -91,8 +91,7 @@ export default {
     return {
       rules: [],
       itemSetting: [],
-      formData: {
-      },
+      formData: {},
       formBoxStyle: {
         marginLeft: "100px"
       },
@@ -123,25 +122,34 @@ export default {
     // 合并基础配置。
     mergeItemSetting() {
       let items = [];
+
       ItemsSetting.forEach(v => {
-        BaseItems.forEach(b => {
-          if (v.type === b.type) {
-            Utils.deepMerge(v, b);
-          }
-        });
-        if (v.rulesId && Array.isArray(v.rulesId) && v.rulesId.length > 0) {
-          v.rules = [];
-          v.rulesId.forEach(rId => {
-            Rules.forEach(R => {
-              if (rId === R.id) {
-                v.rules.push(R);
-              }
-            });
-          });
-        }
+        this.mergeBaseSetting(v);
+        this.mergeRule(v);
         items.push(v);
       });
       return items;
+    },
+    // 合并验证规则
+    mergeRule(v) {
+      if (v.rulesId && Array.isArray(v.rulesId) && v.rulesId.length > 0) {
+        v.rules = [];
+        v.rulesId.forEach(rId => {
+          Rules.forEach(R => {
+            if (rId === R.id) {
+              v.rules.push(R);
+            }
+          });
+        });
+      }
+    },
+    // 合并基础配置
+    mergeBaseSetting(v) {
+      BaseItems.forEach(b => {
+        if (v.type === b.type) {
+          Utils.deepMerge(v, b);
+        }
+      });
     },
     // 显示该该字段配置
     showEditItem(item) {
@@ -160,6 +168,8 @@ export default {
         if (v.type === type) {
           v.field = "_" + v.type + "_" + Utils.uuid(7);
           v["_isNewAdd"] = true;
+          this.mergeRule(v);
+          this.dealRule(v);
           this.itemSetting.push(v);
         }
       });

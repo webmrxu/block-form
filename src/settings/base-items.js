@@ -17,7 +17,7 @@ const baseItemsSetting = [
   {
     type: 'email',
     title: '邮箱',
-    rules: ['2'],
+    rulesId: ['2'],
     itemWidth: '60%',
     labelWidth: '150px',
     labelHeight: '62px'

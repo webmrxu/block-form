@@ -48,7 +48,7 @@ export default {
   methods: {
     dealItemStyle(item) {
       return {
-        // width: item.itemWidth ? item.itemWidth : this.formSetting.itemWidth
+        width: item.itemWidth ? item.itemWidth : this.formSetting.itemWidth
       };
     },
     test() {

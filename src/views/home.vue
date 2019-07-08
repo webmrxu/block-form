@@ -23,9 +23,9 @@
     <div class="form-box" :style="formBoxStyle">
       <div class="form-container">
         <block-from :itemSetting="itemSetting" :formData="formData" />
-        <div v-if="false" class="edit-box">
-          <div v-for="item in itemSetting" :key="item.field" @click="showEditItem(item)">
-            <!-- <span>{{item.title}}</span> -->
+        <div v-if="true" class="edit-box" >
+          <div v-for="item in itemSetting" :key="item.field" @click="showEditItem(item)" :style="{width: item.itemWidth}">
+            <span>{{item.title}}</span>
           </div>
         </div>
       </div>
@@ -229,7 +229,7 @@ export default {
 }
 .edit-box > div {
   height: 62px;
-  width: 60%;
+  /* width: 60%; */
   cursor: pointer;
 }
 .form-container {

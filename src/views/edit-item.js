@@ -3,21 +3,21 @@ const editSetting = [
     type: 'input',
     title: '标题',
     field: 'userName',
-    itemWidth: '80%',
+    itemWidth: '60%',
     rules: ['1']
   },
   {
     type: 'input',
     title: '描述',
     field: 'userName',
-    itemWidth: '80%',
+    itemWidth: '60%',
     rules: ['1']
   },
   {
     type: 'input',
     title: '默认提示文字',
     field: 'userName',
-    itemWidth: '80%',
+    itemWidth: '60%',
     rules: ['1']
   },
   {
@@ -25,7 +25,7 @@ const editSetting = [
     title: '验证规则',
     field: 'parteents',
     paramCode: 'code',
-    itemWidth: '80%',
+    itemWidth: '60%',
     paramList: [{
       value: 'ali',
       name: '正则'
@@ -40,14 +40,14 @@ const editSetting = [
     type: 'input',
     title: '组件布局',
     field: 'userName',
-    itemWidth: '80%',
+    itemWidth: '60%',
     rules: ['1']
   },
   {
     type: 'input',
     title: '组件布局',
     field: 'userName',
-    itemWidth: '80%',
+    itemWidth: '60%',
     rules: ['1']
   }
 ]

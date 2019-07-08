@@ -34,12 +34,12 @@
     </div>
     <!-- 字段自定义区 -->
     <div>
-      <div v-if="showItemEdit" class="b-mask" @click="showItemEdit=false"></div>
+      <div v-if="showItemEditState" class="b-mask" @click="showItemEditState=false"></div>
       <transition name="fade">
-        <div v-if="showItemEdit" class="form-custom b-form">
+        <div v-if="showItemEditState" class="form-custom b-form">
           <div class="clearfix b-form-title">
             <div class="float-l">输入组件修改</div>
-            <div class="float-r bf-form-close" @click="showItemEdit=false">X</div>
+            <div class="float-r bf-form-close" @click="showItemEditState=false">X</div>
           </div>
           <div class="bf-form-body">
             <block-from :itemSetting="editSetting" :formData="formData" />
@@ -95,7 +95,7 @@ export default {
       formBoxStyle: {
         marginLeft: "100px"
       },
-      showItemEdit: false, // 展示组件配置
+      showItemEditState: false, // 展示组件配置
       showSetting: false,
       editSetting: {}
     };
@@ -117,7 +117,7 @@ export default {
   methods: {
     // 测试
     test() {
-      this.showItemEdit = !this.showItemEdit;
+      this.showItemEditState = !this.showItemEditState;
     },
     // 合并基础配置。
     mergeItemSetting() {
@@ -153,7 +153,7 @@ export default {
     },
     // 显示该该字段配置
     showEditItem(item) {
-      this.showItemEdit = true;
+      this.showItemEditState = true;
     },
     // 处理浏览器缩放
     dealWindowResize() {

@@ -4,7 +4,7 @@ const baseItemsSetting = [
     title: '文本框',
     itemWidth: '50%',
     labelWidth: '150px',
-    labelHeight: '62px'
+    itemHeight: '62px'
   },
   {
     type: 'select',
@@ -12,7 +12,7 @@ const baseItemsSetting = [
     paramsList: [],
     itemWidth: '50%',
     labelWidth: '150px',
-    labelHeight: '62px'
+    itemHeight: '62px'
   },
   {
     type: 'email',
@@ -20,7 +20,7 @@ const baseItemsSetting = [
     rulesId: ['2'],
     itemWidth: '50%',
     labelWidth: '150px',
-    labelHeight: '62px'
+    itemHeight: '62px'
   }
 ]
 

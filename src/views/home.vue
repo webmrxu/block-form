@@ -29,8 +29,12 @@
           </div>
         </div>
       </div>
-      <!-- 点击在字段展示字段配置编辑 -->
-      <div class="show-setting" @click="showSetting = true;">show settings</div>
+    </div>
+    <!-- 操作按钮 -->
+    <div class="act-box">
+      <div class="act-item" @click="showSetting = true;">
+        <span>显示表单配置</span>
+      </div>
     </div>
     <!-- 字段自定义区 -->
     <div>
@@ -180,7 +184,6 @@ export default {
 .home > div {
   float: left;
   height: 500px;
-  border: 1px solid #eee;
 }
 .formitem-box {
   width: 370px;
@@ -250,5 +253,19 @@ export default {
   display: block;
   clear: both;
   content: "";
+}
+.act-box{
+  margin-top: 8px;
+  margin-left: 8px;
+}
+.act-box>div{
+  height: 32px;
+  line-height: 32px;
+  padding: 0 8px;
+  color: rgb(121, 187, 255);
+  cursor: pointer;
+}
+.act-box>div:hover{
+  color: rgb(83, 168, 255);
 }
 </style>

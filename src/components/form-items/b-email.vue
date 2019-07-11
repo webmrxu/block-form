@@ -1,7 +1,11 @@
 <template>
   <div>
     <el-form-item :label="item.title" :rules="item._rules" :prop="item.field" :label-width="item.labelWidth">
-      <el-input v-model="itemValue" @input="change" ></el-input>
+      <el-input
+        v-model="itemValue"
+        @input="change"
+        :placeholder="item.placeholder"
+      ></el-input>
     </el-form-item>
   </div>
 </template>

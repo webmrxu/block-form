@@ -1,7 +1,11 @@
 <template>
   <div>
     <el-form-item  :label="item.title" :label-width="item.labelWidth">
-      <el-select v-model="form.region" placeholder="请选择活动区域" @input="change" class="b-select">
+      <el-select
+        v-model="form.region"
+        @input="change" class="b-select"
+        :placeholder="item.placeholder"
+      >
         <el-option v-for="item in list" :key="item.value" :label="item.name" :value="item.value"></el-option>
       </el-select>
     </el-form-item>

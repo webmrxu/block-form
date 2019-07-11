@@ -1,21 +1,42 @@
 const editSetting = [
   {
+    field: 'title',
     type: 'input',
     title: '标题',
-    field: 'title',
+    itemWidth: '60%',
+    rules: ['1']
+  },
+  {
+    field: 'placeholder',
+    type: 'input',
+    title: '默认提示文字',
+    itemWidth: '60%',
+    rules: ['1']
+  },
+  {
+    field: 'itemWidth',
+    type: 'input',
+    title: '组件宽度',
+    itemWidth: '60%',
+    rules: ['1']
+  },
+  {
+    field: 'itemHeight',
+    type: 'input',
+    title: '组件高度',
+    itemWidth: '60%',
+    rules: ['1']
+  },
+  {
+    field: 'labelWidth',
+    type: 'input',
+    title: '标题宽度',
     itemWidth: '60%',
     rules: ['1']
   },
   {
     type: 'input',
     title: '描述',
-    field: 'userName',
-    itemWidth: '60%',
-    rules: ['1']
-  },
-  {
-    type: 'input',
-    title: '默认提示文字',
     field: 'userName',
     itemWidth: '60%',
     rules: ['1']
@@ -35,13 +56,6 @@ const editSetting = [
       name: '无效'
     }
     ]
-  },
-  {
-    type: 'input',
-    title: '组件布局',
-    field: 'userName',
-    itemWidth: '60%',
-    rules: ['1']
   },
   {
     type: 'input',

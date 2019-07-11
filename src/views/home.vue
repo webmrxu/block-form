@@ -42,7 +42,7 @@
             <div class="float-r bf-form-close" @click="showItemEditState=false">X</div>
           </div>
           <div class="bf-form-body">
-            <block-from :itemSetting="editSetting" :formData="formData" />
+            <block-from :itemSetting="editSetting" :formData="showEditForm" />
           </div>
         </div>
       </transition>
@@ -94,7 +94,8 @@ export default {
       },
       showItemEditState: false, // 展示组件配置
       showSetting: false,
-      editSetting: {}
+      editSetting: {},
+      showEditForm: {}
     };
   },
   mounted() {
@@ -119,6 +120,7 @@ export default {
     // 显示该该字段配置
     showEditItem(item) {
       this.showItemEditState = true;
+      this.showEditForm = item;
     },
     // 处理浏览器缩放
     dealWindowResize() {
@@ -149,8 +151,8 @@ export default {
 }
 .edit-box > div {
   height: 62px;
-  /* width: 60%; */
   cursor: pointer;
+  float: left;
 }
 .form-container {
   position: relative;

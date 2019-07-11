@@ -17,6 +17,11 @@ export default {
       form: {}
     }
   },
+  watch: {
+    value(value) {
+      this.itemValue = value
+    }
+  },
   mounted() {
     if (Array.isArray(this.item.paramList)) {
       this.list = this.item.paramList;

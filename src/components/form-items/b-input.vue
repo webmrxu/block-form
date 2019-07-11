@@ -11,11 +11,15 @@ export default {
   props: ["item", "value"],
   data() {
     return {
-      itemValue: this.value
+      itemValue: ''
+    }
+  },
+  watch: {
+    value(value) {
+      this.itemValue = value
     }
   },
   mounted() {
-    // console.log(this.item)
   },
   methods: {
     change(value) {

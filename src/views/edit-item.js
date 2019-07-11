@@ -2,7 +2,7 @@ const editSetting = [
   {
     type: 'input',
     title: '标题',
-    field: 'userName',
+    field: 'title',
     itemWidth: '60%',
     rules: ['1']
   },

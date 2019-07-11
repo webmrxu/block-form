@@ -1,9 +1,6 @@
 const itemsSetting = [
   {
     type: 'input',
-    itemStyleObj: {
-      color: '#aaa'
-    },
     placeholder: '请输入',
     itemLayout: 'left-right', // top-bottom
     title: '文本框',
@@ -12,9 +9,6 @@ const itemsSetting = [
   },
   {
     type: 'select',
-    itemStyleObj: {
-      color: '#aaa'
-    },
     placeholder: '请输入',
     itemLayout: 'left-right', // top-bottom
     title: '下拉选择框',
@@ -33,9 +27,6 @@ const itemsSetting = [
   },
   {
     type: 'email',
-    itemStyleObj: {
-      color: '#aaa'
-    },
     placeholder: '请输入',
     itemLayout: 'left-right', // top-bottom
     title: '邮箱',

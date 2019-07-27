@@ -39,9 +39,17 @@ export default {
     if (typeof obj !== 'object' || obj === null) {
       return obj
     }
-    let newobj = {}
-    for (let attr in obj) {
-      newobj[attr] = this.deepCopy(obj[attr])
+    let newobj;
+    if (Array.isArray(obj)) {
+      newobj = []
+      obj.forEach((v, i) => {
+        newobj[i] = this.deepCopy(v)
+      })
+    } else {
+      newobj = {}
+      for (let attr in obj) {
+        newobj[attr] = this.deepCopy(obj[attr])
+      }
     }
     return newobj
   },

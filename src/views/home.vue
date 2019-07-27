@@ -23,8 +23,13 @@
     <div class="form-box" :style="formBoxStyle">
       <div class="form-container">
         <block-from :itemSetting="itemSetting" :formData="formData" />
-        <div v-if="true" class="edit-box" >
-          <div v-for="item in itemSetting" :key="item.field" @click="showEditItem(item)" :style="{width: item.itemWidth}">
+        <div v-if="true" class="edit-box">
+          <div
+            v-for="item in itemSetting"
+            :key="item.field"
+            @click="showEditItem(item)"
+            :style="{width: item.itemWidth}"
+          >
             <!-- <span>{{item.title}}</span> -->
           </div>
         </div>
@@ -113,7 +118,12 @@ export default {
   },
   computed: {
     itemSettingStr() {
-      return JSON.stringify(this.itemSetting, null, 2);
+      let newObj = JSON.parse(JSON.stringify(Utils.deepCopy(this.itemSetting)));
+      for (let key in newObj) {
+        let item = newObj[key];
+        delete item._rules;
+      }
+      return JSON.stringify(newObj, null, 2);
     }
   },
   methods: {
@@ -254,18 +264,18 @@ export default {
   clear: both;
   content: "";
 }
-.act-box{
+.act-box {
   margin-top: 8px;
   margin-left: 8px;
 }
-.act-box>div{
+.act-box > div {
   height: 32px;
   line-height: 32px;
   padding: 0 8px;
   color: rgb(121, 187, 255);
   cursor: pointer;
 }
-.act-box>div:hover{
+.act-box > div:hover {
   color: rgb(83, 168, 255);
 }
 </style>

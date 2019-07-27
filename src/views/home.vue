@@ -23,7 +23,7 @@
     <div class="form-box" :style="formBoxStyle">
       <div class="form-container">
         <block-from :itemSetting="itemSetting" :formData="formData" />
-        <div v-if="true" class="edit-box">
+        <div v-if="!showEdit" class="edit-box">
           <div
             v-for="item in itemSetting"
             :key="item.field"
@@ -39,6 +39,9 @@
     <div class="act-box">
       <div class="act-item" @click="showSetting = true;">
         <span>显示表单配置</span>
+      </div>
+      <div class="act-item" @click="showEdit = !showEdit;">
+        <span>{{showEdit?'切换编辑模式':'切换输入模式'}}</span>
       </div>
     </div>
     <!-- 字段自定义区 -->
@@ -104,7 +107,8 @@ export default {
       showItemEditState: false, // 展示组件配置
       showSetting: false,
       editSetting: {},
-      showEditForm: {}
+      showEditForm: {},
+      showEdit: false
     };
   },
   mounted() {

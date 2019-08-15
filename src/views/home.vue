@@ -54,7 +54,7 @@
             <div class="float-r bf-form-close" @click="showItemEditState=false">X</div>
           </div>
           <div class="bf-form-body">
-            <block-from :itemSetting="editSetting" :formData="showEditForm" />
+            <block-from :itemSetting="editSetting" :formData="showEditForm"/>
           </div>
         </div>
       </transition>
@@ -153,7 +153,7 @@ export default {
         if (v.type === type) {
           v.field = "_" + v.type + "_" + Utils.uuid(7);
           v["_isNewAdd"] = true;
-          this.itemSetting.push(v);
+          this.itemSetting.push(JSON.parse(JSON.stringify(v)));
         }
       });
     }

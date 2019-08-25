@@ -12,5 +12,5 @@ export default {
 
 <style>
 /* 公共css */
-@import url('./style/style.css');
+@import url('./assets/style/style.css');
 </style>

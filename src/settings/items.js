@@ -16,11 +16,11 @@ const itemsSetting = [
     paramCode: 'code',
     paramList: [
       {
-        value: 'ali',
+        value: 'zz',
         name: '正则'
       },
       {
-        value: 'tent',
+        value: 'wx',
         name: '无效'
       }
     ]

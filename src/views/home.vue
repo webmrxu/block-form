@@ -1,6 +1,5 @@
 <template>
   <div class="clearfix home">
-    <!-- <div @click="test">test</div> -->
     <!-- 字段列表 -->
     <div class="formitem-box">
       <div>
@@ -22,7 +21,7 @@
     <!-- 表单展示区 -->
     <div class="form-box" :style="formBoxStyle">
       <div class="form-container">
-        <block-from :itemSetting="itemSetting" :formData="formData" />
+        <block-from :itemSetting="itemSetting" :formData="formData" ref="b-form"/>
         <div v-if="!showEdit" class="edit-box">
           <div
             v-for="item in itemSetting"
@@ -42,6 +41,15 @@
       </div>
       <div class="act-item" @click="showEdit = !showEdit;">
         <span>{{showEdit?'切换编辑模式':'切换输入模式'}}</span>
+      </div>
+      <div class="act-item" @click="getInput">
+        <span>测试输出</span>
+      </div>
+      <div class="act-item" @click="doValidate">
+        <span>触发表单验证</span>
+      </div>
+      <div class="act-item" @click="resetValidate">
+        <span>重置表单验证</span>
       </div>
     </div>
     <!-- 字段自定义区 -->
@@ -108,7 +116,7 @@ export default {
       showSetting: false,
       editSetting: {},
       showEditForm: {},
-      showEdit: false
+      showEdit: true
     };
   },
   mounted() {
@@ -131,6 +139,20 @@ export default {
     }
   },
   methods: {
+    // 重置表单验证
+    resetValidate() {
+      this.$refs['b-form'].resetForm();
+    },
+    // 触发表单验证
+    doValidate() {
+      this.$refs['b-form'].validate(result => {
+        console.log(result)
+      })
+    },
+    // 获取输入值
+    getInput() {
+      console.log(this.formData)
+    },
     // 测试
     test() {
       this.showItemEditState = !this.showItemEditState;

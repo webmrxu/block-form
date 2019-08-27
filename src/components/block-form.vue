@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <div @click="test">test</div> -->
     <div>
       <el-form ref="form" :model="formData" class="clearfix">
         <component
@@ -47,22 +46,29 @@ export default {
       this.PItemSetting = newV;
       this.mergeItemSetting();
       this.dealFormRules();
-      // this.itemSetting = this.mergeItemSetting();
-      // newV.forEach(v => {
-      //   if (v["_isNewAdd"]) {
-      //     this.dealRule(v);
-      //   }
-      // });
     }
   },
   methods: {
-    test() {
-      console.log(this.formData);
-    },
     dealItemStyle(item) {
       return {
         width: item.itemWidth || item.itemWidth
       };
+    },
+    // 重置验证规则
+    resetForm() {
+      this.$refs['form'].resetFields()
+    },
+    // 触发表单验证
+    validate(callBack) {
+      this.$refs['form'].validate((valid) => {
+        let result = false
+        if (valid) {
+          result = true
+        } else {
+          result = false
+        }
+        callBack && callBack(result)
+      });
     },
     // 合并基础配置。
     mergeItemSetting() {

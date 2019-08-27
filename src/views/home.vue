@@ -48,7 +48,7 @@
       <div class="act-item" @click="doValidate">
         <span>触发表单验证</span>
       </div>
-      <div class="act-item" @click="resetValidate">
+      <div class="act-item" @click="clearValidate">
         <span>重置表单验证</span>
       </div>
     </div>
@@ -140,8 +140,8 @@ export default {
   },
   methods: {
     // 重置表单验证
-    resetValidate() {
-      this.$refs['b-form'].resetForm();
+    clearValidate() {
+      this.$refs['b-form'].clearValidate();
     },
     // 触发表单验证
     doValidate() {
@@ -178,6 +178,7 @@ export default {
           this.itemSetting.push(JSON.parse(JSON.stringify(v)));
         }
       });
+      // console.log(this.itemSetting)
     }
   }
 };

@@ -55,8 +55,8 @@ export default {
       };
     },
     // 重置验证规则
-    resetForm() {
-      this.$refs['form'].resetFields()
+    clearValidate() {
+      this.$refs['form'].clearValidate()
     },
     // 触发表单验证
     validate(callBack) {

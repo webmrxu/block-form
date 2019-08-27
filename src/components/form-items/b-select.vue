@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form-item  :label="item.title" :label-width="item.labelWidth">
+    <el-form-item  :label="item.title" :label-width="item.labelWidth" :prop="item.field">
       <el-select
         v-model="form.region"
         @input="change" class="b-select"

@@ -117,32 +117,32 @@ export default {
       editSetting: {},
       showEditForm: {},
       showEdit: true
-    };
+    }
   },
   mounted() {
-    this.itemSetting = ItemsSetting;
-    this.editSetting = EditSetting;
+    this.itemSetting = ItemsSetting
+    this.editSetting = EditSetting
   },
   created() {
-    let _this = this;
-    this.dealWindowResize();
-    window.onresize = Utils.debounce(_this.dealWindowResize, 500);
+    let _this = this
+    this.dealWindowResize()
+    window.onresize = Utils.debounce(_this.dealWindowResize, 500)
   },
   computed: {
     itemSettingStr() {
-      let newObj = JSON.parse(JSON.stringify(Utils.deepCopy(this.itemSetting)));
+      let newObj = JSON.parse(JSON.stringify(Utils.deepCopy(this.itemSetting)))
       for (let key in newObj) {
         let item = newObj[key]
         delete item._rules
         delete item.rules
       }
-      return JSON.stringify(newObj, null, 2);
+      return JSON.stringify(newObj, null, 2)
     }
   },
   methods: {
     // 重置表单验证
     clearValidate() {
-      this.$refs['b-form'].clearValidate();
+      this.$refs['b-form'].clearValidate()
     },
     // 触发表单验证
     doValidate() {
@@ -156,29 +156,29 @@ export default {
     },
     // 显示该该字段配置
     showEditItem(item) {
-      this.showItemEditState = true;
-      this.showEditForm = item;
+      this.showItemEditState = true
+      this.showEditForm = item
     },
     // 处理浏览器缩放
     dealWindowResize() {
       let windowWidth = window.document.documentElement.getBoundingClientRect()
-        .width;
-      let margin = windowWidth - 793;
-      this.formBoxStyle.marginLeft = margin / 2 - 375 + "px";
+        .width
+      let margin = windowWidth - 793
+      this.formBoxStyle.marginLeft = margin / 2 - 375 + "px"
     },
     // 新增一个字段
     addInputItem(type) {
       BaseItems.forEach(v => {
         if (v.type === type) {
-          v.field = "_" + v.type + "_" + Utils.uuid(7);
-          v["_isNewAdd"] = true;
-          this.itemSetting.push(JSON.parse(JSON.stringify(v)));
+          v.field = "_" + v.type + "_" + Utils.uuid(7)
+          v["_isNewAdd"] = true
+          this.itemSetting.push(JSON.parse(JSON.stringify(v)))
         }
-      });
+      })
       // console.log(this.itemSetting)
     }
   }
-};
+}
 </script>
 <style scoped>
 .edit-box {

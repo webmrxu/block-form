@@ -36,10 +36,10 @@ export default {
   data() {
     return {
       PItemSetting: []
-    };
+    }
   },
   created() {
-    // this.dealFormRules();
+    // this.dealFormRules()
   },
   watch: {
     itemSetting(newV, oldV) {
@@ -52,7 +52,7 @@ export default {
     dealItemStyle(item) {
       return {
         width: item.itemWidth || item.itemWidth
-      };
+      }
     },
     // 重置验证规则
     clearValidate() {
@@ -68,31 +68,31 @@ export default {
           result = false
         }
         callBack && callBack(result)
-      });
+      })
     },
     // 合并基础配置。
     mergeItemSetting() {
-      let items = [];
+      let items = []
       if (this.PItemSetting && this.PItemSetting.length && this.PItemSetting.length > 0) {
         this.PItemSetting.forEach(v => {
           this.mergeBaseSetting(v)
           this.mergeRule(v)
           items.push(v)
-        });
+        })
       }
-      return items;
+      return items
     },
     // 合并验证规则
     mergeRule(v) {
       if (v.rulesId && Array.isArray(v.rulesId) && v.rulesId.length > 0) {
-        v.rules = [];
+        v.rules = []
         v.rulesId.forEach(rId => {
           Rules.forEach(R => {
             if (rId === R.id) {
               v.rules.push(R)
             }
-          });
-        });
+          })
+        })
       }
     },
     // 合并基础配置
@@ -101,13 +101,13 @@ export default {
         if (v.type === b.type) {
           Utils.deepMerge(v, b)
         }
-      });
+      })
     },
     // 处理表单验证规则
     dealFormRules() {
       this.PItemSetting.forEach(v => {
         this.dealRule(v)
-      });
+      })
     },
     // 处理单个验证规则
     dealRule(v) {
@@ -121,7 +121,7 @@ export default {
           if (k.ruleTyle === "pattern") {
             v._rules.push(this.convertPattern(k))
           }
-        });
+        })
       }
     },
     // 正则规则转换
@@ -133,7 +133,7 @@ export default {
         trigger: rule.trigger,
         message: rule.message,
         pattern: new RegExp(rule.pattern)
-      };
+      }
     },
     // 必填规则转换
     convertRequire(rule) {
@@ -147,7 +147,7 @@ export default {
       }
     }
   }
-};
+}
 </script>
 <style scoped>
 .form-item-component {

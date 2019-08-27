@@ -87,11 +87,11 @@ import Utils from "@/Utils/common";
 import BlockFrom from "@/components/block-form";
 // 基础表单配置
 import BaseItems from "@/settings/base-items";
-// 编辑字段表单配置
-import EditSetting from "./edit-item";
 // 核心字段配置
 import ItemsSetting from "@/settings/items";
 
+// 编辑字段表单配置
+import EditSetting from "./edit-item";
 export default {
   name: "home",
   components: {

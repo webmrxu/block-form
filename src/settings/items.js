@@ -11,7 +11,6 @@ const itemsSetting = [
     placeholder: '请输入',
     title: '下拉选择框',
     field: 'parteents',
-    paramCode: 'code',
     rulesId: ['1'],
     paramList: [
       {

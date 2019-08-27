@@ -132,8 +132,9 @@ export default {
     itemSettingStr() {
       let newObj = JSON.parse(JSON.stringify(Utils.deepCopy(this.itemSetting)));
       for (let key in newObj) {
-        let item = newObj[key];
-        delete item._rules;
+        let item = newObj[key]
+        delete item._rules
+        delete item.rules
       }
       return JSON.stringify(newObj, null, 2);
     }

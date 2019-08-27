@@ -154,10 +154,6 @@ export default {
     getInput() {
       console.log(this.formData)
     },
-    // 测试
-    test() {
-      this.showItemEditState = !this.showItemEditState;
-    },
     // 显示该该字段配置
     showEditItem(item) {
       this.showItemEditState = true;

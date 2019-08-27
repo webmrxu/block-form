@@ -43,9 +43,9 @@ export default {
   },
   watch: {
     itemSetting(newV, oldV) {
-      this.PItemSetting = newV;
-      this.mergeItemSetting();
-      this.dealFormRules();
+      this.PItemSetting = newV
+      this.mergeItemSetting()
+      this.dealFormRules()
     }
   },
   methods: {
@@ -75,9 +75,9 @@ export default {
       let items = [];
       if (this.PItemSetting && this.PItemSetting.length && this.PItemSetting.length > 0) {
         this.PItemSetting.forEach(v => {
-          this.mergeBaseSetting(v);
-          this.mergeRule(v);
-          items.push(v);
+          this.mergeBaseSetting(v)
+          this.mergeRule(v)
+          items.push(v)
         });
       }
       return items;
@@ -89,7 +89,7 @@ export default {
         v.rulesId.forEach(rId => {
           Rules.forEach(R => {
             if (rId === R.id) {
-              v.rules.push(R);
+              v.rules.push(R)
             }
           });
         });
@@ -99,27 +99,27 @@ export default {
     mergeBaseSetting(v) {
       BaseItems.forEach(b => {
         if (v.type === b.type) {
-          Utils.deepMerge(v, b);
+          Utils.deepMerge(v, b)
         }
       });
     },
     // 处理表单验证规则
     dealFormRules() {
       this.PItemSetting.forEach(v => {
-        this.dealRule(v);
+        this.dealRule(v)
       });
     },
     // 处理单个验证规则
     dealRule(v) {
       if (v.rules && Array.isArray(v.rules) && v.rules.length > 0) {
-        this.$set(v, "_rules", []);
+        this.$set(v, "_rules", [])
         v.rules.forEach(k => {
           if (k.ruleTyle === "require") {
-            v._rules.push(this.convertRequire(k));
+            v._rules.push(this.convertRequire(k))
           }
           // 正则规则转换
           if (k.ruleTyle === "pattern") {
-            v._rules.push(this.convertPattern(k));
+            v._rules.push(this.convertPattern(k))
           }
         });
       }
@@ -144,7 +144,7 @@ export default {
         ruleDes: rule.ruleDes,
         trigger: rule.trigger,
         message: rule.message
-      };
+      }
     }
   }
 };

@@ -11,7 +11,7 @@
     <!-- 表单展示区 -->
     <div class="form-box" :style="formBoxStyle">
       <div class="form-container">
-        <block-from :itemSetting="itemSetting" :formData="formData" ref="b-form"/>
+        <block-from :itemSetting="itemSetting" :formData="formData" ref="b-form" />
         <div v-if="!showEdit" class="edit-box">
           <div
             v-for="item in itemSetting"
@@ -52,7 +52,7 @@
             <div class="float-r bf-form-close" @click="showItemEditState=false">X</div>
           </div>
           <div class="bf-form-body">
-            <block-from :itemSetting="editSetting" :formData="showEditForm"/>
+            <block-from :itemSetting="editSetting" :formData="showEditForm" />
           </div>
         </div>
       </transition>
@@ -108,68 +108,68 @@ export default {
       editSetting: {},
       showEditForm: {},
       showEdit: true
-    }
+    };
   },
   mounted() {
-    this.itemSetting = ItemsSetting
-    this.editSetting = EditSetting
+    this.itemSetting = ItemsSetting;
+    this.editSetting = EditSetting;
   },
   created() {
-    let _this = this
-    this.dealWindowResize()
-    window.onresize = Utils.debounce(_this.dealWindowResize, 500)
+    let _this = this;
+    this.dealWindowResize();
+    window.onresize = Utils.debounce(_this.dealWindowResize, 500);
   },
   computed: {
     itemSettingStr() {
-      let newObj = JSON.parse(JSON.stringify(Utils.deepCopy(this.itemSetting)))
+      let newObj = JSON.parse(JSON.stringify(Utils.deepCopy(this.itemSetting)));
       for (let key in newObj) {
-        let item = newObj[key]
-        delete item._rules
-        delete item.rules
+        let item = newObj[key];
+        delete item._rules;
+        delete item.rules;
       }
-      return JSON.stringify(newObj, null, 2)
+      return JSON.stringify(newObj, null, 2);
     }
   },
   methods: {
     // 重置表单验证
     clearValidate() {
-      this.$refs['b-form'].clearValidate()
+      this.$refs["b-form"].clearValidate();
     },
     // 触发表单验证
     doValidate() {
-      this.$refs['b-form'].validate(result => {
-        console.log(result)
-      })
+      this.$refs["b-form"].validate(result => {
+        console.log(result);
+      });
     },
     // 获取输入值
     getInput() {
-      console.log(this.formData)
+      console.log(this.formData);
     },
     // 显示该该字段配置
     showEditItem(item) {
-      this.showItemEditState = true
-      this.showEditForm = item
+      this.showItemEditState = true;
+      this.showEditForm = item;
     },
     // 处理浏览器缩放
     dealWindowResize() {
       let windowWidth = window.document.documentElement.getBoundingClientRect()
-        .width
-      let margin = windowWidth - 793
-      this.formBoxStyle.marginLeft = margin / 2 - 375 + "px"
+        .width;
+      let margin = windowWidth - 793;
+      this.formBoxStyle.marginLeft = margin / 2 - 375 + "px";
     },
     // 新增一个字段
     addInputItem(type) {
       BaseItems.forEach(v => {
         if (v.type === type) {
-          v.field = "_" + v.type + "_" + Utils.uuid(7)
-          v["_isNewAdd"] = true
-          this.itemSetting.push(JSON.parse(JSON.stringify(v)))
+          v.field = "_" + v.type + "_" + Utils.uuid(7);
+          v["_isNewAdd"] = true;
+          this.itemSetting.push(JSON.parse(JSON.stringify(v)));
         }
-      })
+      });
       // console.log(this.itemSetting)
     }
   }
-}
+};
 </script>
 <style scoped>
 .edit-box {
@@ -178,7 +178,6 @@ export default {
   left: 0;
   right: 0;
   z-index: 100;
-  
 }
 .edit-box > div {
   height: 62px;

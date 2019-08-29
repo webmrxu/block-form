@@ -10,11 +10,16 @@ const baseItemsSetting = [
   {
     type: 'select',
     title: '下拉选择框',
-    paramsList: [],
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px',
-    placeholder: '请输入'
+    placeholder: '请输入',
+    paramsList: [
+      {
+        value: 'value1',
+        name: '测试'
+      }
+    ]
   },
   {
     type: 'email',
@@ -40,7 +45,13 @@ const baseItemsSetting = [
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px',
-    placeholder: '请输入'
+    placeholder: '请输入',
+    paramsList: [
+      {
+        value: 'value1',
+        name: '测试'
+      }
+    ]
   },
   {
     type: 'count',
@@ -64,7 +75,13 @@ const baseItemsSetting = [
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px',
-    placeholder: '请输入'
+    placeholder: '请输入',
+    paramsList: [
+      {
+        value: 'value1',
+        name: '测试'
+      }
+    ]
   },
   {
     type: 'rate',
@@ -85,6 +102,14 @@ const baseItemsSetting = [
   {
     type: 'time',
     title: '时间选择',
+    itemWidth: '50%',
+    labelWidth: '150px',
+    itemHeight: '62px',
+    placeholder: '请输入'
+  },
+  {
+    type: 'color',
+    title: '颜色选择',
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px',

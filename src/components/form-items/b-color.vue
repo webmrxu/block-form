@@ -1,12 +1,11 @@
 <template>
   <div>
     <el-form-item :label="item.title" :rules="item._rules" :prop="item.field" :label-width="item.labelWidth">
-      <el-rate
+      <el-color-picker
         v-model="itemValue"
         :placeholder="item.placeholder"
         @input="change"
-        style="margin-top:10px;"
-      ></el-rate>
+      ></el-color-picker>
     </el-form-item>
   </div>
 </template>
@@ -16,7 +15,7 @@ export default {
   props: ["item", "value"],
   data() {
     return {
-      itemValue: 0
+      itemValue: '#409EFF'
     }
   },
   watch: {

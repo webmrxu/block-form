@@ -85,6 +85,11 @@ const itemsSetting = [
     type: 'rate',
     title: '评分输入框',
     field: 'ratefield'
+  },
+  {
+    type: 'color',
+    title: '颜色选择框',
+    field: 'colorfield'
   }
 ]
 

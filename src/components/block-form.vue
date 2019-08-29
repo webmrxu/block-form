@@ -27,6 +27,7 @@ import BRate from "@/components/form-items/b-rate";
 import BSwitch from "@/components/form-items/b-switch";
 import BTime from "@/components/form-items/b-time";
 import BNumber from "@/components/form-items/b-number";
+import BColor from "@/components/form-items/b-color";
 
 import Utils from "@/Utils/common";
 // 基础表单配置
@@ -47,7 +48,8 @@ export default {
     BTime,
     BNumber,
     BSelect,
-    BEmail
+    BEmail,
+    BColor
   },
   props: ["itemSetting", "formData", "formSetting"],
   data() {

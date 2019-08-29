@@ -4,7 +4,7 @@ const itemsSetting = [
     placeholder: '请输入',
     title: '文本框',
     field: 'userName',
-    rulesId: ['1']
+    rulesId: ['3']
   },
   {
     type: 'select',

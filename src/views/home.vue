@@ -2,19 +2,9 @@
   <div class="clearfix home">
     <!-- 字段列表 -->
     <div class="formitem-box">
-      <div>
-        <div @click="addInputItem('input')">
-          <span>文本框</span>
-        </div>
-      </div>
-      <div>
-        <div @click="addInputItem('select')">
-          <span>下拉选择框</span>
-        </div>
-      </div>
-      <div>
-        <div @click="addInputItem('email')">
-          <span>邮箱</span>
+      <div @click="addInputItem(item.type)" v-for="item in baseItems" :key="item.type">
+        <div>
+          <span>{{item.title}}</span>
         </div>
       </div>
     </div>
@@ -107,6 +97,7 @@ export default {
   },
   data() {
     return {
+      baseItems: BaseItems,
       itemSetting: [],
       formData: {},
       formBoxStyle: {

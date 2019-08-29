@@ -13,7 +13,6 @@ const baseItemsSetting = [
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px',
-    placeholder: '请输入',
     paramsList: [
       {
         value: 'value1',
@@ -45,7 +44,6 @@ const baseItemsSetting = [
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px',
-    placeholder: '请输入',
     paramsList: [
       {
         value: 'value1',
@@ -58,8 +56,7 @@ const baseItemsSetting = [
     title: '数值选择',
     itemWidth: '50%',
     labelWidth: '150px',
-    itemHeight: '62px',
-    placeholder: '请输入'
+    itemHeight: '62px'
   },
   {
     type: 'date',
@@ -75,7 +72,6 @@ const baseItemsSetting = [
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px',
-    placeholder: '请输入',
     paramsList: [
       {
         value: 'value1',
@@ -88,16 +84,14 @@ const baseItemsSetting = [
     title: '评分',
     itemWidth: '50%',
     labelWidth: '150px',
-    itemHeight: '62px',
-    placeholder: '请输入'
+    itemHeight: '62px'
   },
   {
     type: 'switch',
     title: '开关',
     itemWidth: '50%',
     labelWidth: '150px',
-    itemHeight: '62px',
-    placeholder: '请输入'
+    itemHeight: '62px'
   },
   {
     type: 'time',
@@ -112,8 +106,7 @@ const baseItemsSetting = [
     title: '颜色选择',
     itemWidth: '50%',
     labelWidth: '150px',
-    itemHeight: '62px',
-    placeholder: '请输入'
+    itemHeight: '62px'
   }
 ]
 

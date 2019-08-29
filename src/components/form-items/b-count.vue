@@ -1,11 +1,11 @@
 <template>
   <div>
     <el-form-item :label="item.title" :rules="item._rules" :prop="item.field" :label-width="item.labelWidth">
-      <el-input
+      <el-input-number
         v-model="itemValue"
         :placeholder="item.placeholder"
         @input="change"
-      ></el-input>
+      ></el-input-number>
     </el-form-item>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
   props: ["item", "value"],
   data() {
     return {
-      itemValue: ''
+      itemValue: 0
     }
   },
   watch: {

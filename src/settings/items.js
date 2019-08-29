@@ -65,7 +65,12 @@ const itemsSetting = [
         name: '主题2'
       }
     ]
-  }
+  },
+  {
+    type: 'count',
+    title: '计数输入框',
+    field: 'countfield'
+  },
 ]
 
 export default itemsSetting

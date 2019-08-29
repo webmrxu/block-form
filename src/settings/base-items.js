@@ -4,7 +4,8 @@ const baseItemsSetting = [
     title: '文本框',
     itemWidth: '50%',
     labelWidth: '150px',
-    itemHeight: '62px'
+    itemHeight: '62px',
+    placeholder: '请输入'
   },
   {
     type: 'select',
@@ -12,7 +13,8 @@ const baseItemsSetting = [
     paramsList: [],
     itemWidth: '50%',
     labelWidth: '150px',
-    itemHeight: '62px'
+    itemHeight: '62px',
+    placeholder: '请输入'
   },
   {
     type: 'email',
@@ -20,7 +22,8 @@ const baseItemsSetting = [
     rulesId: ['2'],
     itemWidth: '50%',
     labelWidth: '150px',
-    itemHeight: '62px'
+    itemHeight: '62px',
+    placeholder: '请输入'
   },
   {
     type: 'number',
@@ -28,7 +31,8 @@ const baseItemsSetting = [
     rulesId: ['3'],
     itemWidth: '50%',
     labelWidth: '150px',
-    itemHeight: '62px'
+    itemHeight: '62px',
+    placeholder: '请输入'
   },
   {
     type: 'checkbox',
@@ -36,7 +40,8 @@ const baseItemsSetting = [
     rulesId: ['2'],
     itemWidth: '50%',
     labelWidth: '150px',
-    itemHeight: '62px'
+    itemHeight: '62px',
+    placeholder: '请输入'
   },
   {
     type: 'count',
@@ -44,7 +49,8 @@ const baseItemsSetting = [
     rulesId: ['2'],
     itemWidth: '50%',
     labelWidth: '150px',
-    itemHeight: '62px'
+    itemHeight: '62px',
+    placeholder: '请输入'
   },
   {
     type: 'date',
@@ -52,7 +58,8 @@ const baseItemsSetting = [
     rulesId: ['2'],
     itemWidth: '50%',
     labelWidth: '150px',
-    itemHeight: '62px'
+    itemHeight: '62px',
+    placeholder: '请输入'
   },
   {
     type: 'radio',
@@ -60,7 +67,8 @@ const baseItemsSetting = [
     rulesId: ['2'],
     itemWidth: '50%',
     labelWidth: '150px',
-    itemHeight: '62px'
+    itemHeight: '62px',
+    placeholder: '请输入'
   },
   {
     type: 'rate',
@@ -68,7 +76,8 @@ const baseItemsSetting = [
     rulesId: ['2'],
     itemWidth: '50%',
     labelWidth: '150px',
-    itemHeight: '62px'
+    itemHeight: '62px',
+    placeholder: '请输入'
   },
   {
     type: 'switch',
@@ -76,7 +85,8 @@ const baseItemsSetting = [
     rulesId: ['2'],
     itemWidth: '50%',
     labelWidth: '150px',
-    itemHeight: '62px'
+    itemHeight: '62px',
+    placeholder: '请输入'
   },
   {
     type: 'time',
@@ -84,7 +94,8 @@ const baseItemsSetting = [
     rulesId: ['2'],
     itemWidth: '50%',
     labelWidth: '150px',
-    itemHeight: '62px'
+    itemHeight: '62px',
+    placeholder: '请输入'
   }
 ]
 

@@ -29,6 +29,21 @@ const itemsSetting = [
     title: '邮箱',
     field: 'userEmail',
     rulesId: ['1', '2']
+  },
+  {
+    type: 'radio',
+    title: '是否可选择',
+    field: 'radiosfield',
+    paramList: [
+      {
+        value: 'radiotrue',
+        name: '是'
+      },
+      {
+        value: 'radiofalse',
+        name: '否'
+      }
+    ]
   }
 ]
 

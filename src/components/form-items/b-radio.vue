@@ -1,21 +1,24 @@
 <template>
   <div>
-    <el-form-item :label="item.title" :rules="item._rules" :prop="item.field" :label-width="item.labelWidth">
-      <el-input
-        v-model="itemValue"
+    <el-form-item  :label="item.title" :label-width="item.labelWidth" :prop="item.field" :rules="item._rules">
+      <el-radio-group
+        v-model="form.region"
+        @input="change" class="b-select"
         :placeholder="item.placeholder"
-        @input="change"
-      ></el-input>
+      >
+        <el-radio v-for="item in list" :key="item.value" :label="item.value" :value="item.value">{{item.name}}</el-radio>
+      </el-radio-group>
     </el-form-item>
   </div>
 </template>
 <script>
 export default {
-  name: "base-input",
-  props: ["item", "value"],
+  name: 'b-select',
+  props: ['item'],
   data() {
     return {
-      itemValue: ''
+      list: [],
+      form: {}
     }
   },
   watch: {
@@ -24,6 +27,9 @@ export default {
     }
   },
   mounted() {
+    if (Array.isArray(this.item.paramList)) {
+      this.list = this.item.paramList
+    }
   },
   methods: {
     change(value) {
@@ -32,3 +38,9 @@ export default {
   }
 }
 </script>
+
+<style scoped >
+.b-select {
+  width: 100%;
+}
+</style>

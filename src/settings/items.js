@@ -71,6 +71,11 @@ const itemsSetting = [
     title: '计数输入框',
     field: 'countfield'
   },
+  {
+    type: 'date',
+    title: '日期输入框',
+    field: 'datefield'
+  }
 ]
 
 export default itemsSetting

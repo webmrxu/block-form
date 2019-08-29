@@ -1,11 +1,13 @@
 <template>
   <div>
     <el-form-item :label="item.title" :rules="item._rules" :prop="item.field" :label-width="item.labelWidth">
-      <el-input
+      <el-date-picker
         v-model="itemValue"
         :placeholder="item.placeholder"
+        format="yyyy 年 MM 月 dd 日"
+        value-format="yyyy-MM-dd"
         @input="change"
-      ></el-input>
+      ></el-date-picker>
     </el-form-item>
   </div>
 </template>

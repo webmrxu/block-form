@@ -37,7 +37,6 @@ const baseItemsSetting = [
   {
     type: 'checkbox',
     title: '多选框',
-    rulesId: ['2'],
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px',
@@ -46,7 +45,6 @@ const baseItemsSetting = [
   {
     type: 'count',
     title: '数值选择',
-    rulesId: ['2'],
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px',
@@ -55,7 +53,6 @@ const baseItemsSetting = [
   {
     type: 'date',
     title: '日期选择',
-    rulesId: ['2'],
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px',
@@ -64,7 +61,6 @@ const baseItemsSetting = [
   {
     type: 'radio',
     title: '单选框',
-    rulesId: ['2'],
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px',
@@ -73,7 +69,6 @@ const baseItemsSetting = [
   {
     type: 'rate',
     title: '评分',
-    rulesId: ['2'],
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px',
@@ -82,7 +77,6 @@ const baseItemsSetting = [
   {
     type: 'switch',
     title: '开关',
-    rulesId: ['2'],
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px',
@@ -91,7 +85,6 @@ const baseItemsSetting = [
   {
     type: 'time',
     title: '时间选择',
-    rulesId: ['2'],
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px',

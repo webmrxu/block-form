@@ -75,6 +75,11 @@ const itemsSetting = [
     type: 'date',
     title: '日期输入框',
     field: 'datefield'
+  },
+  {
+    type: 'time',
+    title: '时间输入框',
+    field: 'timefield'
   }
 ]
 

@@ -2,7 +2,7 @@ const itemsSetting = [
   {
     type: 'input',
     placeholder: '请输入',
-    title: '文本框',
+    title: '文本输入框',
     field: 'userName',
     rulesId: ['3']
   },
@@ -26,7 +26,7 @@ const itemsSetting = [
   {
     type: 'email',
     placeholder: '请输入',
-    title: '邮箱',
+    title: '邮箱输入框',
     field: 'userEmail',
     rulesId: ['1', '2']
   },
@@ -47,8 +47,24 @@ const itemsSetting = [
   },
   {
     type: 'switch',
-    title: '开启服务',
+    title: '开启服务项',
     field: 'switchfield'
+  },
+  {
+    type: 'checkbox',
+    placeholder: '请输入',
+    title: '多选项输入',
+    field: 'checkboxfield',
+    paramList: [
+      {
+        value: 'type1',
+        name: '主题1'
+      },
+      {
+        value: 'type2',
+        name: '主题2'
+      }
+    ]
   }
 ]
 

@@ -1,21 +1,25 @@
 <template>
   <div>
-    <el-form-item :label="item.title" :rules="item._rules" :prop="item.field" :label-width="item.labelWidth">
-      <el-input
+    <el-form-item  :label="item.title" :label-width="item.labelWidth" :prop="item.field" :rules="item._rules">
+      <el-checkbox-group
         v-model="itemValue"
+        @input="change" class="b-select"
         :placeholder="item.placeholder"
-        @input="change"
-      ></el-input>
+      >
+        <el-checkbox v-for="item in list" :key="item.value" :label="item.value">{{item.name}}</el-checkbox>
+      </el-checkbox-group>
     </el-form-item>
   </div>
 </template>
 <script>
 export default {
-  name: "base-input",
-  props: ["item", "value"],
+  name: 'b-select',
+  props: ['item'],
   data() {
     return {
-      itemValue: ''
+      itemValue: [],
+      list: [],
+      form: {}
     }
   },
   watch: {
@@ -24,6 +28,10 @@ export default {
     }
   },
   mounted() {
+    if (Array.isArray(this.item.paramList)) {
+      this.list = this.item.paramList
+    }
+    // console.log(this.item)
   },
   methods: {
     change(value) {
@@ -32,3 +40,9 @@ export default {
   }
 }
 </script>
+
+<style scoped >
+.b-select {
+  width: 100%;
+}
+</style>

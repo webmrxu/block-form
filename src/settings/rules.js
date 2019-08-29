@@ -34,7 +34,7 @@ let rules = [
     ruleTyle: 'pattern',
     ruleName: '正整数验证',
     ruleDes: '正整数验证正则验证，只能输入整数，不能输入小数点',
-    message: '输入的邮箱格式错误',
+    message: '只能输入数值字符,0-9',
     trigger: 'blur',
     pattern: '^[0-9]*$',
     minlen: '',

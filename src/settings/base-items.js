@@ -25,7 +25,7 @@ const baseItemsSetting = [
   {
     type: 'number',
     title: '数值',
-    rulesId: ['2'],
+    rulesId: ['3'],
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px'

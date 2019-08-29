@@ -80,6 +80,11 @@ const itemsSetting = [
     type: 'time',
     title: '时间输入框',
     field: 'timefield'
+  },
+  {
+    type: 'rate',
+    title: '评分输入框',
+    field: 'ratefield'
   }
 ]
 

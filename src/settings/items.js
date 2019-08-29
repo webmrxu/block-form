@@ -44,6 +44,11 @@ const itemsSetting = [
         name: '否'
       }
     ]
+  },
+  {
+    type: 'switch',
+    title: '开启服务',
+    field: 'switchfield'
   }
 ]
 

@@ -177,11 +177,20 @@ export default {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 100;
+  
 }
 .edit-box > div {
   height: 62px;
   cursor: pointer;
   float: left;
+  background: rgba(0, 0, 0, 0.05);
+  border-top: 1px dotted #f56c6c;
+  border-left: 1px dotted #f56c6c;
+  box-sizing: border-box;
+  position: relative;
+  bottom: 10px;
+  left: 8px;
 }
 .form-container {
   position: relative;

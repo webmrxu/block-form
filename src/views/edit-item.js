@@ -47,14 +47,15 @@ const editSetting = [
     field: 'parteents',
     paramCode: 'code',
     itemWidth: '60%',
-    paramList: [{
-      value: 'ali',
-      name: '正则'
-    },
-    {
-      value: 'tent',
-      name: '无效'
-    }
+    paramList: [
+      {
+        value: 'ali',
+        name: '正则'
+      },
+      {
+        value: 'tent',
+        name: '无效'
+      }
     ]
   },
   {

@@ -2,6 +2,7 @@
   "name": "block-form",
   "version": "1.0.0",
   "description": "block form",
+  "main":"dist/block-form.min.js",
   "author": "webmrxu@foxmail.com",
   "private": true,
   "scripts": {
@@ -11,7 +12,8 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "build:component": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
     "element-ui": "^2.8.2",

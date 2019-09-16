@@ -16,24 +16,24 @@
   </div>
 </template>
 <script>
-import BInput from "@/components/form-items/b-input";
-import BSelect from "@/components/form-items/b-select";
-import BEmail from "@/components/form-items/b-email";
-import BCheckbox from "@/components/form-items/b-checkbox";
-import BCount from "@/components/form-items/b-count";
-import BDate from "@/components/form-items/b-date";
-import BRadio from "@/components/form-items/b-radio";
-import BRate from "@/components/form-items/b-rate";
-import BSwitch from "@/components/form-items/b-switch";
-import BTime from "@/components/form-items/b-time";
-import BNumber from "@/components/form-items/b-number";
-import BColor from "@/components/form-items/b-color";
+import BInput from "../components/form-items/b-input.vue";
+import BSelect from "../components/form-items/b-select.vue";
+import BEmail from "../components/form-items/b-email.vue";
+import BCheckbox from "../components/form-items/b-checkbox.vue";
+import BCount from "../components/form-items/b-count.vue";
+import BDate from "../components/form-items/b-date.vue";
+import BRadio from "../components/form-items/b-radio.vue";
+import BRate from "../components/form-items/b-rate.vue";
+import BSwitch from "../components/form-items/b-switch.vue";
+import BTime from "../components/form-items/b-time.vue";
+import BNumber from "../components/form-items/b-number.vue";
+import BColor from "../components/form-items/b-color.vue";
 
-import Utils from "@/Utils/common";
+import Utils from "../Utils/common";
 // 基础表单配置
-import BaseItems from "@/settings/base-items";
+import BaseItems from "../settings/base-items";
 // form 表单验证规则
-import Rules from "@/settings/rules";
+import Rules from "../settings/rules";
 
 export default {
   name: "block-from",

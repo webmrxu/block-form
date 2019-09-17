@@ -28,7 +28,8 @@ import BSwitch from "../components/form-items/b-switch.vue";
 import BTime from "../components/form-items/b-time.vue";
 import BNumber from "../components/form-items/b-number.vue";
 import BColor from "../components/form-items/b-color.vue";
-
+// element ui
+import { Form, FormItem } from "element-ui";
 import Utils from "../Utils/common";
 // 基础表单配置
 import BaseItems from "../settings/base-items";
@@ -49,7 +50,9 @@ export default {
     BNumber,
     BSelect,
     BEmail,
-    BColor
+    BColor,
+    Form,
+    FormItem
   },
   props: ["itemSetting", "formData", "formSetting"],
   data() {

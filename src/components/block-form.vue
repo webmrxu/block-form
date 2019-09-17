@@ -29,7 +29,7 @@ import BTime from "../components/form-items/b-time.vue";
 import BNumber from "../components/form-items/b-number.vue";
 import BColor from "../components/form-items/b-color.vue";
 // element ui
-import { Form, FormItem } from "element-ui";
+import { Form } from "element-ui";
 import Utils from "../Utils/common";
 // 基础表单配置
 import BaseItems from "../settings/base-items";
@@ -51,8 +51,7 @@ export default {
     BSelect,
     BEmail,
     BColor,
-    'el-form':Form,
-    'el-form-item':FormItem
+    "el-form": Form
   },
   props: ["itemSetting", "formData", "formSetting"],
   data() {
@@ -64,10 +63,14 @@ export default {
     // this.dealFormRules()
   },
   watch: {
-    itemSetting(newV, oldV) {
-      this.PItemSetting = newV;
-      this.mergeItemSetting();
-      this.dealFormRules();
+    itemSetting: {
+      handler(newV, oldV) {
+        this.PItemSetting = newV;
+        this.mergeItemSetting();
+        this.dealFormRules();
+      },
+      deep: true,
+      immediate: true
     }
   },
   methods: {

@@ -60,17 +60,13 @@ export default {
     };
   },
   created() {
-    // this.dealFormRules()
+    this.PItemSetting = this.itemSetting
   },
   watch: {
-    itemSetting: {
-      handler(newV, oldV) {
-        this.PItemSetting = newV;
-        this.mergeItemSetting();
-        this.dealFormRules();
-      },
-      deep: true,
-      immediate: true
+    itemSetting(newV, oldV) {
+      this.PItemSetting = newV;
+      this.mergeItemSetting();
+      this.dealFormRules();
     }
   },
   methods: {

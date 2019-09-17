@@ -16,7 +16,7 @@ export default {
   props: ["item", "value"],
   components: {
     'el-form-item': FormItem,
-    'el-form-item': Input
+    'el-input': Input
   },
   data() {
     return {

@@ -1,5 +1,5 @@
 import BlockForm from './components/block-form.vue';
-export default Clock;
+export default BlockForm;
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.component('block-form', BlockForm);
 }

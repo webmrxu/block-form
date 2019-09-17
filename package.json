@@ -13,7 +13,7 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "build": "node build/build.js",
-    "build:component": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build:publish": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
     "element-ui": "^2.8.2",

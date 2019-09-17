@@ -9,8 +9,6 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     filename: 'block-form.min.js',
-    library: 'Clock',
-    libraryTarget: 'umd',
     umdNamedDefine: true
   },
   optimization: {

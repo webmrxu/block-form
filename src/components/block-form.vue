@@ -51,8 +51,8 @@ export default {
     BSelect,
     BEmail,
     BColor,
-    Form,
-    FormItem
+    'el-form':Form,
+    'el-form-item':FormItem
   },
   props: ["itemSetting", "formData", "formSetting"],
   data() {

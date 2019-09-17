@@ -12,9 +12,15 @@
   </div>
 </template>
 <script>
+import { FormItem, Select, Option } from "element-ui";
 export default {
   name: 'b-select',
   props: ['item'],
+  components: {
+    'el-form-item': FormItem,
+    'el-select': Select,
+    'el-option': Option
+  },
   data() {
     return {
       list: [],

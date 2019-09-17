@@ -12,9 +12,15 @@
   </div>
 </template>
 <script>
+import { FormItem, CheckboxGroup, Checkbox } from "element-ui";
 export default {
   name: 'b-select',
   props: ['item'],
+  components: {
+    'el-form-item': FormItem,
+    'el-checkbox-group': CheckboxGroup,
+    'el-checkbox': Checkbox
+  },
   data() {
     return {
       itemValue: [],

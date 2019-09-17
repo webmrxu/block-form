@@ -12,9 +12,15 @@
   </div>
 </template>
 <script>
+import { FormItem, RadioGroup, Radio } from "element-ui";
 export default {
   name: 'b-select',
   props: ['item'],
+  components: {
+    'el-form-item': FormItem,
+    'el-radio-group': RadioGroup,
+    'el-radio': Radio
+  },
   data() {
     return {
       list: [],

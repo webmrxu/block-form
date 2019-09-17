@@ -11,9 +11,14 @@
   </div>
 </template>
 <script>
+import { FormItem, Rate } from "element-ui";
 export default {
   name: "base-input",
   props: ["item", "value"],
+  components: {
+    'el-form-item': FormItem,
+    'el-rate': Rate
+  },
   data() {
     return {
       itemValue: 0

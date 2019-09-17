@@ -12,9 +12,14 @@
   </div>
 </template>
 <script>
+import { FormItem , DatePicker} from "element-ui";
 export default {
   name: "base-input",
   props: ["item", "value"],
+  components: {
+    'el-form-item': FormItem,
+    'el-date-picker': DatePicker
+  },
   data() {
     return {
       itemValue: ''

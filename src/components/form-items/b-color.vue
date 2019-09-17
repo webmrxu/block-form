@@ -10,9 +10,14 @@
   </div>
 </template>
 <script>
+import { FormItem , ColorPicker} from "element-ui";
 export default {
   name: "base-input",
   props: ["item", "value"],
+  components: {
+    'el-form-item': FormItem,
+    'el-color-picker': ColorPicker
+  },
   data() {
     return {
       itemValue: '#409EFF'

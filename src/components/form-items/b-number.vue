@@ -10,9 +10,14 @@
   </div>
 </template>
 <script>
+import { FormItem, Input } from "element-ui";
 export default {
   name: "base-input",
   props: ["item", "value"],
+  components: {
+    'el-form-item': FormItem,
+    'el-form-item': Input
+  },
   data() {
     return {
       itemValue: ''

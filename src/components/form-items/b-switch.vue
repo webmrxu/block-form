@@ -10,9 +10,14 @@
   </div>
 </template>
 <script>
+import { FormItem, Switch } from "element-ui";
 export default {
   name: "base-input",
   props: ["item", "value"],
+  components: {
+    'el-form-item': FormItem,
+    'el-switch': Switch
+  },
   data() {
     return {
       itemValue: false

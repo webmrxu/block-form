@@ -14,9 +14,14 @@
   </div>
 </template>
 <script>
+import { FormItem, TimePicker } from "element-ui";
 export default {
   name: "base-input",
   props: ["item", "value"],
+  components: {
+    'el-form-item': FormItem,
+    'el-time-picker': TimePicker
+  },
   data() {
     return {
       itemValue: ''

@@ -1,0 +1,14 @@
+{
+  "name": "block-form",
+  "description": "Vue component with block-form",
+  "version": "1.0.0",
+  "author": "webmrxu@gmail.com",
+  "keywords": [
+    "vue",
+    "component",
+    "block-form"
+  ],
+  "main": "dist/block-form.min.js",
+  "license": "MIT",
+  "homepage": "https://github.com/webmrxu/block-form.git"
+}

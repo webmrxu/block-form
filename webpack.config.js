@@ -13,7 +13,7 @@ module.exports = {
     umdNamedDefine: true
   },
   optimization: {
-    minimize: true
+    minimize: false
   },
   module: {
     rules: [

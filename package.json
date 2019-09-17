@@ -1,19 +1,20 @@
 {
   "name": "block-form",
-  "version": "1.0.0",
-  "description": "block form",
-  "main":"dist/block-form.min.js",
-  "author": "webmrxu@foxmail.com",
-  "private": true,
+  "description": "Vue component with block-form",
+  "version": "1.0.5",
+  "author": "webmrxu@gmail.com",
+  "main": "dist/block-form.min.js",
+  "license": "MIT",
+  "homepage": "https://github.com/webmrxu/block-form.git",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
+    "build:publish": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-    "build": "node build/build.js",
-    "build:publish": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "node build/build.js"
   },
   "dependencies": {
     "element-ui": "^2.8.2",
@@ -87,5 +88,10 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
+  ],
+  "keywords": [
+    "vue",
+    "component",
+    "block-form"
   ]
 }

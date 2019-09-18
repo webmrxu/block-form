@@ -16,6 +16,7 @@
   </div>
 </template>
 <script>
+import 'element-ui/lib/theme-chalk/index.css'
 import BInput from "../components/form-items/b-input.vue";
 import BSelect from "../components/form-items/b-select.vue";
 import BEmail from "../components/form-items/b-email.vue";

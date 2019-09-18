@@ -28,6 +28,7 @@ module.exports = {
     'space-before-function-paren': 'off',
     'quotes': 'off',
     'semi': 'off',
+    'no-new': 'off',
     'no-new-wrappers': 'off'
   }
 }

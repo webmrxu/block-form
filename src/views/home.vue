@@ -82,7 +82,7 @@
 <script>
 import Utils from "@/Utils/common";
 // 积木表单组件
-import BlockFrom from "@/components/block-form";
+import BlockForm from "@/components/block-form";
 // 基础表单配置
 import BaseItems from "@/settings/base-items";
 // 核心字段配置
@@ -93,7 +93,7 @@ import EditSetting from "./edit-item";
 export default {
   name: "home",
   components: {
-    BlockFrom
+    BlockForm
   },
   data() {
     return {

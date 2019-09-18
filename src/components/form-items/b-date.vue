@@ -19,7 +19,7 @@
 <script>
 import { FormItem, DatePicker } from "element-ui";
 export default {
-  name: "base-input",
+  name: "b-date",
   props: ["item", "value"],
   components: {
     'el-form-item': FormItem,

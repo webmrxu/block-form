@@ -16,7 +16,7 @@
 <script>
 import { FormItem, TimePicker } from "element-ui";
 export default {
-  name: "base-input",
+  name: "b-time",
   props: ["item", "value"],
   components: {
     'el-form-item': FormItem,

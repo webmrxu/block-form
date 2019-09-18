@@ -14,7 +14,7 @@
 <script>
 import { FormItem, CheckboxGroup, Checkbox } from "element-ui";
 export default {
-  name: 'b-select',
+  name: 'b-checkbox',
   props: ['item'],
   components: {
     'el-form-item': FormItem,

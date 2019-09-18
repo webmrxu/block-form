@@ -14,7 +14,7 @@
 <script>
 import { FormItem, RadioGroup, Radio } from "element-ui";
 export default {
-  name: 'b-select',
+  name: 'b-radio',
   props: ['item'],
   components: {
     'el-form-item': FormItem,

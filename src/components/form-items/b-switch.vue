@@ -12,7 +12,7 @@
 <script>
 import { FormItem, Switch } from "element-ui";
 export default {
-  name: "base-input",
+  name: "b-switch",
   props: ["item", "value"],
   components: {
     'el-form-item': FormItem,

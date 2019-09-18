@@ -12,7 +12,7 @@
 <script>
 import { FormItem, Input } from "element-ui";
 export default {
-  name: "base-email",
+  name: "b-email",
   props: ["item", "value"],
   components: {
     'el-form-item': FormItem,

@@ -13,7 +13,7 @@
 <script>
 import { FormItem, ColorPicker } from "element-ui";
 export default {
-  name: "base-input",
+  name: "b-color",
   props: ["item", "value"],
   components: {
     'el-form-item': FormItem,

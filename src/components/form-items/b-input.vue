@@ -12,7 +12,7 @@
 <script>
 import { FormItem, Input } from "element-ui";
 export default {
-  name: "base-input",
+  name: "b-input",
   props: ["item", "value"],
   components: {
     'el-form-item': FormItem,

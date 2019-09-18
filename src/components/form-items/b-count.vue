@@ -13,7 +13,7 @@
 <script>
 import { FormItem, InputNumber } from "element-ui";
 export default {
-  name: "base-input",
+  name: "b-count",
   props: ["item", "value"],
   components: {
     'el-form-item': FormItem,

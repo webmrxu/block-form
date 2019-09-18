@@ -1,6 +1,11 @@
 <template>
   <div>
-    <el-form-item :label="item.title" :rules="item._rules" :prop="item.field" :label-width="item.labelWidth">
+    <el-form-item
+      :label="item.title"
+      :rules="item._rules"
+      :prop="item.field"
+      :label-width="item.labelWidth"
+    >
       <el-date-picker
         v-model="itemValue"
         :placeholder="item.placeholder"
@@ -12,7 +17,7 @@
   </div>
 </template>
 <script>
-import { FormItem , DatePicker} from "element-ui";
+import { FormItem, DatePicker } from "element-ui";
 export default {
   name: "base-input",
   props: ["item", "value"],

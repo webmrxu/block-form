@@ -1,16 +1,17 @@
 <template>
   <div>
-    <el-form-item :label="item.title" :rules="item._rules" :prop="item.field" :label-width="item.labelWidth">
-      <el-color-picker
-        v-model="itemValue"
-        :placeholder="item.placeholder"
-        @input="change"
-      ></el-color-picker>
+    <el-form-item
+      :label="item.title"
+      :rules="item._rules"
+      :prop="item.field"
+      :label-width="item.labelWidth"
+    >
+      <el-color-picker v-model="itemValue" :placeholder="item.placeholder" @input="change"></el-color-picker>
     </el-form-item>
   </div>
 </template>
 <script>
-import { FormItem , ColorPicker} from "element-ui";
+import { FormItem, ColorPicker } from "element-ui";
 export default {
   name: "base-input",
   props: ["item", "value"],

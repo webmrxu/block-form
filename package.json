@@ -1,7 +1,7 @@
 {
   "name": "block-form",
   "description": "Vue component with block-form",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "author": "webmrxu@gmail.com",
   "main": "dist/block-form.min.js",
   "license": "MIT",

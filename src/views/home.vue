@@ -52,7 +52,7 @@
             <div class="float-r bf-form-close" @click="showItemEditState=false">X</div>
           </div>
           <div class="bf-form-body">
-            <block-from :itemSetting="editSetting" :formData="showEditForm" />
+            <block-form :itemSetting="editSetting" :formData="showEditForm" />
           </div>
         </div>
       </transition>

@@ -178,6 +178,10 @@ export default {
 <style scoped>
 .form-item-component {
   float: left;
-  height: 62px;
+}
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
 }
 </style>

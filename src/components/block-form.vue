@@ -62,6 +62,8 @@ export default {
   },
   created() {
     this.PItemSetting = this.itemSetting
+    this.mergeItemSetting()
+    this.dealFormRules()
   },
   watch: {
     itemSetting(newV, oldV) {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <block-form :itemSetting="setting" :formData="form" ref="formref"/>
+    <block-form :setting="setting" :formData="form" ref="formref"/>
     <div>
       <button @click="submit">submit</button> <button @click="validate">validate</button>
     </div>

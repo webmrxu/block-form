@@ -3,7 +3,7 @@
     <div>
       <el-form ref="form" :model="formData" class="clearfix">
         <component
-          v-for="item in PItemSetting"
+          v-for="item in Psetting"
           :is="'b-'+item.type"
           :key="item.id"
           :item="item"
@@ -54,21 +54,21 @@ export default {
     BColor,
     "el-form": Form
   },
-  props: ["itemSetting", "formData", "formSetting"],
+  props: ["setting", "formData", "formSetting"],
   data() {
     return {
-      PItemSetting: []
+      Psetting: []
     }
   },
   created() {
-    this.PItemSetting = this.itemSetting
-    this.mergeItemSetting()
+    this.Psetting = this.setting
+    this.mergesetting()
     this.dealFormRules()
   },
   watch: {
-    itemSetting(newV, oldV) {
-      this.PItemSetting = newV
-      this.mergeItemSetting()
+    setting(newV, oldV) {
+      this.Psetting = newV
+      this.mergesetting()
       this.dealFormRules()
     }
   },
@@ -95,14 +95,14 @@ export default {
       })
     },
     // 合并基础配置。
-    mergeItemSetting() {
+    mergesetting() {
       let items = []
       if (
-        this.PItemSetting &&
-        this.PItemSetting.length &&
-        this.PItemSetting.length > 0
+        this.Psetting &&
+        this.Psetting.length &&
+        this.Psetting.length > 0
       ) {
-        this.PItemSetting.forEach(v => {
+        this.Psetting.forEach(v => {
           this.mergeBaseSetting(v)
           this.mergeRule(v)
           items.push(v)
@@ -132,7 +132,7 @@ export default {
     },
     // 处理表单验证规则
     dealFormRules() {
-      this.PItemSetting.forEach(v => {
+      this.Psetting.forEach(v => {
         this.dealRule(v)
       })
     },

@@ -11,10 +11,10 @@
     <!-- 表单展示区 -->
     <div class="form-box" :style="formBoxStyle">
       <div class="form-container">
-        <block-from :itemSetting="itemSetting" :formData="formData" ref="b-form" />
+        <block-from :setting="setting" :formData="formData" ref="b-form" />
         <div v-if="!showEdit" class="edit-box">
           <div
-            v-for="item in itemSetting"
+            v-for="item in setting"
             :key="item.field"
             @click="showEditItem(item)"
             :style="{width: item.itemWidth}"
@@ -52,7 +52,7 @@
             <div class="float-r bf-form-close" @click="showItemEditState=false">X</div>
           </div>
           <div class="bf-form-body">
-            <block-form :itemSetting="editSetting" :formData="showEditForm" />
+            <block-form :setting="editSetting" :formData="showEditForm" />
           </div>
         </div>
       </transition>
@@ -68,8 +68,8 @@
               <div class="float-r bf-form-close" @click="showSetting=false">X</div>
             </div>
             <div class="bf-form-body">
-              <h2>itemSetting 配置</h2>
-              <pre class="language-json"><code class="language-json">{{itemSettingStr}}</code></pre>
+              <h2>setting 配置</h2>
+              <pre class="language-json"><code class="language-json">{{settingStr}}</code></pre>
               <!-- <h2>FormSetting 配置</h2>
               <pre class="language-json"><code class="language-json">{{FormSetting}}</code></pre>-->
             </div>
@@ -98,7 +98,7 @@ export default {
   data() {
     return {
       baseItems: BaseItems,
-      itemSetting: [],
+      setting: [],
       formData: {},
       formBoxStyle: {
         marginLeft: "100px"
@@ -111,7 +111,7 @@ export default {
     };
   },
   mounted() {
-    this.itemSetting = ItemsSetting;
+    this.setting = ItemsSetting;
     this.editSetting = EditSetting;
   },
   created() {
@@ -120,8 +120,8 @@ export default {
     window.onresize = Utils.debounce(_this.dealWindowResize, 500);
   },
   computed: {
-    itemSettingStr() {
-      let newObj = JSON.parse(JSON.stringify(Utils.deepCopy(this.itemSetting)));
+    settingStr() {
+      let newObj = JSON.parse(JSON.stringify(Utils.deepCopy(this.setting)));
       for (let key in newObj) {
         let item = newObj[key];
         delete item._rules;
@@ -163,10 +163,10 @@ export default {
         if (v.type === type) {
           v.field = "_" + v.type + "_" + Utils.uuid(7);
           v["_isNewAdd"] = true;
-          this.itemSetting.push(JSON.parse(JSON.stringify(v)));
+          this.setting.push(JSON.parse(JSON.stringify(v)));
         }
       });
-      // console.log(this.itemSetting)
+      // console.log(this.setting)
     }
   }
 };

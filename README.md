@@ -62,6 +62,10 @@ export default {
 </script>
 ```
 
+## LICENSE
+
+> MIT
+
 # 目录结构
 
 ```

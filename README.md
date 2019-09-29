@@ -62,9 +62,6 @@ export default {
 </script>
 ```
 
-## LICENSE
-
-> MIT
 
 # 目录结构
 
@@ -179,4 +176,8 @@ resetField	对该表单项进行重置，将其值重置为初始值并移除校
 # 问题
 
 1 使用npm 安装并使用时，表单验证规则失效
+
+
+## LICENSE
+[MIT](LICENSE)
 

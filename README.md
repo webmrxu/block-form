@@ -41,7 +41,7 @@ export default {
           type: 'input',
           title: '标题',
           itemWidth: '60%',
-          rules: ['1']
+          rulesId: ['1']
         },
         {
           field: 'placeholder',
@@ -173,9 +173,13 @@ Form-Item Methods
 resetField	对该表单项进行重置，将其值重置为初始值并移除校验结果	-
 ```
 
+# 记录
+1 父组件setting属性，改为子组件不再直接对这个对象进行处理，使用clone出新对象进行处理。TODOLIST
+
+
 # 问题
 
-1 使用npm 安装并使用时，表单验证规则失效
+1 
 
 
 ## LICENSE

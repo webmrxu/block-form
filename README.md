@@ -155,33 +155,7 @@ let rules = [
 
 ```
 
-
-# Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# core components
 
 ```
 form
@@ -201,8 +175,8 @@ rules	表单验证规则	object	—	—
 Form-Item Methods
 resetField	对该表单项进行重置，将其值重置为初始值并移除校验结果	-
 ```
+
 # 问题
 
-1 不应该有公共样式，样式需要全部在组件中，并添加命名空间
+1 使用npm 安装并使用时，表单验证规则失效
 
-2 先实现block-form输入和输出

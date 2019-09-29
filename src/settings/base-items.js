@@ -114,7 +114,24 @@ const baseItemsSetting = [
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px'
-  }
+  },
+  {
+    type: 'phoneNum',
+    title: '手机号码',
+    rulesId: ['5'],
+    itemWidth: '50%',
+    labelWidth: '150px',
+    itemHeight: '62px'
+  },
+  {
+    type: 'url',
+    title: '网址',
+    rulesId: ['6'],
+    itemWidth: '50%',
+    labelWidth: '150px',
+    itemHeight: '62px'
+  },
+  
 ]
 
 export default baseItemsSetting

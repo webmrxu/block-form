@@ -54,6 +54,32 @@ let rules = [
     maxlen: '',
     minrang: '',
     maxrang: ''
+  },
+  {
+    id: '5',
+    ruleTyle: 'pattern',
+    ruleName: '手机号验证',
+    ruleDes: '手机号验证',
+    message: '请输入正确的手机号码',
+    trigger: 'blur',
+    pattern: '^((0[0-9]{2,3}-[0-9]{7,8})|(1[3456789][0-9]{9}))$',
+    minlen: '',
+    maxlen: '',
+    minrang: '',
+    maxrang: ''
+  },
+  {
+    id: '6',
+    ruleTyle: 'pattern',
+    ruleName: 'url',
+    ruleDes: 'url',
+    message: '请输入正确的url,以http或者https开头',
+    trigger: 'blur',
+    pattern: '(?:(https?|ftp|file):)?\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]',
+    minlen: '',
+    maxlen: '',
+    minrang: '',
+    maxrang: ''
   }
 ]
 export default rules

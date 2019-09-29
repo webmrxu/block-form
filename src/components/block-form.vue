@@ -54,7 +54,7 @@ export default {
   data() {
     return {
       Psetting: [],
-      userInputSetting: ['email', 'number', 'idcard']
+      userInputSetting: ['email', 'number', 'idcard', 'url', 'phoneNum']
     }
   },
   created() {

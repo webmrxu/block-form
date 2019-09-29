@@ -3,9 +3,9 @@
     <div>
       <el-form ref="form" :model="formData" class="clearfix">
         <component
-          v-for="item in Psetting"
+          v-for="(item,index) in Psetting"
           :is="'b-'+item.type"
-          :key="item.id"
+          :key="index"
           :item="item"
           :value.sync="formData[item.field]"
           :style="dealItemStyle(item)"
@@ -19,7 +19,6 @@
 import 'element-ui/lib/theme-chalk/index.css'
 import BInput from "../components/form-items/b-input.vue"
 import BSelect from "../components/form-items/b-select.vue"
-import BEmail from "../components/form-items/b-email.vue"
 import BCheckbox from "../components/form-items/b-checkbox.vue"
 import BCount from "../components/form-items/b-count.vue"
 import BDate from "../components/form-items/b-date.vue"
@@ -27,7 +26,6 @@ import BRadio from "../components/form-items/b-radio.vue"
 import BRate from "../components/form-items/b-rate.vue"
 import BSwitch from "../components/form-items/b-switch.vue"
 import BTime from "../components/form-items/b-time.vue"
-import BNumber from "../components/form-items/b-number.vue"
 import BColor from "../components/form-items/b-color.vue"
 // element ui
 import { Form } from "element-ui"
@@ -48,9 +46,7 @@ export default {
     BRadio,
     BSwitch,
     BTime,
-    BNumber,
     BSelect,
-    BEmail,
     BColor,
     "el-form": Form
   },
@@ -97,11 +93,7 @@ export default {
     // 合并基础配置。
     mergesetting() {
       let items = []
-      if (
-        this.Psetting &&
-        this.Psetting.length &&
-        this.Psetting.length > 0
-      ) {
+      if (this.Psetting && this.Psetting.length && this.Psetting.length > 0) {
         this.Psetting.forEach(v => {
           this.mergeBaseSetting(v)
           this.mergeRule(v)
@@ -132,9 +124,11 @@ export default {
     },
     // 处理表单验证规则
     dealFormRules() {
-      this.Psetting.forEach(v => {
-        this.dealRule(v)
-      })
+      if (this.Psetting && this.Psetting.length > 0) {
+        this.Psetting.forEach(v => {
+          this.dealRule(v)
+        })
+      }
     },
     // 处理单个验证规则
     dealRule(v) {

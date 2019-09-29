@@ -24,13 +24,6 @@ const itemsSetting = [
     ]
   },
   {
-    type: 'email',
-    placeholder: '请输入',
-    title: '邮箱输入框',
-    field: 'userEmail',
-    rulesId: ['1', '2']
-  },
-  {
     type: 'radio',
     title: '是否可选择',
     field: 'radiosfield',

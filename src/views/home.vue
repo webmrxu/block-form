@@ -2,7 +2,7 @@
   <div class="clearfix home">
     <!-- 字段列表 -->
     <div class="formitem-box">
-      <div @click="addInputItem(item.type)" v-for="item in baseItems" :key="item.type">
+      <div @click="addInputItem(item.id)" v-for="(item,index) in baseItems" :key="index">
         <div>
           <span>{{item.title}}</span>
         </div>
@@ -11,7 +11,7 @@
     <!-- 表单展示区 -->
     <div class="form-box" :style="formBoxStyle">
       <div class="form-container">
-        <block-from :setting="setting" :formData="formData" ref="b-form" />
+        <block-form :setting="setting" :formData="formData" ref="b-form" />
         <div v-if="!showEdit" class="edit-box">
           <div
             v-for="item in setting"
@@ -19,7 +19,6 @@
             @click="showEditItem(item)"
             :style="{width: item.itemWidth}"
           >
-            <!-- <span>{{item.title}}</span> -->
           </div>
         </div>
       </div>
@@ -70,8 +69,6 @@
             <div class="bf-form-body">
               <h2>setting 配置</h2>
               <pre class="language-json"><code class="language-json">{{settingStr}}</code></pre>
-              <!-- <h2>FormSetting 配置</h2>
-              <pre class="language-json"><code class="language-json">{{FormSetting}}</code></pre>-->
             </div>
           </div>
         </div>
@@ -93,7 +90,7 @@ import EditSetting from "./edit-item";
 export default {
   name: "home",
   components: {
-    BlockForm
+    'block-form': BlockForm
   },
   data() {
     return {
@@ -158,12 +155,12 @@ export default {
       this.formBoxStyle.marginLeft = margin / 2 - 375 + "px";
     },
     // 新增一个字段
-    addInputItem(type) {
+    addInputItem(id) {
       BaseItems.forEach(v => {
-        if (v.type === type) {
+        if (v.id === id) {
           v.field = "_" + v.type + "_" + Utils.uuid(7);
           v["_isNewAdd"] = true;
-          this.setting.push(JSON.parse(JSON.stringify(v)));
+          this.setting.push(Utils.deepCopy(v));
         }
       });
       // console.log(this.setting)

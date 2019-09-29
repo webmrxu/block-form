@@ -4,6 +4,63 @@
 
 积木表单
 
+# Install
+
+> npm install block-form
+
+# Quick Start
+
+```html
+<template>
+  <div id="app">
+    <block-form :itemSetting="setting" :formData="form" />
+    <div>
+      <button @click="test">test</button>
+    </div>
+  </div>
+</template>
+
+<script>
+import BlockForm from 'block-form'
+export default {
+  name: "quck-start",
+  components: {
+    BlockForm
+  },
+  methods: {
+    test() {
+      console.log(this.form)
+    }
+  },
+  data() {
+    return {
+      form: {},
+      setting: [
+        {
+          field: 'title',
+          type: 'input',
+          title: '标题',
+          itemWidth: '60%',
+          rules: ['1']
+        },
+        {
+          field: 'placeholder',
+          type: 'count',
+          title: '日期',
+          itemWidth: '60%'
+        },
+        {
+          field: 'itemWidth',
+          type: 'email',
+          title: '邮箱',
+          itemWidth: '60%'
+        }
+      ]
+    }
+  }
+};
+</script>
+```
 
 # 目录结构
 

@@ -183,7 +183,7 @@ npm test
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-
+```
 form
 label-position 表单域标签的位置	string	right/left/top	right
 label-width 表单域标签的宽度，作为 Form 直接子元素的 form-item 会继承该值	string	—	—
@@ -200,7 +200,9 @@ label-width	表单域标签的的宽度，例如 '50px'	string	—	—
 rules	表单验证规则	object	—	—
 Form-Item Methods
 resetField	对该表单项进行重置，将其值重置为初始值并移除校验结果	-
-
+```
 # 问题
+
 1 不应该有公共样式，样式需要全部在组件中，并添加命名空间
+
 2 先实现block-form输入和输出

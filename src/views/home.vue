@@ -2,7 +2,7 @@
   <div class="clearfix home">
     <!-- 字段列表 -->
     <div class="formitem-box">
-      <div @click="addInputItem(item.id)" v-for="(item,index) in baseItems" :key="index">
+      <div @click="addInputItem(item.type)" v-for="(item,index) in baseItems" :key="index">
         <div>
           <span>{{item.title}}</span>
         </div>
@@ -77,16 +77,16 @@
   </div>
 </template>
 <script>
-import Utils from "@/Utils/common";
+import Utils from "@/Utils/common"
 // 积木表单组件
-import BlockForm from "@/components/block-form";
+import BlockForm from "@/components/block-form"
 // 基础表单配置
-import BaseItems from "@/settings/base-items";
+import BaseItems from "@/settings/base-items"
 // 核心字段配置
-import ItemsSetting from "@/settings/items";
+import ItemsSetting from "@/settings/items"
 
 // 编辑字段表单配置
-import EditSetting from "./edit-item";
+import EditSetting from "./edit-item"
 export default {
   name: "home",
   components: {
@@ -105,64 +105,63 @@ export default {
       editSetting: {},
       showEditForm: {},
       showEdit: true
-    };
+    }
   },
   mounted() {
-    this.setting = ItemsSetting;
-    this.editSetting = EditSetting;
+    this.setting = ItemsSetting
+    this.editSetting = EditSetting
   },
   created() {
-    let _this = this;
-    this.dealWindowResize();
-    window.onresize = Utils.debounce(_this.dealWindowResize, 500);
+    let _this = this
+    this.dealWindowResize()
+    window.onresize = Utils.debounce(_this.dealWindowResize, 500)
   },
   computed: {
     settingStr() {
-      let newObj = JSON.parse(JSON.stringify(Utils.deepCopy(this.setting)));
+      let newObj = JSON.parse(JSON.stringify(Utils.deepCopy(this.setting)))
       for (let key in newObj) {
-        let item = newObj[key];
-        delete item._rules;
-        delete item.rules;
+        let item = newObj[key]
+        delete item._rules
+        delete item.rules
       }
-      return JSON.stringify(newObj, null, 2);
+      return JSON.stringify(newObj, null, 2)
     }
   },
   methods: {
     // 重置表单验证
     clearValidate() {
-      this.$refs["b-form"].clearValidate();
+      this.$refs["b-form"].clearValidate()
     },
     // 触发表单验证
     doValidate() {
       this.$refs["b-form"].validate(result => {
-        console.log(result);
-      });
+        console.log(result)
+      })
     },
     // 获取输入值
     getInput() {
-      console.log(this.formData);
+      console.log(this.formData)
     },
     // 显示该该字段配置
     showEditItem(item) {
-      this.showItemEditState = true;
-      this.showEditForm = item;
+      this.showItemEditState = true
+      this.showEditForm = item
     },
     // 处理浏览器缩放
     dealWindowResize() {
-      let windowWidth = window.document.documentElement.getBoundingClientRect()
-        .width;
-      let margin = windowWidth - 793;
-      this.formBoxStyle.marginLeft = margin / 2 - 375 + "px";
+      let windowWidth = window.document.documentElement.getBoundingClientRect().width
+      let margin = windowWidth - 793
+      this.formBoxStyle.marginLeft = margin / 2 - 375 + "px"
     },
     // 新增一个字段
-    addInputItem(id) {
+    addInputItem(type) {
       BaseItems.forEach(v => {
-        if (v.id === id) {
-          v.field = "_" + v.type + "_" + Utils.uuid(7);
-          v["_isNewAdd"] = true;
-          this.setting.push(Utils.deepCopy(v));
+        if (v.type === type) {
+          v.field = "_" + v.type + "_" + Utils.uuid(7)
+          v["_isNewAdd"] = true
+          this.setting.push(Utils.deepCopy(v))
         }
-      });
+      })
       // console.log(this.setting)
     }
   }

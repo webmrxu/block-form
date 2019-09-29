@@ -4,7 +4,7 @@
       <el-form ref="form" :model="formData" class="clearfix">
         <component
           v-for="(item,index) in Psetting"
-          :is="'b-'+item.type"
+          :is="item._userInputComponent?'b-input':'b-'+item.type"
           :key="index"
           :item="item"
           :value.sync="formData[item.field]"
@@ -53,7 +53,8 @@ export default {
   props: ["setting", "formData", "formSetting"],
   data() {
     return {
-      Psetting: []
+      Psetting: [],
+      userInputSetting: ['email', 'number', 'idcard']
     }
   },
   created() {
@@ -117,6 +118,9 @@ export default {
     // 合并基础配置
     mergeBaseSetting(v) {
       BaseItems.forEach(b => {
+        if (this.userInputSetting.includes(v.type)) {
+          v._userInputComponent = true
+        }
         if (v.type === b.type) {
           Utils.deepMerge(v, b)
         }

@@ -41,7 +41,19 @@ let rules = [
     maxlen: '',
     minrang: '',
     maxrang: ''
+  },
+  {
+    id: '4',
+    ruleTyle: 'pattern',
+    ruleName: '身份证验证',
+    ruleDes: '身份证号码为15位或者18位，最后一位是数字或字符X',
+    message: '请输入正确的身份证号码',
+    trigger: 'blur',
+    pattern: '^([0-9]{18,18}|[0-9]{15,15}|[0-9]{17,17}x)',
+    minlen: '',
+    maxlen: '',
+    minrang: '',
+    maxrang: ''
   }
 ]
-
 export default rules

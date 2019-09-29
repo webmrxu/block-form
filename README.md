@@ -1,12 +1,12 @@
 # block-form
 
-> block form
-
 积木表单
 
 # Install
 
-> npm install block-form
+```
+$ npm install block-form
+```
 
 # Quick Start
 

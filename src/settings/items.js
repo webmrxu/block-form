@@ -64,11 +64,6 @@ const itemsSetting = [
     field: 'ratefield'
   },
   {
-    type: 'color',
-    title: '颜色选择框',
-    field: 'colorfield'
-  },
-  {
     type: 'checkbox',
     placeholder: '请输入',
     title: '多选项输入',

@@ -29,6 +29,7 @@ module.exports = {
     'quotes': 'off',
     'semi': 'off',
     'no-new': 'off',
-    'no-new-wrappers': 'off'
+    'no-new-wrappers': 'off',
+    'no-useless-escape': 'off'
   }
 }

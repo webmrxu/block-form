@@ -130,8 +130,7 @@ const baseItemsSetting = [
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px'
-  },
-  
+  }
 ]
 
 export default baseItemsSetting

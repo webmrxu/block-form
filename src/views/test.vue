@@ -46,6 +46,22 @@ export default {
           type: 'email',
           title: '邮箱',
           itemWidth: '60%'
+        },
+        {
+          field: 'select',
+          type: 'select',
+          title: '下拉选择',
+          itemWidth: '60%',
+          params: [
+            {
+              name: '选项1',
+              value: 'value1'
+            },
+            {
+              name: '选项2',
+              value: 'value2'
+            }
+          ]
         }
       ]
     }

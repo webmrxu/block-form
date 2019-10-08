@@ -71,13 +71,11 @@ src/
   components/ 组件目录
     block-form.vue 积木表单核心form 父组件
     form-items/ 积木表单组件子组件(输入组件) 子组件
-      b-input.vue  基础输入组件
       b-checkbox.vue 复选框输入组件
       b-color.vue 颜色选择输入组件
       b-count.vue 数值计数输入组件
       b-date.vue 日期输入组件
-      b-email.vue 邮箱格式输入组件
-      b-number.vue 数值格式输入组件
+      b-input.vue  基础输入组件
       b-radio.vue 单选输入组件
       b-rate.vue 评分输入组件
       b-select.vue 下拉选择输入组件

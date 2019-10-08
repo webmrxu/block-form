@@ -34,8 +34,8 @@ export default {
     }
   },
   mounted() {
-    if (Array.isArray(this.item.paramList)) {
-      this.list = this.item.paramList
+    if (Array.isArray(this.item.params)) {
+      this.list = this.item.params
     }
     // console.log(this.item)
   },

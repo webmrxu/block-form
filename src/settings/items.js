@@ -12,7 +12,7 @@ const itemsSetting = [
     title: '下拉选择框',
     field: 'parteents',
     rulesId: ['1'],
-    paramList: [
+    params: [
       {
         value: 'zz',
         name: '正则'
@@ -27,7 +27,7 @@ const itemsSetting = [
     type: 'radio',
     title: '是否可选择',
     field: 'radiosfield',
-    paramList: [
+    params: [
       {
         value: 'radiotrue',
         name: '是'
@@ -68,7 +68,7 @@ const itemsSetting = [
     placeholder: '请输入',
     title: '多选项输入',
     field: 'checkboxfield',
-    paramList: [
+    params: [
       {
         value: 'type1',
         name: '主题1'

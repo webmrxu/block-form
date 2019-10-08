@@ -47,7 +47,7 @@ const editSetting = [
     field: 'parteents',
     paramCode: 'code',
     itemWidth: '60%',
-    paramList: [
+    params: [
       {
         value: 'ali',
         name: '正则'

@@ -91,7 +91,7 @@ src/
 
 ## 属性
 
-+ setting: Array[Object](./doc/setting.md) 表单配置
++ setting:Array:[Object](./doc/setting.md) 表单配置
 + formData:Object 表单数据(输入输出)双向绑定
 
 ## 事件

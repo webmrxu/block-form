@@ -45,7 +45,7 @@ let rules = [
   {
     id: '4',
     ruleTyle: 'pattern',
-    ruleName: '身份证验证',
+    ruleName: '身份证号码验证',
     ruleDes: '身份证号码为15位或者18位，最后一位是数字或字符X',
     message: '请输入正确的身份证号码',
     trigger: 'blur',
@@ -71,7 +71,7 @@ let rules = [
   {
     id: '6',
     ruleTyle: 'pattern',
-    ruleName: 'url',
+    ruleName: 'url验证',
     ruleDes: 'url',
     message: '请输入正确的url,以http或者https开头',
     trigger: 'blur',

@@ -47,8 +47,17 @@ Array:Object 类型
 
 # rulesId
 
-form表单验证id,
+Array:String 枚举类型
 
-只有提供有限的表单验证规则，后期会添加自定义验证规则
+form表单验证id
+
+1 必填验证
+2 邮箱格式
+3 正整数验证
+4 身份证号码验证
+5 手机号验证
+6 url验证
+
+[../src/settings/rules.js](../src/settings/rules.js)
 
 

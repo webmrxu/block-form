@@ -62,6 +62,22 @@ export default {
               value: 'value2'
             }
           ]
+        },
+        {
+          field: 'checkbox',
+          type: 'checkbox',
+          title: '多选框',
+          itemWidth: '60%',
+          params: [
+            {
+              name: '选择1',
+              value: '1'
+            },
+            {
+              name: '选择2',
+              value: '2'
+            }
+          ]
         }
       ]
     }

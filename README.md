@@ -10,6 +10,8 @@ $ npm install block-form
 
 # Quick Start
 
+[测试页面](./src/views/test.vue)
+
 ```html
 <template>
   <div id="app">

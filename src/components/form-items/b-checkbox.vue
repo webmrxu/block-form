@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="b-checkbox">
     <el-form-item  :label="item.title" :label-width="item.labelWidth" :prop="item.field" :rules="item._rules">
       <el-checkbox-group
         v-model="itemValue"
-        @input="change" class="b-select"
+        @input="change"
         :placeholder="item.placeholder"
       >
         <el-checkbox v-for="item in list" :key="item.value" :label="item.value">{{item.name}}</el-checkbox>
@@ -50,5 +50,8 @@ export default {
 <style scoped >
 .b-select {
   width: 100%;
+}
+.b-checkbox /deep/ .el-checkbox-group {
+  font-size: 14px;
 }
 </style>

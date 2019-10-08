@@ -6,7 +6,7 @@
         @input="change" class="b-select"
         :placeholder="item.placeholder"
       >
-        <el-option v-for="item in list" :key="item.value" :label="item.name" :value="item.value"></el-option>
+        <el-option v-for="(item,index) in list" :key="index" :label="item.name" :value="item.value"></el-option>
       </el-select>
     </el-form-item>
   </div>

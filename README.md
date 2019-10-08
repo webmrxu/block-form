@@ -10,7 +10,6 @@ $ npm install block-form
 
 # Quick Start
 
-[测试页面](./src/views/test.vue)
 
 ```html
 <template>
@@ -65,6 +64,7 @@ export default {
 </script>
 ```
 
+[./src/views/test.vue](./src/views/test.vue)
 
 # 核心组件
 

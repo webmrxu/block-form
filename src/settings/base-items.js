@@ -13,11 +13,7 @@ const baseItemsSetting = [
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px',
-    paramsList: [
-      {
-        value: 'value1',
-        name: '测试'
-      }
+    params: [
     ]
   },
   {
@@ -26,11 +22,7 @@ const baseItemsSetting = [
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px',
-    paramsList: [
-      {
-        value: 'value1',
-        name: '测试'
-      }
+    params: [
     ]
   },
   {
@@ -54,11 +46,7 @@ const baseItemsSetting = [
     itemWidth: '50%',
     labelWidth: '150px',
     itemHeight: '62px',
-    paramsList: [
-      {
-        value: 'value1',
-        name: '测试'
-      }
+    params: [
     ]
   },
   {

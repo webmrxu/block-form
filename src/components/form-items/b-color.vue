@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="b-color">
     <el-form-item
       :label="item.title"
       :rules="item._rules"
@@ -38,3 +38,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.b-color /deep/ .el-color-picker {
+  display: block;
+}
+</style>

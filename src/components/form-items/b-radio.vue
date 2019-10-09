@@ -2,12 +2,14 @@
   <div>
     <el-form-item  :label="item.title" :label-width="item.labelWidth" :prop="item.field" :rules="item._rules">
       <el-radio-group
+        v-if="list.length > 0"
         v-model="form.region"
         @input="change" class="b-select"
         :placeholder="item.placeholder"
       >
         <el-radio v-for="item in list" :key="item.value" :label="item.value" :value="item.value">{{item.name}}</el-radio>
       </el-radio-group>
+      <span class="b-gray" v-if="list.length === 0">无选项</span>
     </el-form-item>
   </div>
 </template>
@@ -48,5 +50,8 @@ export default {
 <style scoped >
 .b-select {
   width: 100%;
+}
+.b-gray {
+  color: #777;
 }
 </style>

@@ -6,8 +6,9 @@
         @input="change"
         :placeholder="item.placeholder"
       >
-        <el-checkbox v-for="item in list" :key="item.value" :label="item.value">{{item.name}}</el-checkbox>
+        <el-checkbox v-for="(item, index) in list" :key="index" :label="item.value">{{item.name}}</el-checkbox>
       </el-checkbox-group>
+      <span class="b-gray" v-if="list.length === 0">无选项</span>
     </el-form-item>
   </div>
 </template>
@@ -53,5 +54,8 @@ export default {
 }
 .b-checkbox /deep/ .el-checkbox-group {
   font-size: 14px;
+}
+.b-gray {
+  color: #777;
 }
 </style>

@@ -79,4 +79,22 @@ form表单验证id
 
 [../src/settings/rules.js](../src/settings/rules.js)
 
+# width
+
+单个输入框的宽度
+
+默认为 50%
+
+# height
+
+单个输入框的高度
+
+默认为 62px
+
+# labelWidth
+
+label 的标题的宽度
+
+默认为 150px
+
 

@@ -72,7 +72,8 @@ export default {
   methods: {
     dealItemStyle(item) {
       return {
-        width: item.itemWidth || item.itemWidth
+        width: item.width && item.width,
+        height: item.height && item.height
       }
     },
     // 重置验证规则

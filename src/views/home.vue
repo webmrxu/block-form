@@ -17,7 +17,7 @@
             v-for="item in setting"
             :key="item.field"
             @click="showEditItem(item)"
-            :style="{width: item.itemWidth}"
+            :style="{width: item.width}"
           >
           </div>
         </div>

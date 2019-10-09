@@ -42,20 +42,20 @@ export default {
           field: 'title',
           type: 'input',
           title: '标题',
-          itemWidth: '60%',
+          width: '60%',
           rulesId: ['1']
         },
         {
           field: 'placeholder',
           type: 'count',
           title: '日期',
-          itemWidth: '60%'
+          width: '60%'
         },
         {
-          field: 'itemWidth',
+          field: 'width',
           type: 'email',
           title: '邮箱',
-          itemWidth: '60%'
+          width: '60%'
         }
       ]
     }

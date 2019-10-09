@@ -146,7 +146,35 @@ export default {
           if (k.ruleTyle === "pattern") {
             v._rules.push(this.convertPattern(k))
           }
+          if (k.maxlen && typeof k.maxlen === 'number') {
+            v._rules.push(this.converMaxlen(k))
+          }
+          if (k.minlen && typeof k.maxlen === 'number') {
+            v._rules.push(this.converMinlen(k))
+          }
         })
+      }
+    },
+    // 字符最大长度验证
+    converMaxlen(rule) {
+      return {
+        id: rule.id,
+        ruleName: rule.ruleName,
+        ruleDes: rule.ruleDes,
+        trigger: rule.trigger,
+        message: rule.message,
+        max: rule.maxlen
+      }
+    },
+    // 字符最小长度验证
+    converMinlen(rule) {
+      return {
+        id: rule.id,
+        ruleName: rule.ruleName,
+        ruleDes: rule.ruleDes,
+        trigger: rule.trigger,
+        message: rule.message,
+        min: rule.minlen
       }
     },
     // 正则规则转换

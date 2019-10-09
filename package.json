@@ -1,7 +1,7 @@
 {
   "name": "block-form",
   "description": "Vue component with block-form",
-  "version": "1.1.0",
+  "version": "1.1.11",
   "author": "webmrxu@gmail.com",
   "main": "dist/block-form.min.js",
   "license": "MIT",
@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build:publish": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build:publish": "cross-env NODE_ENV=production webpack --progress --hide-modules --mode production",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",

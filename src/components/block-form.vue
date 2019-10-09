@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="b-form">
     <div>
       <el-form ref="form" :model="formData" class="clearfix">
         <component
@@ -213,5 +213,8 @@ export default {
   display: block;
   clear: both;
   content: "";
+}
+.b-form /deep/ .b-color {
+  color: #aaa;
 }
 </style>

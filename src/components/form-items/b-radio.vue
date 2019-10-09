@@ -1,6 +1,9 @@
 <template>
   <div>
     <el-form-item  :label="item.title" :label-width="item.labelWidth" :prop="item.field" :rules="item._rules">
+      <span slot="label">
+        {{item.title}} <el-tooltip v-if="item.info" effect="dark" :content="item.info" placement="top-start"><i class="el-icon-info b-color"></i></el-tooltip>
+      </span>
       <el-radio-group
         v-if="list.length > 0"
         v-model="form.region"

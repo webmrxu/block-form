@@ -97,4 +97,8 @@ label 的标题的宽度
 
 默认为 150px
 
+# info 
+
+label 提示
+
 

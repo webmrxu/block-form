@@ -20,13 +20,14 @@
   </div>
 </template>
 <script>
-import { FormItem, DatePicker } from "element-ui";
+import { FormItem, DatePicker, Tooltip } from "element-ui";
 export default {
   name: "b-date",
   props: ["item", "value"],
   components: {
     'el-form-item': FormItem,
-    'el-date-picker': DatePicker
+    'el-date-picker': DatePicker,
+    'el-tooltip': Tooltip
   },
   data() {
     return {

@@ -17,13 +17,14 @@
   </div>
 </template>
 <script>
-import { FormItem, TimePicker } from "element-ui";
+import { FormItem, TimePicker, Tooltip } from "element-ui";
 export default {
   name: "b-time",
   props: ["item", "value"],
   components: {
     'el-form-item': FormItem,
-    'el-time-picker': TimePicker
+    'el-time-picker': TimePicker,
+    'el-tooltip': Tooltip
   },
   data() {
     return {

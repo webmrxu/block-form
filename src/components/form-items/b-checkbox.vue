@@ -16,14 +16,15 @@
   </div>
 </template>
 <script>
-import { FormItem, CheckboxGroup, Checkbox } from "element-ui";
+import { FormItem, CheckboxGroup, Checkbox, Tooltip } from "element-ui";
 export default {
   name: 'b-checkbox',
   props: ['item'],
   components: {
     'el-form-item': FormItem,
     'el-checkbox-group': CheckboxGroup,
-    'el-checkbox': Checkbox
+    'el-checkbox': Checkbox,
+    'el-tooltip': Tooltip
   },
   data() {
     return {

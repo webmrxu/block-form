@@ -17,14 +17,15 @@
   </div>
 </template>
 <script>
-import { FormItem, RadioGroup, Radio } from "element-ui";
+import { FormItem, RadioGroup, Radio, Tooltip } from "element-ui";
 export default {
   name: 'b-radio',
   props: ['item'],
   components: {
     'el-form-item': FormItem,
     'el-radio-group': RadioGroup,
-    'el-radio': Radio
+    'el-radio': Radio,
+    'el-tooltip': Tooltip
   },
   data() {
     return {

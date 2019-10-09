@@ -14,13 +14,14 @@
   </div>
 </template>
 <script>
-import { FormItem, Rate } from "element-ui";
+import { FormItem, Rate, Tooltip } from "element-ui";
 export default {
   name: "b-rate",
   props: ["item", "value"],
   components: {
     'el-form-item': FormItem,
-    'el-rate': Rate
+    'el-rate': Rate,
+    'el-tooltip': Tooltip
   },
   data() {
     return {

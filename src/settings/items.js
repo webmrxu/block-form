@@ -4,7 +4,8 @@ const itemsSetting = [
     placeholder: '请输入',
     title: '文本输入框',
     field: 'userName',
-    rulesId: ['3']
+    rulesId: ['3'],
+    info: '添加输入提示'
   },
   {
     type: 'select',
@@ -61,7 +62,8 @@ const itemsSetting = [
   {
     type: 'rate',
     title: '评分输入框',
-    field: 'ratefield'
+    field: 'ratefield',
+    info: '您的评分很重要，请谨慎评分'
   },
   {
     type: 'checkbox',

@@ -13,13 +13,14 @@
   </div>
 </template>
 <script>
-import { FormItem, Switch } from "element-ui";
+import { FormItem, Switch, Tooltip } from "element-ui";
 export default {
   name: "b-switch",
   props: ["item", "value"],
   components: {
     'el-form-item': FormItem,
-    'el-switch': Switch
+    'el-switch': Switch,
+    'el-tooltip': Tooltip
   },
   data() {
     return {

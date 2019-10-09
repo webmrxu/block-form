@@ -15,14 +15,15 @@
   </div>
 </template>
 <script>
-import { FormItem, Select, Option } from "element-ui";
+import { FormItem, Select, Option, Tooltip } from "element-ui";
 export default {
   name: 'b-select',
   props: ['item'],
   components: {
     'el-form-item': FormItem,
     'el-select': Select,
-    'el-option': Option
+    'el-option': Option,
+    'el-tooltip': Tooltip
   },
   data() {
     return {

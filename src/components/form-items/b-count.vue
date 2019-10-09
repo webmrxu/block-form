@@ -14,13 +14,14 @@
   </div>
 </template>
 <script>
-import { FormItem, InputNumber } from "element-ui";
+import { FormItem, InputNumber, Tooltip } from "element-ui";
 export default {
   name: "b-count",
   props: ["item", "value"],
   components: {
     'el-form-item': FormItem,
-    'el-input-number': InputNumber
+    'el-input-number': InputNumber,
+    'el-tooltip': Tooltip
   },
   data() {
     return {

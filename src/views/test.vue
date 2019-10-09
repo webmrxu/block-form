@@ -45,7 +45,8 @@ export default {
           field: 'width',
           type: 'email',
           title: '邮箱',
-          width: '60%'
+          width: '60%',
+          info: '请按照正确的邮箱格式进行输入'
         },
         {
           field: 'select',

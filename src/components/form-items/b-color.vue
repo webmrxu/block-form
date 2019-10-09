@@ -14,13 +14,14 @@
   </div>
 </template>
 <script>
-import { FormItem, ColorPicker } from "element-ui";
+import { FormItem, ColorPicker, Tooltip } from "element-ui";
 export default {
   name: "b-color",
   props: ["item", "value"],
   components: {
     'el-form-item': FormItem,
-    'el-color-picker': ColorPicker
+    'el-color-picker': ColorPicker,
+    'el-tooltip': Tooltip
   },
   data() {
     return {

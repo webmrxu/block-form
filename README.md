@@ -129,17 +129,25 @@ TODO list
 // 验证规则实例
 let rules = [
   {
-    id: '',
-    ruleTyle: '',
-    ruleName: '',
-    ruleDes: '',
-    message: '',
-    trigger: '',
-    pattern: '',
-    minlen: '',
-    maxlen: '',
-    minrang: '',
-    maxrang: ''
+    id: '6',
+    ruleTyle: 'pattern',
+    ruleName: 'url验证',
+    ruleDes: 'url',
+    message: '请输入正确的url,以http或者https开头',
+    trigger: 'blur',
+    pattern: '(?:(https?|ftp|file):)?\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]'
+  },
+  {
+    id: '7',
+    message: '链接地址最长只能输入30个字符',
+    trigger: 'blur',
+    maxlen: 30
+  },
+  {
+    id: '8',
+    message: '最少输入10个字符',
+    trigger: 'blur',
+    minlen: 10
   }
 ]
 

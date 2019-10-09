@@ -139,12 +139,14 @@ let rules = [
   },
   {
     id: '7',
+    ruleTyle: 'len',
     message: '链接地址最长只能输入30个字符',
     trigger: 'blur',
     maxlen: 30
   },
   {
     id: '8',
+    ruleTyle: 'len',
     message: '最少输入10个字符',
     trigger: 'blur',
     minlen: 10

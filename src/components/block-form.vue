@@ -146,11 +146,13 @@ export default {
           if (k.ruleTyle === "pattern") {
             v._rules.push(this.convertPattern(k))
           }
-          if (k.maxlen && typeof k.maxlen === 'number') {
-            v._rules.push(this.converMaxlen(k))
-          }
-          if (k.minlen && typeof k.maxlen === 'number') {
-            v._rules.push(this.converMinlen(k))
+          if (k.ruleTyle === 'len') {
+            if (k.maxlen && typeof k.maxlen === 'number') {
+              v._rules.push(this.converMaxlen(k))
+            }
+            if (k.minlen && typeof k.maxlen === 'number') {
+              v._rules.push(this.converMinlen(k))
+            }
           }
         })
       }

@@ -44,6 +44,8 @@ switch 开关组件输入
 
 time 时间输入
 
+table 表格编辑
+
 # title 
 
 输入标题, 为了美观，建议标题长度限制在 2~6 个字的长度。如果长度不够，可以使用 `info` 配置，添加输入提示
@@ -100,6 +102,14 @@ form表单验证id
 label 的标题的宽度
 
 默认为 150px
+
+# setting
+
+Array：Object
+
+Object 对应当前文档配置
+
+table 表格编辑， type 为table 时可用， 其他type 会忽略
 
 
 

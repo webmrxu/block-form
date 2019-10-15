@@ -79,6 +79,31 @@ export default {
               value: '2'
             }
           ]
+        },
+        {
+          type: 'table',
+          title: '用户列表',
+          field: 'names',
+          setting: [
+            {
+              type: 'input',
+              title: '姓名',
+              field: 'name',
+              width: '80%'
+            },
+            {
+              type: 'number',
+              title: '年龄',
+              field: 'age',
+              width: '80%'
+            },
+            {
+              type: 'phoneNum',
+              title: '手机号',
+              field: 'phone',
+              width: '80%'
+            }
+          ]
         }
       ]
     }

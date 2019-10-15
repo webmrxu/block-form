@@ -27,6 +27,7 @@ import BRate from "../components/form-items/b-rate.vue"
 import BSwitch from "../components/form-items/b-switch.vue"
 import BTime from "../components/form-items/b-time.vue"
 import BColor from "../components/form-items/b-color.vue"
+import BTable from "../components/form-items/b-table.vue"
 // element ui
 import { Form } from "element-ui"
 import Utils from "../Utils/common"
@@ -36,7 +37,7 @@ import BaseItems from "../settings/base-items"
 import Rules from "../settings/rules"
 
 export default {
-  name: "block-from",
+  name: "block-form",
   components: {
     BInput,
     BCheckbox,
@@ -48,6 +49,7 @@ export default {
     BTime,
     BSelect,
     BColor,
+    BTable,
     "el-form": Form
   },
   props: ["setting", "formData", "formSetting"],

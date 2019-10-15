@@ -118,6 +118,12 @@ const baseItemsSetting = [
     width: '50%',
     labelWidth: '150px',
     height: '62px'
+  },
+  {
+    type: 'table',
+    title: '表格编辑',
+    width: '100%',
+    setting: []
   }
 ]
 

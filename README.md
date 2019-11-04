@@ -1,6 +1,7 @@
 # block-form
 
-积木表单
+积木表单 block form component for Vue
+![积木表单](./example.jpg)
 
 # Install
 

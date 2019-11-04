@@ -33,12 +33,6 @@ const editSetting = [
     title: '验证规则',
     width: '60%',
     params: baseRules
-  },
-  {
-    type: 'input',
-    title: '组件布局',
-    field: 'userName',
-    width: '60%'
   }
 ]
 

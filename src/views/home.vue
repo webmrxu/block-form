@@ -127,7 +127,7 @@ export default {
     editSure() {
       this.$refs['edit-setting-form'].validate(result => {
         if (result) {
-          console.log(this.editSettingForm)
+          // console.log(this.editSettingForm)
           this.showItemEditState = false
         }
       })

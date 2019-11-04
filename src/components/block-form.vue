@@ -4,7 +4,7 @@
       <el-form ref="form" :model="formData" class="clearfix">
         <component
           v-for="(item,index) in Psetting"
-          :is="item._userInputComponent?'b-input':'b-'+item.type"
+          :is="item._useBaseInputComponent?'b-input':'b-'+item.type"
           :key="index"
           :item="item"
           :value.sync="formData[item.field]"
@@ -57,18 +57,17 @@ export default {
   data() {
     return {
       Psetting: [],
-      userInputSetting: ['email', 'number', 'idcard', 'url', 'phoneNum']
+      useBaseInputSetting: ['email', 'number', 'idcard', 'url', 'phoneNum']
     }
   },
   created() {
-    this.Psetting = this.setting
+    this.Psetting = Utils.deepCopy(this.setting)
     this.mergesetting()
     this.dealFormRules()
   },
   watch: {
     setting: {
       handler: function (newV, oldV) {
-        // console.log('change setting')
         this.Psetting = Utils.deepCopy(newV)
         this.mergesetting()
         this.dealFormRules()
@@ -129,8 +128,8 @@ export default {
     // 合并基础配置
     mergeBaseSetting(v) {
       BaseItems.forEach(b => {
-        if (this.userInputSetting.includes(v.type)) {
-          v._userInputComponent = true
+        if (this.useBaseInputSetting.includes(v.type)) {
+          v._useBaseInputComponent = true
         }
         if (v.type === b.type) {
           Utils.deepMerge(v, b)

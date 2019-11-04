@@ -53,6 +53,10 @@
           <div class="bf-form-body">
             <block-form :setting="editSetting" :formData="showEditForm" />
           </div>
+          <div class="b-form-footer">
+            <el-button size="small" type="primary" plain @click="editSure">确认</el-button>
+            <el-button size="small" type="primary" plain @click="editClose">取消</el-button>
+          </div>
         </div>
       </transition>
     </div>
@@ -87,10 +91,12 @@ import ItemsSetting from "@/settings/items"
 
 // 编辑字段表单配置
 import EditSetting from "./edit-item"
+import { Button } from "element-ui"
 export default {
   name: "home",
   components: {
-    'block-form': BlockForm
+    'block-form': BlockForm,
+    'el-button': Button
   },
   data() {
     return {
@@ -128,6 +134,12 @@ export default {
     }
   },
   methods: {
+    editClose() {
+
+    },
+    editSure() {
+
+    },
     // 重置表单验证
     clearValidate() {
       this.$refs["b-form"].clearValidate()
@@ -168,6 +180,11 @@ export default {
 };
 </script>
 <style scoped>
+.b-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .edit-box {
   position: absolute;
   top: 0;

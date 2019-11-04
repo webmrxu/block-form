@@ -7,7 +7,7 @@
     <div>
       <el-table :data="tableData" border style="width: 100%">
         <el-table-column :prop="itemT.field" :label="itemT.title" v-for="(itemT,index) in item.setting" :key="index"></el-table-column>
-        <el-table-column  label="操作" width="100">
+        <el-table-column  label="操作">
           <template slot-scope="scope">
             <el-button @click="edit(scope.row)" type="text" size="small">编辑</el-button>
             <el-button @click="delete_(index)" type="text" size="small">删除</el-button>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-form-item :label="item.title" :rules="item._rules" :prop="item.field" :label-width="item.labelWidth">
-      <span slot="label">
+      <span slot="label" @click="labelClick">
         {{item.title}} <el-tooltip v-if="item.info" effect="dark" :content="item.info" placement="top-start"><i class="el-icon-info b-color"></i></el-tooltip>
       </span>
       <el-switch
@@ -13,7 +13,8 @@
   </div>
 </template>
 <script>
-import { FormItem, Switch, Tooltip } from "element-ui";
+import { FormItem, Switch, Tooltip } from "element-ui"
+import methods from './methods'
 export default {
   name: "b-switch",
   props: ["item", "value"],
@@ -34,10 +35,6 @@ export default {
   },
   mounted() {
   },
-  methods: {
-    change(value) {
-      this.$emit("update:value", value)
-    }
-  }
+  methods: methods
 }
 </script>

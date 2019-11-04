@@ -13,7 +13,8 @@
   </div>
 </template>
 <script>
-import { FormItem, Input, Tooltip } from "element-ui";
+import { FormItem, Input, Tooltip } from "element-ui"
+import methods from './methods'
 export default {
   name: "b-input",
   props: ["item", "value"],
@@ -34,13 +35,6 @@ export default {
   },
   mounted() {
   },
-  methods: {
-    change(value) {
-      this.$emit("update:value", value)
-    },
-    labelClick() {
-      this.$emit("labelClick", this.item)
-    }
-  }
+  methods: methods
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-form-item  :label="item.title" :label-width="item.labelWidth" :prop="item.field" :rules="item._rules">
-      <span slot="label">
+      <span slot="label" @click="labelClick">
         {{item.title}} <el-tooltip v-if="item.info" effect="dark" :content="item.info" placement="top-start"><i class="el-icon-info b-color"></i></el-tooltip>
       </span>
       <el-radio-group
@@ -17,7 +17,8 @@
   </div>
 </template>
 <script>
-import { FormItem, RadioGroup, Radio, Tooltip } from "element-ui";
+import { FormItem, RadioGroup, Radio, Tooltip } from "element-ui"
+import methods from './methods'
 export default {
   name: 'b-radio',
   props: ['item'],
@@ -43,11 +44,7 @@ export default {
       this.list = this.item.params
     }
   },
-  methods: {
-    change(value) {
-      this.$emit("update:value", value)
-    }
-  }
+  methods: methods
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="b-checkbox">
-    <el-form-item  :label="item.title" :label-width="item.labelWidth" :prop="item.field" :rules="item._rules">
-      <span slot="label">
+    <el-form-item :label="item.title" :label-width="item.labelWidth" :prop="item.field" :rules="item._rules">
+      <span slot="label" @click="labelClick">
         {{item.title}} <el-tooltip v-if="item.info" effect="dark" :content="item.info" placement="top-start"><i class="el-icon-info b-color"></i></el-tooltip>
       </span>
       <el-checkbox-group
@@ -16,7 +16,8 @@
   </div>
 </template>
 <script>
-import { FormItem, CheckboxGroup, Checkbox, Tooltip } from "element-ui";
+import { FormItem, CheckboxGroup, Checkbox, Tooltip } from "element-ui"
+import methods from './methods'
 export default {
   name: 'b-checkbox',
   props: ['item'],
@@ -44,11 +45,7 @@ export default {
     }
     // console.log(this.item)
   },
-  methods: {
-    change(value) {
-      this.$emit("update:value", value)
-    }
-  }
+  methods: methods
 }
 </script>
 

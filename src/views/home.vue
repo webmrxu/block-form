@@ -19,9 +19,6 @@
       <div class="act-item" @click="showSetting = true;">
         <span>显示表单配置</span>
       </div>
-      <div class="act-item" @click="showEdit = !showEdit;">
-        <span>{{showEdit?'切换编辑模式':'切换输入模式'}}</span>
-      </div>
       <div class="act-item" @click="getInput">
         <span>测试输出</span>
       </div>
@@ -100,8 +97,7 @@ export default {
       showItemEditState: false, // 展示组件配置
       showSetting: false,
       editSetting: {},
-      editSettingForm: {},
-      showEdit: true
+      editSettingForm: {}
     }
   },
   mounted() {

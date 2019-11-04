@@ -11,16 +11,7 @@
     <!-- 表单展示区 -->
     <div class="form-box" :style="formBoxStyle">
       <div class="form-container">
-        <block-form :setting="setting" :formData="formData" ref="b-form" />
-        <div v-if="!showEdit" class="edit-box">
-          <div
-            v-for="item in setting"
-            :key="item.field"
-            @click="showEditItem(item)"
-            :style="{width: item.width}"
-          >
-          </div>
-        </div>
+        <block-form :setting="setting" :formData="formData" ref="b-form" @labelClick="showEditItem"/>
       </div>
     </div>
     <!-- 操作按钮 -->

@@ -96,7 +96,13 @@ src/
 
 ## 事件
 
-TODO list
+### label 输入框点击事件
+
+@labelClick(settingItem)
+
+settingItem: 输入框配置
+
+
 
 ## 方法
 

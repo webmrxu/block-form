@@ -10,6 +10,7 @@
           :value.sync="formData[item.field]"
           :style="dealItemStyle(item)"
           class="form-item-component"
+          @labelClick="labelClick"
         ></component>
       </el-form>
     </div>
@@ -65,13 +66,20 @@ export default {
     this.dealFormRules()
   },
   watch: {
-    setting(newV, oldV) {
-      this.Psetting = newV
-      this.mergesetting()
-      this.dealFormRules()
+    setting: {
+      handler: function (newV, oldV) {
+        // console.log('change setting')
+        this.Psetting = Utils.deepCopy(newV)
+        this.mergesetting()
+        this.dealFormRules()
+      },
+      deep: true
     }
   },
   methods: {
+    labelClick(item) {
+      this.$emit("labelClick", item)
+    },
     dealItemStyle(item) {
       return {
         width: item.width && item.width,

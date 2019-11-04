@@ -1,3 +1,11 @@
+import rules from '../settings/rules'
+let baseRules = []
+rules.forEach(v => {
+  baseRules.push({
+    value: v.id,
+    name: v.ruleName
+  })
+})
 const editSetting = [
   {
     field: 'title',
@@ -24,12 +32,7 @@ const editSetting = [
     type: 'checkbox',
     title: '验证规则',
     width: '60%',
-    params: [
-      {
-        value: '1',
-        name: '必填项'
-      }
-    ]
+    params: baseRules
   },
   {
     type: 'input',

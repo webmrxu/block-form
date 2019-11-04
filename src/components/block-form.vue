@@ -81,8 +81,7 @@ export default {
     },
     dealItemStyle(item) {
       return {
-        width: item.width && item.width,
-        height: item.height && item.height
+        width: item.width && item.width
       }
     },
     // 重置验证规则

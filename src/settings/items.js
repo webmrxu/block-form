@@ -4,7 +4,7 @@ const itemsSetting = [
     placeholder: '请输入',
     title: '文本输入框',
     field: 'userName',
-    rulesId: ['3'],
+    ruleIds: ['3'],
     info: '添加输入提示'
   },
   {
@@ -12,7 +12,7 @@ const itemsSetting = [
     placeholder: '请输入',
     title: '下拉选择框',
     field: 'parteents',
-    rulesId: ['1'],
+    ruleIds: ['1'],
     params: [
       {
         value: 'zz',

@@ -107,9 +107,9 @@ export default {
     },
     // 合并验证规则
     mergeRule(v) {
-      if (v.rulesId && Array.isArray(v.rulesId) && v.rulesId.length > 0) {
+      if (v.ruleIds && Array.isArray(v.ruleIds) && v.ruleIds.length > 0) {
         v.rules = []
-        v.rulesId.forEach(rId => {
+        v.ruleIds.forEach(rId => {
           Rules.forEach(R => {
             if (rId === R.id) {
               v.rules.push(R)

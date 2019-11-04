@@ -33,7 +33,7 @@ export default {
           type: 'input',
           title: '标题',
           width: '60%',
-          rulesId: ['1']
+          ruleIds: ['1']
         },
         {
           field: 'placeholder',

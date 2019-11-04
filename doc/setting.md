@@ -65,7 +65,7 @@ Array:Object 类型
 }
 ```
 
-# rulesId
+# ruleIds
 
 Array:String 枚举类型
 

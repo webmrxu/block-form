@@ -81,7 +81,7 @@ const baseItemsSetting = [
   {
     type: 'number',
     title: '数值',
-    rulesId: ['3'],
+    ruleIds: ['3'],
     width: '50%',
     labelWidth: '150px',
     height: '62px',
@@ -90,7 +90,7 @@ const baseItemsSetting = [
   {
     type: 'email',
     title: '邮箱',
-    rulesId: ['2'],
+    ruleIds: ['2'],
     width: '50%',
     labelWidth: '150px',
     height: '62px'
@@ -98,7 +98,7 @@ const baseItemsSetting = [
   {
     type: 'idcard',
     title: '身份证号',
-    rulesId: ['4'],
+    ruleIds: ['4'],
     width: '50%',
     labelWidth: '150px',
     height: '62px'
@@ -106,7 +106,7 @@ const baseItemsSetting = [
   {
     type: 'phoneNum',
     title: '手机号码',
-    rulesId: ['5'],
+    ruleIds: ['5'],
     width: '50%',
     labelWidth: '150px',
     height: '62px'
@@ -114,7 +114,7 @@ const baseItemsSetting = [
   {
     type: 'url',
     title: '网址',
-    rulesId: ['6'],
+    ruleIds: ['6'],
     width: '50%',
     labelWidth: '150px',
     height: '62px'

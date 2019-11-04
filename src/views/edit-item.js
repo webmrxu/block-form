@@ -4,7 +4,7 @@ const editSetting = [
     type: 'input',
     title: '输入框名称',
     width: '60%',
-    rulesId: ['1']
+    ruleIds: ['1']
   },
   {
     field: 'placeholder',
@@ -20,7 +20,7 @@ const editSetting = [
     info: '附加输入提示'
   },
   {
-    field: 'rulesId',
+    field: 'ruleIds',
     type: 'checkbox',
     title: '验证规则',
     width: '60%',

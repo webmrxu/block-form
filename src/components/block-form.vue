@@ -106,6 +106,7 @@ export default {
       let items = []
       if (this.Psetting && this.Psetting.length && this.Psetting.length > 0) {
         this.Psetting.forEach(v => {
+          v.__id = Utils.uuid(8)
           this.mergeBaseSetting(v)
           this.mergeRule(v)
           items.push(v)
@@ -123,6 +124,8 @@ export default {
             }
           })
         })
+      } else {
+        v.rules = []
       }
     },
     // 合并基础配置
@@ -165,6 +168,8 @@ export default {
             }
           }
         })
+      } else {
+        v._rules = []
       }
     },
     // 字符最大长度验证

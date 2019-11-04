@@ -120,6 +120,18 @@ export default {
       return JSON.stringify(newObj, null, 2)
     }
   },
+  watch: {
+    editSettingForm: {
+      handler: function(val, old) {
+        this.setting.forEach((v,i) => {
+          if (v.field == val.field) {
+            this.setting.splice(i,1,val)
+          }
+        })
+      },
+      deep: true
+    }
+  },
   methods: {
     editClose() {
 

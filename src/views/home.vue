@@ -51,7 +51,7 @@
             <div class="float-r bf-form-close" @click="showItemEditState=false">X</div>
           </div>
           <div class="bf-form-body">
-            <block-form :setting="editSetting" :formData="showEditForm" />
+            <block-form :setting="editSetting" :formData="editSettingForm" ref="edit-setting-form"/>
           </div>
           <div class="b-form-footer">
             <el-button size="small" type="primary" plain @click="editSure">确认</el-button>
@@ -109,7 +109,7 @@ export default {
       showItemEditState: false, // 展示组件配置
       showSetting: false,
       editSetting: {},
-      showEditForm: {},
+      editSettingForm: {},
       showEdit: true
     }
   },
@@ -138,7 +138,12 @@ export default {
 
     },
     editSure() {
-
+      this.$refs['edit-setting-form'].validate(result => {
+        if (result) {
+          console.log(this.editSettingForm)
+          this.showItemEditState = false
+        }
+      })
     },
     // 重置表单验证
     clearValidate() {
@@ -157,7 +162,7 @@ export default {
     // 显示该该字段配置
     showEditItem(item) {
       this.showItemEditState = true
-      this.showEditForm = item
+      this.editSettingForm = item
     },
     // 处理浏览器缩放
     dealWindowResize() {

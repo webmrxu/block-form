@@ -2,59 +2,32 @@ const editSetting = [
   {
     field: 'title',
     type: 'input',
-    title: '标题',
+    title: '输入框名称',
     width: '60%',
     rulesId: ['1']
   },
   {
     field: 'placeholder',
     type: 'input',
-    title: '默认提示文字',
-    width: '60%',
-    rulesId: ['1']
+    title: '输入框提示',
+    width: '60%'
   },
   {
-    field: 'width',
+    field: 'info',
     type: 'input',
-    title: '组件宽度',
+    title: '附加输入提示',
     width: '60%',
-    rulesId: ['1']
+    info: '附加输入提示'
   },
   {
-    field: 'height',
-    type: 'input',
-    title: '组件高度',
-    width: '60%',
-    rulesId: ['1']
-  },
-  {
-    field: 'labelWidth',
-    type: 'input',
-    title: '标题宽度',
-    width: '60%',
-    rulesId: ['1']
-  },
-  {
-    type: 'input',
-    title: '描述',
-    field: 'title',
-    width: '60%',
-    rulesId: ['1']
-  },
-  {
-    type: 'select',
+    field: 'rulesId',
+    type: 'checkbox',
     title: '验证规则',
-    field: 'parteents',
-    paramCode: 'code',
     width: '60%',
     params: [
       {
-        value: 'ali',
-        name: '正则'
-      },
-      {
-        value: 'tent',
-        name: '无效'
+        value: '1',
+        name: '必填项'
       }
     ]
   },
@@ -62,8 +35,7 @@ const editSetting = [
     type: 'input',
     title: '组件布局',
     field: 'userName',
-    width: '60%',
-    rulesId: ['1']
+    width: '60%'
   }
 ]
 

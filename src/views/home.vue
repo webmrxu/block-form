@@ -134,13 +134,12 @@ export default {
   },
   methods: {
     editClose() {
-
+      this.showItemEditState = false
     },
     editSure() {
       this.$refs['edit-setting-form'].validate(result => {
         if (result) {
-          // console.log(this.editSettingForm)
-          this.showItemEditState = false
+          this.editClose()
         }
       })
     },

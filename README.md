@@ -1,7 +1,7 @@
 # block-form
 
 积木表单 block form component for Vue
-![积木表单](./example.jpg)
+![积木表单](https://raw.githubusercontent.com/webmrxu/block-form/master/example.jpg)
 
 # Install
 

@@ -39,7 +39,7 @@
 </template>
 <script>
 import { Table, TableColumn, Button } from "element-ui"
-import Utils from "@/Utils/common"
+import Utils from "../../Utils/common"
 export default {
   name: 'b-table',
   props: ["item", "value"],

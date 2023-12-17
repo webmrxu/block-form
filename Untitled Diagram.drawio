@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-17T10:31:25.691Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="5GJJa4_5hQKzdul9oZDD" version="21.6.5" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2023-12-17T10:31:55.784Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="zjAhi4z6z6Os4TfCGOzK" version="21.6.5" type="github" pages="2">
   <diagram id="oaLfkoBUNta8aNfazAAT" name="浏览器插件">
     <mxGraphModel dx="954" dy="494" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -97,7 +97,7 @@
           <mxGeometry x="553" y="240" width="70" height="30" as="geometry" />
         </mxCell>
         <mxCell id="2ukARSMntHaHrh0UnRik-84" value="选择机器人" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
-          <mxGeometry x="543" y="272" width="90" height="25" as="geometry" />
+          <mxGeometry x="543" y="274" width="90" height="25" as="geometry" />
         </mxCell>
         <mxCell id="2ukARSMntHaHrh0UnRik-89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="2ukARSMntHaHrh0UnRik-86" target="2ukARSMntHaHrh0UnRik-76" edge="1">
           <mxGeometry relative="1" as="geometry" />
